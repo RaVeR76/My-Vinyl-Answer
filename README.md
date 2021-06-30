@@ -113,7 +113,7 @@ for the main text and [Roboto](https://fonts.google.com/specimen/Roboto) for tit
 
 Below is an example of my fonts where the title is in ***Roboto*** and the text is in ***Raleway*** .....
 
-![Thee-Profile Fonts](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/fonts-example.png)
+![My-Vinyl-Answer Fonts](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/fonts-example.png)
 
 
 #### Icons
@@ -141,7 +141,7 @@ So the colours I have mainly settled for are :
 
 Below is an image of the chosen colours .....
 
-![My-Vinyl-Answer Colors](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/My-Vinyl-Answer%20Colour%20Scheme.png)
+![My-Vinyl-Answer Colors](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/color-scheme.png)
 
 [Back to Top](#contents)
 
