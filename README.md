@@ -47,32 +47,33 @@ Again, this is were my project comes in ! I want to have a once and for all list
 
 ### **User Goals**
 
-* Find out who this comedy genius but deadly serious coder really is
-* The website will be a one page website so I can focus in on certain aspects
+* An easily accessible database for all my vinyl collection
+* Be able to search my vinyl database for specific vinyl by their various attributes
+* List my vinyl collect alphabetically when required
 * The website will have to work well on all devices
 * Navigate around the website with ease and pleasure
 * An aesthetically pleasing and visually appealing website
-* Contact options for getting in touch with moi
-* Last and most importantly ... find out who this comedy genius but deadly serious coder really is !
 
 
 ### **User Stories**
 
-* As a user, I 
-* As a user, I  
-* As a user, I 
-* As a user, I
-* As a user, I
-* As a user, I
-* As a user but admin, I want to be able to access the database so I can perform CRUD operations
+* As a user, I want to be able to login so I can have my own personal enviroment or enVINYLoment as I like to call it (sorry that was bad)
+* As a user, I want to be able to know what vinyl I have collected over the years
+* As a user, I want to list my vinyl collection by genre or year which are the most important aspects as a DJ .... (or by any attribute possibly)
+* As a user, I want to be able to rate my vinyl as they are not all as good as the next one
+* As a user, I want the website to be easy to use
+* As a user, I to possibly add some specific notes attavced to each vinyl if required (like small scratch at start)
+* As a user, I want to be able to add as many records / vinyls as I want
+* As a user, I want to edit any vinyl info I want
+* As a user, I want to delete any vinyl I want (if I sell one on another site)
 
 
 
 ### **Site Owner Goals**
 
-* 
-* 
-* Add Admin access for site owner to perform CRUD (Create, Read, Update & Delete) within the database
+* To have a great website that vinyl collectors can keep track of their personal vinyl collection
+* To have an easily accessible website where the user can find specific vinyl by an easy search method
+* Add login access for site user to perform CRUD (Create, Read, Update & Delete) within their personal vinyl collection / database
 * 
 
 
@@ -82,29 +83,25 @@ Again, this is were my project comes in ! I want to have a once and for all list
 
 #### Requirements 
 
-* Single page portfolio design
+* Multi page design
 * Ease of navigation
 * An aesthetically pleasing website
-* Easy to perform CRUD operations (Admin)
-* Developers creditials up to date
-* Contact form
-* Admin access for various functions
+* Easy to perform CRUD operations on each vinyl stored in their database
+* Contact form for contacting the developer with any bugs or future suggestions to make the site better
 * A little uniqueness to hopefully stand out a little bit more
 
 
 #### Expectations
 
 * To enjoy the website layout and navigate freely with no issues
-* To know a little bit more about the developer
-* Contact options in case the user wants to offer employment or projects
-* As an Admin, to be able to access the Database and make changes easily
+* 
+* Contact options in case the user has found some bugs that need fixing
+* As a user, to be able to access their personal collection / database and make changes easily
 
 
 ### **Design Choices**
 
-I will be using Bootstrap 4 to create the overall layout of my website, as this will make it easier for me to control it's functionality across multiple devices.
-I just want it to be a simple and easy on the eye .... nothing too adventurous or loud !
-It will be a one page scrolling website split into various sections, each displaying certain information about the developer.
+
 
 
 
@@ -122,7 +119,7 @@ Below is an example of my fonts where the title is in ***Roboto*** and the text 
 #### Icons
 
 [Font Awesome](https://fontawesome.com/) will be the main source for any icons that I require. 
-I will deffo be using the various programming language icons and some social media icons on my website.
+I will deffo be using the various basic icons and some social media icons on my website.
 Other than them, we will just have to see what suits and fits the web page layout perfectly.
 
 
@@ -173,6 +170,7 @@ Anyway, you can have a wee look at my wireframes below:
 
 ### **Features To Be Implemented**
 
+Share list with other users for possible sales or swaps if duplicates
 
 
 [Back to Top](#contents)
@@ -288,7 +286,7 @@ Anyway, you can have a wee look at my wireframes below:
 
 
 
-### **T**
+### ****
 
 #### User Story :
 
