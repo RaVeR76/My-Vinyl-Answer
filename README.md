@@ -62,7 +62,7 @@ Again, this is were my project comes in ! I want to have a once and for all list
 * As a user, I want to list my vinyl collection by genre or year which are the most important aspects as a DJ .... (or by any attribute possibly)
 * As a user, I want to be able to rate my vinyl as they are not all as good as the next one
 * As a user, I want the website to be easy to use
-* As a user, I to possibly add some specific notes attavced to each vinyl if required (like small scratch at start)
+* As a user, I want to possibly add some specific notes attached to each vinyl if required (a note like small scratch at start)
 * As a user, I want to be able to add as many records / vinyls as I want
 * As a user, I want to edit any vinyl info I want
 * As a user, I want to delete any vinyl I want (if I sell one on another site)
@@ -94,15 +94,18 @@ Again, this is were my project comes in ! I want to have a once and for all list
 #### Expectations
 
 * To enjoy the website layout and navigate freely with no issues
-* 
+* Be able to search my vinyl collection by the various attributes 
 * Contact options in case the user has found some bugs that need fixing
-* As a user, to be able to access their personal collection / database and make changes easily
+* For the user to be able to access their personal collection / database and make changes easily
 
 
 ### **Design Choices**
 
-
-
+I am going to slip out of my comfort zone with this project and I'm going to use the framework Bulma, on the recommendation of my mentor.
+He wants me to push myself and try new things so I'll give it a go for sure.
+I just want it to be a simple and easy on the eye .... nothing too adventurous or loud !
+It will be a multi page website so that the user can click between pages to utilise the full atonomy of my design :)
+I will be using MongoDB as the database for my application as I found it fairly easy to use and have some knowledge of it now.
 
 
 #### Fonts
@@ -119,7 +122,7 @@ Below is an example of my fonts where the title is in ***Roboto*** and the text 
 #### Icons
 
 [Font Awesome](https://fontawesome.com/) will be the main source for any icons that I require. 
-I will deffo be using the various basic icons and some social media icons on my website.
+I will deffo be using the various basic icons and some music icons on my website.
 Other than them, we will just have to see what suits and fits the web page layout perfectly.
 
 
@@ -141,7 +144,7 @@ So the colours I have mainly settled for are :
 
 Below is an image of the chosen colours .....
 
-![My-Vinyl-Answer Colors](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/color-scheme.png)
+![My-Vinyl-Answer Colours](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/color-scheme.png)
 
 [Back to Top](#contents)
 
@@ -166,6 +169,9 @@ Anyway, you can have a wee look at my wireframes below:
 
 ### **Existing Features**
 
+* The user will be able to register
+* The user will therefore be able to login, in future (after intial registration of course)
+* 
 
 
 ### **Features To Be Implemented**
@@ -183,6 +189,7 @@ Share list with other users for possible sales or swaps if duplicates
 - [HTML](https://en.wikipedia.org/wiki/HTML)
 - [CSS](https://en.wikipedia.org/wiki/CSS) 
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
+python
 
 ### **Tools and Libraries**
 
