@@ -150,15 +150,40 @@ Below is an image of the chosen colours .....
 
 ## **Wireframes**
 ---
-The software that I used for my wireframes was Balsamiq. This was the third time I used this software & it was deffo a lot easier to understand what you need to do. The software allows you design the basic layout of your website on devices such as a desktop, tablet and mobile. They are just simple 2D sketches but I now understand how important these really are:)
+The software that I used for my wireframes was Balsamiq. This was the third time I used this software & it was deffo a lot easier to understand what you need to do. The software allows you design the basic layout of your website on devices such as a desktop, tablet and mobile. They are just simple 2D sketches but I now understand how important these really are :) 
+I think my wireframes look good & deffo give me a great starting point for the design process !
 
 Anyway, you can have a wee look at my wireframes below:
 
-- [Mobile Wireframe]()
+- [Mobile Home Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-home.pdf)
 
-- [Tablet Wireframe]()
+- [Mobile About Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-about.pdf)
 
-- [Desktop Wireframe]()
+- [Mobile Login Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-login.pdf)
+
+- [Mobile Register Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-register.pdf)
+
+- [Mobile My Vinyl Collection Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-myvinylcollection.pdf)
+
+- [Tablet Home Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-home.pdf)
+
+- [Tablet About Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-about.pdf)
+
+- [Tablet Login Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-login.pdf)
+
+- [Tablet Register Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-register.pdf)
+
+- [Tablet My Vinyl Collection Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-myvinylcollection.pdf)
+
+- [Desktop Home Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/desktop-home.pdf)
+
+- [Desktop About Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/desktop-about.pdf)
+
+- [Desktop Login Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/desktop-login.pdf)
+
+- [Desktop Register Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/desktop-register.pdf)
+
+- [Desktop My Vinyl Collection Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/desktop-myvinylcollection.pdf)
 
 
 [Back to Top](#contents)
