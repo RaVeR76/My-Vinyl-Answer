@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Vinyl Answer</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending this man</h2>
+
     {% for vinyl in vinyl %}
         {{ vinyl.genre_name }}<br>
         {{ vinyl.vinyl_name }}<br>
@@ -15,5 +11,5 @@
         {{ vinyl.vinyl_description }}<br>
         {{ vinyl.release_year }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
