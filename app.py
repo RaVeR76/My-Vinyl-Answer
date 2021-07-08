@@ -25,6 +25,11 @@ def get_vinyl():
     return render_template("vinyl.html", vinyl=vinyl)
 
 
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    return render_template("signup.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

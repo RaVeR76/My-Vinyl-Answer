@@ -23,7 +23,7 @@
 
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item logo" href="#">
+                <a class="navbar-item logo" href="{{ url_for('get_vinyl') }}">
                     <!-- <img src="static/images/logo6blue.png" alt="My Vinyl Answer Logo">  -->
                 </a>
 
@@ -37,18 +37,18 @@
 
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item">
+                    <a href="{{ url_for('get_vinyl') }}" class="navbar-item">
                         Home
                     </a>
-                    <a class="navbar-item">
+                    <a href="#" class="navbar-item">
                         About
                     </a>
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button is-primary">
+                            <a href="{{ url_for('signup') }}" class="button is-primary">
                                 <strong>Sign up</strong>
                             </a>
-                            <a class="button is-light">
+                            <a href="#" class="button is-light">
                                 Log in
                             </a>
                         </div>
