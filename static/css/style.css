@@ -5,3 +5,13 @@ html {
 .navbar {
     background-color: #a1e9f7;
 }
+
+.navbar-item::after {
+    color: #f7a1ad;
+}
+
+a.navbar-item.logo { 
+    background-image: url("../images/logo6blue.png");
+    background-size: cover;
+    width: 12rem;
+  }
