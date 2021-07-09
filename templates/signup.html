@@ -1,40 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h2 class="title is-2 has-text-centered">Sign Up !</h2>
+
     <div class="columns">
-        <div class="column is-8 is-offset-2">
+        <form class="column is-8 is-offset-2" method="POST" action="{{ url_for('signup') }}">
             <div class="card">
                 <div class="card-content">
                     <div class="content">
-                        
+                        <!-- Username Input -->
                         <div class="field column is-8 is-offset-2">
-                            <label class="label">Username</label>
+                            <label for="username" class="label">Username</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                                <input id="username" name="username" class="input is-success validate" type="text" placeholder="Enter Username" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
-                                <span class="icon is-small is-right">
+                            <!--    <span class="icon is-small is-right">
                                     <i class="fas fa-check"></i>
-                                </span>
+                                </span> -->
                             </div>
-                            <p class="help is-success">This username is available</p>
+                        <!--    <p class="help is-success">This username is available</p>    -->
                         </div>
-
+                        <!-- Password Input -->
                         <div class="field column is-8 is-offset-2">
-                            <label class="label">Password</label>
+                            <label for="password" class="label">Password</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input is-danger" type="password" placeholder="Password input" value="hello@">
+                                <input id="password" name="password" class="input is-danger validate" type="password" placeholder="Enter Password" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-key"></i>
                                 </span>
-                                <span class="icon is-small is-right">
+                            <!--    <span class="icon is-small is-right">
                                     <i class="fas fa-exclamation-triangle"></i>
-                                </span>
+                                </span> -->
                             </div>
-                            <p class="help is-danger">This email is invalid</p>
+                        <!--    <p class="help is-danger">This email is invalid</p>  -->
                         </div>
-
+                        <!-- Sign Up Button -->
                         <div class="field column is-4 is-offset-4">
                             <div class="control">
                                 <button class="button is-link is-medium is-fullwidth">Sign Up</button>
@@ -47,7 +49,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
 {% endblock %}
