@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -27,6 +28,24 @@ def get_vinyl():
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        # check for username
+        known_user = mongo.db.users.find_one(
+            {"username": request.form.get("username".lower())})
+
+        if known_user:
+            flash("Username Already Exists .... Sorry !")
+            return redirect(url_for("signup"))
+
+        signup = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(signup)
+
+        # Utilise Session Cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Sign Up Successful !")
     return render_template("signup.html")
 
 
