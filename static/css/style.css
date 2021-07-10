@@ -15,23 +15,27 @@ body, html {
     scroll-behavior: smooth;
 }
 
-.navbar {
-    background-color: #a1a9f1;
+.my-blue {
+    background-color: #a1e9f9;
 }
 
-.navbar-item::after {
-    color: #f7a1ad;
+.my-red {
+    background-color: #f7a1ad;
 }
 
 a.navbar-item.logo { 
     background-image: url("../images/1625940214184.png");
-    background-size: cover;
-    width: 14rem;
+    background-size: contain;
+    filter: invert(100%);
+    width: 12rem;
   }
 
-  .notification {
-      background-color: #f7a1ad;
-      color: white;
+  a.navbar-item.logo:hover {
+    filter: opacity(10%);
+  }
+
+  a.navbar-item:hover {
+    filter: opacity(90%);
   }
 
   .notification p {
@@ -40,13 +44,24 @@ a.navbar-item.logo {
 
 .flash h4 {
     line-height: 2;
-    background-color: hsl(220, 50%, 86%);
 }
+
 
 .col-pad {
     margin-top: 2rem;
 }
 
+.input {
+    border-color: #a1e9f9;
+}
+
+.input:hover {
+    border-color: #f7a1ad;
+}
+
+a.my-blue-font {
+    color: #f7a1ad;
+}
 
 
 
@@ -71,6 +86,11 @@ a.navbar-item.logo {
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
+
+    .notification p {
+        font-size: 1.5rem;
+    }
+
     .col-pad {
         margin-top: 1rem;
     }
