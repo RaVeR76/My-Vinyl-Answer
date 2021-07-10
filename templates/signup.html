@@ -12,7 +12,8 @@
                         <div class="field column is-8 is-offset-2">
                             <label for="username" class="label">Username</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input id="username" name="username" class="input is-success validate" type="text" placeholder="Enter Username" required>
+                                <input id="username" name="username" class="input is-success validate" type="text" 
+                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Enter Username" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -26,7 +27,8 @@
                         <div class="field column is-8 is-offset-2">
                             <label for="password" class="label">Password</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input id="password" name="password" class="input is-danger validate" type="password" placeholder="Enter Password" required>
+                                <input id="password" name="password" class="input is-danger validate" type="password" 
+                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Enter Password" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-key"></i>
                                 </span>
