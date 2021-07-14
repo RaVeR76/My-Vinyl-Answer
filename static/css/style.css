@@ -44,7 +44,7 @@ div.navbar-item.logo {
 
 .flash {
     border-radius: 1rem;
-    background-color: rgba(161, 233, 247, .5);                       /* rgba(161, 233, 247, .8) */
+   /* background-color: rgba(161, 233, 247, .5);  */                     /* rgba(161, 233, 247, .8) */
     border: 3px solid rgba(227, 100, 100, .2);                           /* rgba(227, 100, 100) */
 }
 
@@ -57,11 +57,11 @@ div.navbar-item.logo {
     margin-top: 2rem;
 }
 
-.input {
+.sign-bord, .log-bord:hover {
     border-color: #a1e9f9;
 }
 
-.input:hover {
+.sign-bord:hover, .log-bord  {
     border-color: #f7a1ad;
 }
 
