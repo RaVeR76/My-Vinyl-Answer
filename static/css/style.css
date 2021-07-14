@@ -19,31 +19,33 @@ body, html {
     background-color: #a1e9f9;
 }
 
+.my-blue-light {
+    background-color: #a1e9f9;
+}
+
 .my-red {
     background-color: #f7a1ad;
 }
 
-a.navbar-item.logo { 
+div.navbar-item.logo { 
     background-image: url("../images/1625940214184.png");
     background-size: contain;
     filter: invert(100%);
     width: 12rem;
   }
 
-  a.navbar-item.logo:hover {
-    filter: opacity(10%);
-  }
-
-  a.navbar-item:hover {
-    filter: opacity(90%);
-  }
-
   .notification p {
       font-size: 2rem;
   }
 
+.flash {
+    border-radius: 1rem;
+    background-color: rgba(161, 233, 247, .8);                       /* rgba(161, 233, 247, .8) */
+    border: 3px solid rgba(227, 100, 100, .3);                           /* rgba(227, 100, 100) */
+}
+
 .flash h4 {
-    line-height: 2;
+    line-height: 2rem;
 }
 
 
@@ -88,11 +90,13 @@ a.my-blue-font {
 @media (max-width: 767px) {
 
     .notification p {
+        height: 1rem;
         font-size: 1.5rem;
+        line-height: 1rem;
     }
 
     .col-pad {
-        margin-top: 1rem;
+        margin-top: 0.8rem;
     }
 }
 

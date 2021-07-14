@@ -23,9 +23,9 @@
 
         <nav class="navbar is-black has-shadow" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item logo" href="{{ url_for('get_vinyl') }}">
+                <div class="navbar-item logo">
                     <!-- <img src="static/images/logo6blue.png" alt="My Vinyl Answer Logo">  -->
-                </a>
+                </div>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                     data-target="navbarlist">
@@ -64,9 +64,9 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="columns">
-                        <div class="column is-full flash">
-                            <h4 class="title is-4 notification my-blue has-text-centered">{{ message }}</h4>
+                    <div class="columns is-centered col-pad">
+                        <div class="column is-10 flash">
+                            <h4 class="title is-4 has-text-centered">{{ message }}</h4>
                         </div>
                     </div>
                 {% endfor %}
