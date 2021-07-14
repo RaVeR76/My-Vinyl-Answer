@@ -39,15 +39,19 @@
                 <div class="navbar-end">
                     <a href="{{ url_for('get_vinyl') }}" class="navbar-item">Home</a>
                     <a href="#" class="navbar-item">About</a>
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="navbar-item">Profile</a>
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a href="{{ url_for('signup') }}" class="button my-blue">
-                                <strong>Sign up</strong>
-                            </a>
-                            <a href="{{ url_for('login') }}" class="button my-red">Log in</a>
+                    {% if session.user %}
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="navbar-item">Profile</a>
+                        <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a>
+                    {% else %}
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="{{ url_for('signup') }}" class="button my-blue">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="{{ url_for('login') }}" class="button my-red">Log in</a>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
             </div>
         </nav>
