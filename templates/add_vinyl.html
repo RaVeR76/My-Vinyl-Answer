@@ -13,10 +13,10 @@
 
 
 
-                    <!-- Vinyl Name Input -->
+                    <!-- Vinyl Name -->
                     <div class="field column is-8 is-offset-2">
                         <label for="vinyl_name" class="label">Vinyl Name</label>
-                        <div class="control has-icons-left has-icons-right">
+                        <div class="control has-icons-left">
                             <input id="vinyl_name" name="vinyl_name" class="input validate sign-bord" type="text" 
                                 minlength="5" maxlength="50" placeholder="Vinyl Name" required>
                             <span class="icon is-small is-left">
@@ -25,19 +25,52 @@
                         </div>
                     </div>
 
-                    <!-- Vinyl Artist Input -->
+                    <!-- Vinyl Artist -->
                     <div class="field column is-8 is-offset-2">
-                        <label for="vinyl_artist" class="label">Vinyl Artist / Artists</label>
-                        <div class="control has-icons-left has-icons-right">
+                        <label for="vinyl_artist" class="label">Vinyl Artist</label>
+                        <div class="control has-icons-left">
                             <input id="vinyl_artist" name="vinyl_artist" class="input validate sign-bord" type="text" 
-                                minlength="5" maxlength="50" placeholder="Vinyl Artist / Artists" required>
+                                minlength="5" maxlength="50" placeholder="Vinyl Artist" required>
                             <span class="icon is-small is-left">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-user"></i>
                             </span>
                         </div>
                     </div>
 
-                    
+                    <!-- Vinyl Label -->
+                    <div class="field column is-8 is-offset-2">
+                        <label for="vinyl_label" class="label">Vinyl Label</label>
+                        <div class="control has-icons-left">
+                            <input id="vinyl_label" name="vinyl_label" class="input validate sign-bord" type="text" 
+                                minlength="5" maxlength="50" placeholder="Vinyl Label" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-tag"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Vinyl Description -->
+                    <div class="field column is-8 is-offset-2">
+                        <label for="vinyl_description" class="label">Vinyl Description</label>
+                        <div class="control">
+                            <textarea id="vinyl_description" name="vinyl_description" class="textarea validate sign-bord has-fixed-size" type="text" 
+                                minlength="5" maxlength="200" placeholder="Vinyl Description" rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Vinyl Release Year -->
+                    <div class="field column is-8 is-offset-2">
+                        <label for="release_year" class="label">Release Year</label>
+                        <div class="control has-icons-left">
+                            <input id="release_year" name="release_year" class="input validate sign-bord" type="text" 
+                                maxlength="4" pattern="^[0-9]{4}$" placeholder="Release Year" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-calendar-alt"></i>
+                            </span>
+                        </div>
+                    </div>
+
+
 
                     <!-- Add The Vinyl Button -->
                     <div class="field column is-4 is-offset-4">
