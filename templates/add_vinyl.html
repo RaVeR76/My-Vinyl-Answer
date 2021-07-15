@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="columns col-pad">
+    <form class="column is-8 is-offset-2 " method="POST" action="">
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+
+                    <div class="notification my-blue is-full">
+                        <p class="has-text-centered"><strong>Add Vinyl</strong></p>
+                    </div>
+
+
+
+                    <!-- Vinyl Name Input -->
+                    <div class="field column is-8 is-offset-2">
+                        <label for="vinyl_name" class="label">Vinyl Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input id="vinyl_name" name="vinyl_name" class="input validate sign-bord" type="text" 
+                                minlength="5" maxlength="50" placeholder="Vinyl Name" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-record-vinyl"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Vinyl Artist Input -->
+                    <div class="field column is-8 is-offset-2">
+                        <label for="vinyl_artist" class="label">Vinyl Artist / Artists</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input id="vinyl_artist" name="vinyl_artist" class="input validate sign-bord" type="text" 
+                                minlength="5" maxlength="50" placeholder="Vinyl Artist / Artists" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-users"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Add The Vinyl Button -->
+                    <div class="field column is-4 is-offset-4">
+                        <div class="control">
+                            <button class="button my-blue sign-bord is-medium is-fullwidth">Add The Vinyl</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
