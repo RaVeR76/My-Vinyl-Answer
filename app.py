@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_vinyl")
 def get_vinyl():
-    vinyl = mongo.db.vinyl.find()
+    vinyl = list(mongo.db.vinyl.find())
     return render_template("vinyl.html", vinyl=vinyl)
 
 

@@ -1,33 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for vinyl in vinyl %}
-        {{ vinyl.genre_name }}<br>
-        {{ vinyl.vinyl_name }}<br>
-        {{ vinyl.vinyl_artist }}<br>
-        {{ vinyl.vinyl_label }}<br>
-        {{ vinyl.vinyl_description }}<br>
-        {{ vinyl.release_year }}<br>
-    {% endfor %}
+    <h4 class="title is-3 has-text-centered col-pad">My Vinyl Collection</h4>
 
-    <button class="collapsible">Open Section 1</button>
+    {% for vinyl in vinyl %}
+    <button class="collapsible my-blue">
+        {{ vinyl.genre_name }} : <strong>{{ vinyl.vinyl_name }}</strong>
+    </button>
+
     <div class="vinyl-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
+        <p>{{ vinyl.vinyl_artist }}</p>
+        <p>{{ vinyl.vinyl_label }}</p>
+        <p>{{ vinyl.vinyl_description }}</p>
+        <p>{{ vinyl.release_year }}</p>
+
     </div>
-    <button class="collapsible">Open Section 2</button>
-    <div class="vinyl-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
-    </div>
-    <button class="collapsible">Open Section 3</button>
-    <div class="vinyl-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
-    </div>
+    {% endfor %}
+    
 
 
 {% endblock %}
