@@ -70,6 +70,50 @@ a.my-blue-font {
 }
 
 
+/* Collapsible CSS taken from W3Schools */
+.collapsible {
+    background-color: #a1e9f9;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: 1px;
+    border: 3px solid rgba(227, 100, 100, .2);
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .vinyl-content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+
+
+
+
+
+
+
 
 /* Media Queries */
 
