@@ -452,6 +452,8 @@ python
 
 Collapsible taken from W3SChools
 
+ JavaScript for a Bulma select dropdown taken from here - https://github.com/jgthms/bulma/issues/1870
+
 
 
 [Back to Top](#contents)

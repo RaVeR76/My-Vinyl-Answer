@@ -102,7 +102,8 @@ def logout():
 
 @app.route("/add_vinyl")
 def add_vinyl():
-    return render_template("add_vinyl.html")
+    genre = mongo.db.genre.find().sort("genre_name", 1)
+    return render_template("add_vinyl.html", genre=genre)
 
 
 if __name__ == "__main__":

@@ -11,7 +11,23 @@
                         <p class="has-text-centered"><strong>Add Vinyl</strong></p>
                     </div>
 
-
+                    <!-- Genre Name -->
+                    <div class="field column is-8 is-offset-2">
+                        <label for="genre_name" class="label">Vinyl Genre</label>
+                        <div class="control has-icons-left">
+                            <div class="select">
+                                <select id="genre_name" name="genre_name" class="validate" required>
+                                    <option disabled selected>Genre</option>
+                                    {% for genre in genre %}
+                                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <span class="icon is-left">
+                                <i class="fas fa-globe"></i>
+                            </span>
+                        </div>
+                    </div>
 
                     <!-- Vinyl Name -->
                     <div class="field column is-8 is-offset-2">
