@@ -454,6 +454,9 @@ Collapsible taken from W3SChools
 
  JavaScript for a Bulma select dropdown taken from here - https://github.com/jgthms/bulma/issues/1870
 
+Couldn't get dropdown border colour to change to my-blue which did my head in tbh . I tried everything but couldn't get it to work ......
+until I remembered something !important (pun inteneded) ..... this solved my issue as the 'select' class was overruling all my tries !!!
+
 
 
 [Back to Top](#contents)

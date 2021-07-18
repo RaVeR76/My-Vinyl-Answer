@@ -17,7 +17,7 @@
                         <div class="control has-icons-left">
                             <div class="select">
                                 <select id="genre_name" name="genre_name" class="validate" required>
-                                    <option disabled selected>Genre</option>
+                                    <option value="" disabled selected>Select Genre</option>
                                     {% for genre in genre %}
                                         <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
                                     {% endfor %}
