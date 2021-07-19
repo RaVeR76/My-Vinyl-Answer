@@ -63,7 +63,6 @@ select, .sign-bord, .log-bord:hover {
 
 select:focus, .sign-bord:hover, .log-bord {
     border-color: #f7a1ad !important;
-    background-color: rgba(161, 233, 247, .1);
 }
 
 a.my-blue-font {

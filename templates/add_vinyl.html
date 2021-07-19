@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="columns col-pad">
-    <form class="column is-8 is-offset-2 " method="POST" action="">
+    <form class="column is-8 is-offset-2 " method="POST" action="{{ url_for('add_vinyl') }}">
         <div class="card">
             <div class="card-content">
                 <div class="content">
@@ -91,7 +91,9 @@
                     <!-- Add The Vinyl Button -->
                     <div class="field column is-4 is-offset-4">
                         <div class="control">
-                            <button class="button my-blue sign-bord is-medium is-fullwidth">Add The Vinyl</button>
+                            <button type="submit" class="button my-blue sign-bord is-medium is-fullwidth">
+                                Add Thy vinyl
+                            </button>
                         </div>
                     </div>
 
