@@ -457,6 +457,10 @@ Collapsible taken from W3SChools
 Couldn't get dropdown border colour to change to my-blue which did my head in tbh . I tried everything but couldn't get it to work ......
 until I remembered something !important (pun inteneded) ..... this solved my issue as the 'select' class was overruling all my tries !!!
 
+https://stackoverflow.com/questions/34676752/can-i-use-an-html-input-type-date-to-collect-only-a-year/40662109 - Release Year Selection Code
+
+
+
 
 
 [Back to Top](#contents)

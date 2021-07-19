@@ -78,8 +78,9 @@
                     <div class="field column is-8 is-offset-2">
                         <label for="release_year" class="label">Release Year</label>
                         <div class="control has-icons-left">
-                            <input id="release_year" name="release_year" class="input validate sign-bord" type="text" 
-                                maxlength="4" pattern="^[0-9]{4}$" placeholder="Release Year" required>
+                            <input id="release_year" name="release_year" class="input validate sign-bord" 
+                            type="number" maxlength="4" pattern="^[0-9]{4}$" placeholder="Release Year" 
+                            min="1900" max="2099" step="1" value="2000" required>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-calendar-alt"></i>
                             </span>
@@ -92,7 +93,7 @@
                     <div class="field column is-4 is-offset-4">
                         <div class="control">
                             <button type="submit" class="button my-blue sign-bord is-medium is-fullwidth">
-                                Add Thy vinyl
+                                Add Thy Vinyl
                             </button>
                         </div>
                     </div>
