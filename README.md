@@ -459,6 +459,9 @@ until I remembered something !important (pun inteneded) ..... this solved my iss
 
 https://stackoverflow.com/questions/34676752/can-i-use-an-html-input-type-date-to-collect-only-a-year/40662109 - Release Year Selection Code
 
+https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css - Remove Autofill from Add Vinyl As turned background blue
+
+
 
 
 
