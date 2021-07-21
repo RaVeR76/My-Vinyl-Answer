@@ -119,6 +119,14 @@ def add_vinyl():
     return render_template("add_vinyl.html", genre=genre)
 
 
+@app.route("/edit_vinyl/<vinyl_id>", methods=["GET", "POST"])
+def edit_vinyl(vinyl_id):
+    vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
+    genre = mongo.db.genre.find().sort("genre_name", 1)
+    return render_template("edit_vinyl.html", vinyl=vinyl, genre=genre)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

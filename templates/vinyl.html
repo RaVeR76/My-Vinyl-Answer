@@ -14,12 +14,18 @@
                     </button>
 
                     <div class="vinyl-content">
-                        <p><strong>Genre :</strong> {{ vinyl.genre_name }}</p>
-                        <p><strong>Artist :</strong> {{ vinyl.vinyl_artist }}</p>
-                        <p><strong>Label :</strong> {{ vinyl.vinyl_label }}</p>
-                        <p><strong>Description :</strong> {{ vinyl.vinyl_description }}</p>
-                        <p><strong>Release Year :</strong> {{ vinyl.release_year }}</p>
-
+                        <div class="columns">
+                            <div class="column is-four-fifths">
+                                <p><strong>Genre :</strong> {{ vinyl.genre_name }}</p>
+                                <p><strong>Artist :</strong> {{ vinyl.vinyl_artist }}</p>
+                                <p><strong>Label :</strong> {{ vinyl.vinyl_label }}</p>
+                                <p><strong>Description :</strong> {{ vinyl.vinyl_description }}</p>
+                                <p><strong>Release Year :</strong> {{ vinyl.release_year }}</p>
+                            </div>
+                            <div class="column is-one-fifth">
+                                <a href="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}" class="button">Edit</a>
+                            </div>
+                        </div>    
                     </div>
                
                 {% endfor %}
