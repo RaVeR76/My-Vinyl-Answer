@@ -461,6 +461,8 @@ https://stackoverflow.com/questions/34676752/can-i-use-an-html-input-type-date-t
 
 https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css - Remove Autofill from Add Vinyl As turned background blue
 
+https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div - Align Edit Button with in my column
+
 
 
 
