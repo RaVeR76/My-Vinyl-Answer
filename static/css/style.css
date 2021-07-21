@@ -15,6 +15,10 @@ body, html {
     scroll-behavior: smooth;
 }
 
+.my-white {
+    background-color: #F8F9FA;
+}
+
 .my-blue {
     background-color: #a1e9f9;
 }
@@ -108,10 +112,11 @@ a.my-blue-font {
   }
 
 
-
-
-
-
+  #butt-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 
 /* Media Queries */
