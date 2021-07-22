@@ -121,6 +121,18 @@ def add_vinyl():
 
 @app.route("/edit_vinyl/<vinyl_id>", methods=["GET", "POST"])
 def edit_vinyl(vinyl_id):
+    if request.method == "POST":
+        vinyl_edit = {
+            "genre_name": request.form.get("genre_name"),
+            "vinyl_name": request.form.get("vinyl_name"),
+            "vinyl_artist": request.form.get("vinyl_artist"),
+            "vinyl_label": request.form.get("vinyl_label"),
+            "vinyl_description": request.form.get("vinyl_description"),
+            "release_year": request.form.get("release_year")
+        }
+        mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
+        flash("Your Vinyl Has Been Successfully Updated")
+
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     genre = mongo.db.genre.find().sort("genre_name", 1)
     return render_template("edit_vinyl.html", vinyl=vinyl, genre=genre)

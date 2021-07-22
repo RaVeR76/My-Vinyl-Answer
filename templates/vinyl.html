@@ -22,8 +22,10 @@
                                 <p><strong>Description :</strong> {{ vinyl.vinyl_description }}</p>
                                 <p><strong>Release Year :</strong> {{ vinyl.release_year }}</p>
                             </div>
+
                             <div id="butt-center" class="column is-one-fifth">
                                 <a href="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}" class="button my-white sign-bord">Edit</a>
+                                <a href="" class="button my-white sign-bord my-blue-font">Delete</a>
                             </div>
                         </div>    
                     </div>
