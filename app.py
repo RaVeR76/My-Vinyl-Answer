@@ -138,6 +138,13 @@ def edit_vinyl(vinyl_id):
     return render_template("edit_vinyl.html", vinyl=vinyl, genre=genre)
 
 
+@app.route("/delete_vinyl/<vinyl_id>")
+def delete_vinyl(vinyl_id):
+    mongo.db.vinyl.remove({"_id": ObjectId(vinyl_id)})
+    flash("Your Vinyl Has Been Deleted")
+    return redirect(url_for("get_vinyls"))
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
