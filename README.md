@@ -463,6 +463,13 @@ https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-in
 
 https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div - Align Edit Button with in my column
 
+https://www.w3schools.com/howto/howto_css_delete_modal.asp - Delete Confirmation Model
+
+
+tried to add jquery for calling the modal when you clicked on the 'delete button' but it wouldn't work.
+It worked when I used say a class = p1 but not an id = p1 .... couldn't figure it out for ages .... did my head absolutely in tnh
+but then i realised I was created id = p1 numourous times as it was within a for loop so therefore it was pissed off because there should only one 'id' & thats why it wouldn't work .... glad I figured it out tbh :)
+
 
 
 
