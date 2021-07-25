@@ -44,7 +44,7 @@
                         <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a>
                     {% else %}
                         <a href="{{ url_for('home') }}" class="navbar-item">Home</a>
-                        <a href="#" class="navbar-item">About</a>
+                        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
                         <div class="navbar-item">
                             <div class="buttons">
                                 <a href="{{ url_for('signup') }}" class="button my-blue">
