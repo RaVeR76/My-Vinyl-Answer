@@ -10,9 +10,18 @@ body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
-    background-color: #F8F9FA;
+    background-image: url("../images/deck.jpg");
+    background-size: cover;
     font-family: 'Titillium Web', sans-serif;
     scroll-behavior: smooth;
+}
+
+.text-my-white {
+    color: #F8F9FA;
+}
+
+.text-my-black {
+    color: #110303;
 }
 
 .my-white {
@@ -72,11 +81,6 @@ select, .sign-bord, .log-bord:hover {
 select:focus, .sign-bord:hover, .log-bord {
     border-color: #f7a1ad !important;
 }
-
-/*
-a.my-blue-font {
-    color: #f7a1ad;
-}*/
 
 
 /* Collapsible CSS taken from W3Schools */
