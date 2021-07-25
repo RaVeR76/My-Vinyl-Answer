@@ -482,4 +482,17 @@ so I can display any vinyl details I want plus pass the vinyl_id onto the delete
 
 
 
+
+
+
+Vinyl On Floor Pic - Photo by Eric Krull on Unsplash
+
+Vinyl Upright & Headphones Pic - Photo by blocks on Unsplash
+  
+Record Player -  Photo by James Sutton on Unsplash 
+
+Vertical Vinyl - Photo by David Grandmougin on Unsplash
+
+Store Vinyl For Sale - Photo by Valentino Funghi on Unsplash
+
 [Back to Top](#contents)
