@@ -15,12 +15,6 @@ $(document).ready(function() {
   
     });
 
-    // Delete Confirmation Modal Active
-    $(".confirmDel").click(function() {
-        $("#deleteVinyl").addClass("is-active");      
-    });
-
-
 });
 
 

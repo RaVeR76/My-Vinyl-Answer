@@ -472,6 +472,13 @@ but then i realised I was created id = p1 numourous times as it was within a for
 
 
 
+I couldn't get my modal to delete the correct db file & it would just delete the first one in the list.
+The selected vinyl_id wasn't linking to my delete route.
+SO I moved the modal to it's own page & created an app.route to it when the delete button is pressed.
+ANd I pass through the vinyl details using vinyl_id.
+so I can display any vinyl details I want plus pass the vinyl_id onto the delete route.
+
+
 
 
 

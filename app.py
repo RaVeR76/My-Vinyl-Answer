@@ -148,7 +148,9 @@ def delete_vinyl(vinyl_id):
 @app.route("/confirm_modal/<vinyl_id>")
 def confirm_modal(vinyl_id):
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
-    return render_template("confirm_modal.html", vinyl=vinyl)
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("confirm_modal.html", vinyl=vinyl, username=username)
 
 
 if __name__ == "__main__":
