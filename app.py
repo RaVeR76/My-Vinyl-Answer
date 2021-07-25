@@ -103,14 +103,18 @@ def logout():
 @app.route("/add_vinyl", methods=["GET", "POST"])
 def add_vinyl():
     if request.method == "POST":
+
         vinyl = {
             "genre_name": request.form.get("genre_name"),
             "vinyl_name": request.form.get("vinyl_name"),
             "vinyl_artist": request.form.get("vinyl_artist"),
             "vinyl_label": request.form.get("vinyl_label"),
             "vinyl_description": request.form.get("vinyl_description"),
-            "release_year": request.form.get("release_year")
+            "release_year": request.form.get("release_year"),
+            "owner": mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
         }
+
         mongo.db.vinyl.insert_one(vinyl)
         flash("Your Vinyl Has Been Successfully Added")
         return redirect(url_for("get_vinyls"))
