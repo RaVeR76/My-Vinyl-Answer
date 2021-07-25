@@ -44,19 +44,17 @@
                             </div>
                         </div>
 
+                        <div class="column is-12">
+                            <p class="has-text-centered">
+                                Already Signed Up?
+                                <a href="{{ url_for('login') }}" class="my-red-text">Log In</a>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </form>
-    </div>
-
-    <div class="columns">
-        <div class="column is-12">
-            <p class="has-text-centered">
-                Already Signed Up?
-                <a href="{{ url_for('login') }}" class="my-red-text">Log In</a>
-            </p>
-        </div>
     </div>
 
 {% endblock %}
