@@ -489,7 +489,7 @@ Vinyl On Floor Pic - Photo by Eric Krull on Unsplash
 
 Vinyl Upright & Headphones Pic - Photo by blocks on Unsplash
   
-Record Player -  Photo by James Sutton on Unsplash 
+Deck Pic -  Photo by James Sutton on Unsplash 
 
 Vertical Vinyl - Photo by David Grandmougin on Unsplash
 

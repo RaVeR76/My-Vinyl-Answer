@@ -28,6 +28,10 @@ body, html {
     background-color: #F8F9FA;
 }
 
+.my-white-light {
+    background-color: rgba(245, 245, 245, .9);
+}
+
 .my-blue {
     background-color: #a1e9f9;
 }
