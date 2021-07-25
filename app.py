@@ -145,6 +145,11 @@ def delete_vinyl(vinyl_id):
     return redirect(url_for("get_vinyls"))
 
 
+@app.route("/confirm_modal/<vinyl_id>")
+def confirm_modal(vinyl_id):
+    vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
+    return render_template("confirm_modal.html", vinyl=vinyl)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
