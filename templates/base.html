@@ -37,14 +37,14 @@
 
             <div id="navbarlist" class="navbar-menu">
                 <div class="navbar-end">
-                    <a href="#" class="navbar-item">Home</a>
-                    <a href="#" class="navbar-item">About</a>
                     {% if session.user %}
-                        <a href="{{ url_for('get_vinyls') }}" class="navbar-item">My Vinyl</a>
                         <a href="{{ url_for('profile', username=session['user']) }}" class="navbar-item">Profile</a>
+                        <a href="{{ url_for('get_vinyls') }}" class="navbar-item">My Vinyl</a>
                         <a href="{{ url_for('add_vinyl') }}" class="navbar-item">Add Vinyl</a>
                         <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a>
                     {% else %}
+                        <a href="#" class="navbar-item">Home</a>
+                        <a href="#" class="navbar-item">About</a>
                         <div class="navbar-item">
                             <div class="buttons">
                                 <a href="{{ url_for('signup') }}" class="button my-blue">
