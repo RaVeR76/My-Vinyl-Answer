@@ -20,10 +20,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_vinyls")
-def get_vinyls():
-    vinyls = list(mongo.db.vinyl.find())
-    return render_template("vinyl.html", vinyl=vinyls)
+
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -92,6 +89,12 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/get_vinyls")
+def get_vinyls():
+    vinyls = list(mongo.db.vinyl.find())
+    return render_template("vinyl.html", vinyl=vinyls)
+
+
 @app.route("/logout")
 def logout():
     # remove user session cookies
@@ -111,8 +114,7 @@ def add_vinyl():
             "vinyl_label": request.form.get("vinyl_label"),
             "vinyl_description": request.form.get("vinyl_description"),
             "release_year": request.form.get("release_year"),
-            "owner": mongo.db.users.find_one(
-                {"username": session["user"]})["username"]
+            "owner": session["user"]
         }
 
         mongo.db.vinyl.insert_one(vinyl)
