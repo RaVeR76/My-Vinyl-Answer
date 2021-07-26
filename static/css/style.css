@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web&display=swap');
 
-/*html{
-    font-size: 62.5%;
-}*/
-
 body, html {
     width: 100%;
     height: 100%;
@@ -14,6 +10,10 @@ body, html {
     background-size: cover;
     font-family: 'Titillium Web', sans-serif;
     scroll-behavior: smooth;
+}
+
+.prof-font {
+    font-size: 1.3rem;
 }
 
 .text-my-white {
@@ -30,6 +30,10 @@ body, html {
 
 .my-white-light {
     background-color: rgba(245, 245, 245, .9);
+}
+
+.table {
+    background-color: transparent;
 }
 
 .my-blue {
@@ -163,6 +167,10 @@ select:focus, .sign-bord:hover, .log-bord {
 
     .col-pad {
         margin-top: 0.8rem;
+    }
+
+    .prof-font {
+        font-size: 1rem;
     }
 }
 

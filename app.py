@@ -42,7 +42,9 @@ def signup():
             return redirect(url_for("signup"))
 
         signup = {
+            "fullname": request.form.get("fullname").lower(),
             "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(signup)
