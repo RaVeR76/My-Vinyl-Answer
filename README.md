@@ -65,7 +65,7 @@ Again, this is were my project comes in ! I want to have a once and for all list
 * As a user, I want to possibly add some specific notes attached to each vinyl if required (a note like small scratch at start)
 * As a user, I want to be able to add as many records / vinyls as I want
 * As a user, I want to edit any vinyl info I want
-* As a user, I want to delete any vinyl I want (if I sell one on another site)
+* As a user, I want to delete any vinyl I want (if I sell one personally or on another site)
 
 
 
@@ -111,10 +111,10 @@ I will be using MongoDB as the database for my application as I found it fairly 
 #### Fonts
 
 For my fonts, I am going to use [Google Fonts](https://fonts.google.com/) as my source of inspiration :)
-I have settled on the simplicity side of things & the more user friendly style of [Raleway](https://fonts.google.com/specimen/Raleway)
+I have settled on the simplicity side of things & the more user friendly style of [Titillium Web](https://fonts.google.com/specimen/Titillium+Web)
 for the main text and [Roboto](https://fonts.google.com/specimen/Roboto) for titles and section headings.
 
-Below is an example of my fonts where the title is in ***Roboto*** and the text is in ***Raleway*** .....
+Below is an example of my fonts where the title is in ***Titillium*** and the text is in ***Roboto*** .....
 
 ![My-Vinyl-Answer Fonts](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/fonts-example.png)
 
@@ -220,7 +220,7 @@ python
 
 - [Git](https://en.wikipedia.org/wiki/Git) 
 - [GitPod](https://www.gitpod.io/)
-- [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
+- [Bulma](https://bulma.io/)
 - [jQuery](https://jquery.com/)
 - [Balsamiq](https://balsamiq.com/)
 - [W3C HTML Validation Service](https://validator.w3.org/)
