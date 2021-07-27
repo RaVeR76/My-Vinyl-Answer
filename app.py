@@ -52,7 +52,7 @@ def signup():
         # Utilise Session Cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful !")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile"))
 
     return render_template("signup.html")
 
@@ -71,8 +71,7 @@ def login():
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(
                             request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+                        return redirect(url_for("profile"))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -86,13 +85,11 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # pull the session user's username from the database
-    #username = mongo.db.users.find_one(
-       # {"username": session["user"]})["username"]
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    # pull the session user's profile from the database
 
-    users = mongo.db.users.find_one()
+    users = mongo.db.users.find_one({"username": session["user"]})
 
     if session["user"]:
         return render_template("profile.html", users=users)
@@ -167,7 +164,8 @@ def confirm_modal(vinyl_id):
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("confirm_modal.html", vinyl=vinyl, username=username)
+    return render_template(
+        "confirm_modal.html", vinyl=vinyl, username=username)
 
 
 if __name__ == "__main__":
