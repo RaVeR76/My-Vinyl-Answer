@@ -67,11 +67,11 @@ def login():
         if known_user:
             # check password matches user
             if check_password_hash(
-                    known_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for("profile"))
+                known_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for("profile"))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")

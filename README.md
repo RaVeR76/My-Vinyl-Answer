@@ -483,7 +483,11 @@ so I can display any vinyl details I want plus pass the vinyl_id onto the delete
 Spent ages trying to figure out why my users database values would not display on my profile page as per user
 I was using jinja logic to display them but forgot to write the database name with each value i.e. {{ fullname }} should have been {{ users.fullname }}
 Pretty raging after that tbh but sure .... another learning poiunt noted & will be easier to notice next time !
- 
+
+
+email validation wasn't working .... I had type="text" instead of type="email"
+
+
 
 
 
