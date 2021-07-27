@@ -40,10 +40,6 @@ body, html {
     background-color: #a1e9f9;
 }
 
-.my-blue:hover {
-    background-color: #a1e9f9;
-}
-
 .my-blue-light {
     background-color: rgba(161, 233, 247, .3);
 }
@@ -102,34 +98,34 @@ select:focus, .sign-bord:hover, .log-bord {
     text-align: left;
     border: 2px solid rgba(227, 100, 100, .3);
     font-size: 1rem;
-  }
+}
   
-  .collapsible:after {
+.collapsible:after {
     content: '\002B';
     color: black;
     font-weight: bold;
     float: right;
     margin-left: 5px;
-  }
+}
   
-  .active:after {
+.active:after {
     content: "\2212";
-  }
+}
   
-  .vinyl-content {
+.vinyl-content {
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: rgba(161, 233, 247, .3);
-  }
+}
 
 
-  #butt-center {
+#butt-center {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
 
 /* Media Queries */

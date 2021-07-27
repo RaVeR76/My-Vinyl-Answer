@@ -57,14 +57,14 @@ Again, this is were my project comes in ! I want to have a once and for all list
 
 ### **User Stories**
 
-* As a user, I want to be able to login so I can have my own personal enviroment or enVINYLoment as I like to call it (sorry that was bad)
+* As a user, I want to be able to login so I can have my own personal environment or enVINYLoment as I like to call it (sorry that was bad)
 * As a user, I want to be able to know what vinyl I have collected over the years
 * As a user, I want to list my vinyl collection by genre or year which are the most important aspects as a DJ .... (or by any attribute possibly)
 * As a user, I want to be able to rate my vinyl as they are not all as good as the next one
 * As a user, I want the website to be easy to use
 * As a user, I want to possibly add some specific notes attached to each vinyl if required (a note like small scratch at start)
 * As a user, I want to be able to add as many records / vinyls as I want
-* As a user, I want to edit any vinyl info I want
+* As a user, I want to edit any vinyl info if I want
 * As a user, I want to delete any vinyl I want (if I sell one personally or on another site)
 
 
@@ -214,7 +214,7 @@ Share list with other users for possible sales or swaps if duplicates
 - [HTML](https://en.wikipedia.org/wiki/HTML)
 - [CSS](https://en.wikipedia.org/wiki/CSS) 
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
-python
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) 
 
 ### **Tools and Libraries**
 
@@ -234,9 +234,38 @@ python
 ---
 
 
-### ****
+### EnVINYLoment
 
-#### User Story :
+#### User Story : I want to be able to login so I can have my own personal environment or enVINYLoment as I like to call it (sorry that was bad)
+
+* **Plan**  
+I want to create a website that is unique to each person and allows them to feel welcome everytime they log on.
+The user will first have to sign up with some basic details which will be added to their personal user database.
+After this, each user will have a personal username which will be one of a kind, as I will add code to eliminate duplication.
+They will have access to their own vinyl collection which they will have to build from scratch themselves obviously, unless I'm
+some kinda vinyl stalker who knows what each user has in their record boxes or attics !
+I may possibly add some sort of a simple profile pic code that the user can utilise to add a URL link for their profile pic (save db space plus keeps it simple)
+
+In production, you could probably give the user the ability to delete their profile if they wanted to but I will add Admin Access to the website
+for the ability to delete users.
+
+* **Implementation**  
+
+
+* **Test**  
+
+
+* **Result**  
+
+
+* **Verdict**  
+
+
+
+
+### A Record Of Records
+
+#### User Story : I want to be able to know what vinyl I have collected over the years
 
 * **Plan**  
 
@@ -255,30 +284,9 @@ python
 
 
 
-### ****
+### Finding Nemo 
 
-#### User Story :
-
-* **Plan**  
-
-
-* **Implementation**  
-
-
-* **Test**  
-
-
-* **Result**  
-
-
-* **Verdict**  
-
-
-
-
-### ****
-
-#### User Story :
+#### User Story : I want to list my vinyl collection by genre or year which are the most important aspects as a DJ .... (or by any attribute possibly)
 
 * **Plan**  
 
@@ -298,9 +306,9 @@ python
 
 
 
-### ****
+### Rate My Plate .... I Mean Vinyl
 
-#### User Story :
+#### User Story : I want to be able to rate my vinyl as they are not all as good as the next one
 
 * **Plan**  
 
@@ -318,9 +326,9 @@ python
 
 
 
-### ****
+### You are here -->o
 
-#### User Story :
+#### User Story : I want the website to be easy to use
 
 * **Plan**  
 
@@ -338,29 +346,9 @@ python
 
 
 
-### ****
+### Describe Me In Five Words
 
-#### User Story :
-
-* **Plan**  
-
-
-* **Implementation**  
-
-
-* **Test**  
-
-
-* **Result**  
-
-
-* **Verdict**
-
-
-
-### ****
-
-#### User Story :
+#### User Story : I want to possibly add a description or some specific notes attached to each vinyl, if required
 
 * **Plan**  
 
@@ -378,7 +366,63 @@ python
 
 
 
+### You Spent Our Life Savings On A Vinyl Job Lot
 
+#### User Story : I want to be able to add as many records / vinyls as I want
+
+* **Plan**  
+
+
+* **Implementation**  
+
+
+* **Test**  
+
+
+* **Result**  
+
+
+* **Verdict**
+
+
+
+### My Vinyl Edit Before It Goes To Press
+
+#### User Story : I want to edit any vinyl info if I want
+
+* **Plan**  
+
+
+* **Implementation**  
+
+
+* **Test**  
+
+
+* **Result**  
+
+
+* **Verdict**
+
+
+
+### Deletion Will Be My Vinyl Option
+
+#### User Story : I want to delete any vinyl I want (if I sell one personally or on another site)
+
+* **Plan**  
+
+
+* **Implementation**  
+
+
+* **Test**  
+
+
+* **Result**  
+
+
+* **Verdict**
 
 
 
