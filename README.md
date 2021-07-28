@@ -234,7 +234,7 @@ Share list with other users for possible sales or swaps if duplicates
 ---
 
 
-### EnVINYLoment
+### EnVINYLoment Tut Tut
 
 #### User Story : I want to be able to login so I can have my own personal environment or enVINYLoment as I like to call it (sorry that was bad)
 
@@ -268,6 +268,18 @@ for the ability to delete users.
 #### User Story : I want to be able to know what vinyl I have collected over the years
 
 * **Plan**  
+Maybe it's just me that has an issue with keeping track of my vinyl but I know I have mates that are like me. Vinyl everywhere and they 
+generally don't know how many they have, what genre they are or what year they came out. I have seen some really well organised vinyl but these were
+basically like alphabetically but by genre. I just want the user to have a simple database of all their vinyl, that they can call upon using my application.
+The hard part is adding all the vinyl at the start but once it's done .... it's done !  
+I wish there was an easier way like scanning the barcode or something but some of these vinyls are pretty oldish and I honestlty don't kmnow if the barcode would 
+work or not. I'm now kinda intrigued to see if it would work anyway for possible a future add on :) I'll come back to that one and let you know sure !
+The point being that I want the user to be able to add, delete, lookup and edit any of their own personal vinyl collection as and when required.
+The database will store the name, the artist, the genre, the label, a brief description and the release year. 
+I may add admin access where they can add new catagories to the databases and edit user profiles etc. You may wonder why a user can't do this for themselves but
+I just want the admin to do it for the purposes of this project. In production, you could write the code to allow a user the ability to add an extra 3 
+personal database fields with a certain amount of characters per field, make it a little more personal to the user :)
+Anyway, it's a simple database that the user can salivate over anytime or anywhere .... as long as they have a computer or mobile device ... with internet of course ha ha !
 
 
 * **Implementation**  
@@ -289,6 +301,14 @@ for the ability to delete users.
 #### User Story : I want to list my vinyl collection by genre or year which are the most important aspects as a DJ .... (or by any attribute possibly)
 
 * **Plan**  
+I want the user to be able to search through their personal vinyl collection by genre or release year at the very least but possibly more.
+Although I said in the title that this would be good for a DJ, it would still be a great option for any vinyl enthusiast .... the ablity to search their
+collection. Why, you may ask? Well, I'll give you my main reason .... duplication !!!   
+The amount of times I have bought a vinyl or even a CD that I already feckin had is criminal, although the sound is amazing with two identical tunes playing on the decks
+and the beats are cancelling each other out and all. It creates so many emotions when you realise your mistake .... anger, this cost me money .... laughter, can't believe I was so stupid .... worry, jeez my memory is so awful .... happiness, the 90s was so unbelievably awesome and you felt free ..... laughter again, cause I realise that I can't remember what I watched an hour ago on TV but I can remember the 90s :)
+So for me to check if you already have that vinyl you are watching on ebay or Discogs would be a good reason.
+Also music has changed through the ages so maybe the user is in the mood for a 70s themed evening and isn't sure what 70s songs they have. 
+Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! Search code activated and VOILA !!! ... Your list of 70s classic at your fingertips.
 
 
 * **Implementation**  
@@ -489,6 +509,10 @@ for the ability to delete users.
 
 ## **Conclusion**
 ---
+
+I know I called this My Vinyl Answer so it't therefore mainly about vinyl and stacks of it ha ha, but this could have been further developed so the
+user could make up their own personl database for whatever collection they wanted. Obviously, there would be limits put in place so they don't abuse the database ...
+nobody likes a db abuser !
 
 
 ## **Credits**
