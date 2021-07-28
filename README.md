@@ -57,13 +57,14 @@ Again, this is were my project comes in ! I want to have a once and for all list
 
 ### **User Stories**
 
+* As a user, I want to be able to register for my own account
 * As a user, I want to be able to login so I can have my own personal environment or enVINYLoment as I like to call it (sorry that was bad)
 * As a user, I want to be able to know what vinyl I have collected over the years
 * As a user, I want to list my vinyl collection by genre or year which are the most important aspects as a DJ .... (or by any attribute possibly)
 * As a user, I want to be able to rate my vinyl as they are not all as good as the next one
 * As a user, I want the website to be easy to use
 * As a user, I want to possibly add some specific notes attached to each vinyl if required (a note like small scratch at start)
-* As a user, I want to be able to add as many records / vinyls as I want
+* As a user, I want to be able to add as many vinyls as I want
 * As a user, I want to edit any vinyl info if I want
 * As a user, I want to delete any vinyl I want (if I sell one personally or on another site)
 
@@ -233,6 +234,28 @@ Share list with other users for possible sales or swaps if duplicates
 ## **Testing**
 ---
 
+### Do You Know Reggie Star?
+
+#### User Story : I want to be able to register for my own account
+
+* **Plan**  
+I want the user to have the ability to register for My Vinyl Answer so they can log on anytime in the future with ease.
+They will have to input their full name, a username, a email address and a password which will be stored securely in the database.
+
+
+* **Implementation**  
+Password will be encripted by using hash method --- elaborate
+
+* **Test**  
+
+
+* **Result**  
+
+
+* **Verdict** 
+
+
+
 
 ### EnVINYLoment Tut Tut
 
@@ -331,6 +354,11 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 #### User Story : I want to be able to rate my vinyl as they are not all as good as the next one
 
 * **Plan**  
+I really want a five star system but this may add too much complexity to my overall code .... I will give it a try though so do not panic but worse case scenario, 
+I'll add some sort of one to five rating either by radios or by a simple inputting of a number. This will get added to the vinyl database along with any other information you've added or edited. You know sometimes you could be in that 5 star mode where you want all the tunes to be banging or maybe you want to hear some of the more messed
+up tuneage that you bought by lowering your standards and selecting the one star-ers. The more I talk about this project the more I wish I could add the songs as well and play them on your device ... but I'm oldskool and so is vinyl, fortunately !!!
+Anyway, the main point is that some of my vinyl tunes are so beautiful, so euphoric and bring back so many good memories to me that it would bring a tear to a glass eye.
+On the other hand though .... I have some vinyl tunes that the devil himself would call sadistically sh!t to be quite honest.
 
 
 * **Implementation**  
@@ -351,6 +379,7 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 #### User Story : I want the website to be easy to use
 
 * **Plan**  
+I want the user to be able to move from page to page with ease. I want an easy to use database system that is understandable just from the layout.
 
 
 * **Implementation**  
@@ -371,6 +400,9 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 #### User Story : I want to possibly add a description or some specific notes attached to each vinyl, if required
 
 * **Plan**  
+I want the user to be able to add a small description about each specific vinyl. Whether that's a few words about a song on it or the condition of the vinyl itself.
+For example, this is an Ibiza style trance tune or this is happy hardcore at it's finest, and it's always good to know if there is a small scratch, some warping 
+or possibly some sleeve damage too. This will also be useful information if you are ever looking to sell a vinyl on Discogs (Disclaimer - other vinyl sales websites are available) and you will probably have the main information already in My Vinyl Answer. Although selling vinyl should be made a criminal offence to be fair .... but that would mean I wouldn't have been able to buy any .... which would mean I have lost my passion !!! Okay scrap that, I meant to say selling vinyl should be a crime .... unless you are selling to me, ha ha, much better :)
 
 
 * **Implementation**  
@@ -388,10 +420,15 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 
 ### You Spent Our Life Savings On A Vinyl Job Lot
 
-#### User Story : I want to be able to add as many records / vinyls as I want
+#### User Story : I want to be able to add as many vinyls as I want
 
 * **Plan**  
+I want the user to be able to add as much vinyl as they want and with total ease. 
 
+The user will be able select this option from the navbar once they have logged in or registered.
+I will entail a simple form with the required inputs for the user to fill out.
+They can then submit the new vinyl information for storing in their personal accessible database. I will then flash up a notification to say that they have been successful
+with their vinyl collection incrementation and redirect back them to their **My Vinyl** page .... simples !
 
 * **Implementation**  
 
@@ -406,12 +443,13 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 
 
 
-### My Vinyl Edit Before It Goes To Press
+### The Vinyl Edit Before It Goes To Press
 
 #### User Story : I want to edit any vinyl info if I want
 
 * **Plan**  
-
+I want the user to be able to edit any vinyl information on any individual vinyl document in the database. They will be able to access the **Edit Vinyl** page from the 
+**My Vinyl** page by clicking the edit button hidden within each of the vinyls collapsibles. Once on the Edit Vinyl page the user will have access to a pre-loaded form with the current vinyl information already filled in. The user can then edit whatever section they want and when they are happy, they can submit again to the database the editted vinyl info. Once this is complete I will redirect them back to their **My Vinyl** page again where they can check on their current updated vinyl. I'm just thinking that if the user has a large collection and they edit after scrolling down through a lot of them, if they decide to edit at this point, will a redirectiion send the user back to the top of the list??? I'll have to think about this one and test to see what happens :)
 
 * **Implementation**  
 
@@ -431,7 +469,11 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 #### User Story : I want to delete any vinyl I want (if I sell one personally or on another site)
 
 * **Plan**  
-
+I want the user to be able to delete any vinyl that they want. 
+Why would they do that, you may ask? Well maybe they have grew up, unlike me, and they want to have babies, settle down and live a vinyl free life !
+Life can be cruel so they will have to sell their vinyl collection .... could be a slow and painful sale were they slip from youir grasp in ones and twos ... or it could be a highest bid f'ing wins the f'ing lot :(
+Anyhow enough gibber jabber fool, there will therefore be a button of the deletion family required. This delete button will be also be hidden within each of the vinyls collapsibles besdie the edit button above. Once the user clicks the delete button, I will add some defensive programming to make sure this is what the user wants to do.
+This will hopefully eliminate the chance of deleting a vinyl by accident or mistake. Again once the user has completed their vinyl deletion, I will redirect them back to their **My Vinyl** page where their deleted vinyl has been removed and also removed from the database.
 
 * **Implementation**  
 
@@ -554,6 +596,9 @@ Pretty raging after that tbh but sure .... another learning poiunt noted & will 
 
 
 email validation wasn't working .... I had type="text" instead of type="email"
+
+
+I'm just thinking that if the user has a large collection and they edit after scrolling down through a lot of them, if they decide to edit at this point, will a redirectiion send the user back to the top of the list??? I'll have to think about this one and test tio see what happens :)
 
 
 
