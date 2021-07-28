@@ -239,8 +239,11 @@ Share list with other users for possible sales or swaps if duplicates
 #### User Story : I want to be able to register for my own account
 
 * **Plan**  
-I want the user to have the ability to register for My Vinyl Answer so they can log on anytime in the future with ease.
-They will have to input their full name, a username, a email address and a password which will be stored securely in the database.
+I want the user to have the ability to register for My Vinyl Answer so they can log in anytime in the future with ease.
+I will create a register form where they will have to input their full name, a username, a email address and a password. 
+There will be a Sign Up button available which will POST the data to the database. 
+I will add some defensive programming so that usernames will not be duplicated. I will check to see if the new username already exists in the database and if so flash up a an alert but if not then render their profile page. This will be populated with the information they just input and also a welcome message will appear ... obviously I will not be displaying their **password** within their profile or anywhere in fact ha ha !
+
 
 
 * **Implementation**  
@@ -380,6 +383,10 @@ On the other hand though .... I have some vinyl tunes that the devil himself wou
 
 * **Plan**  
 I want the user to be able to move from page to page with ease. I want an easy to use database system that is understandable just from the layout.
+I am going to use the framework Bulma for assisting with my layout and css. I have used Bootstrap in my first two projects so under direction from my legendary mentor, I will be utilising The Bulma Frameowrk. 
+It looks pretty awesome and will deffo have it's challenges, as did Bootstrap to be fair but I'm here to learn and become a better coder every day :)
+I have so many great ideas but I deffo lack knowledge and lack time unfortunately ..... I do know this will get better over time, with constant developing and total commitment.
+I want the website to work on all devices which I believe Bulma will be a great help with. I want the user to be able to freely navigate to where ever they want but within the confines of **My Vinyl Answer**, of course !
 
 
 * **Implementation**  
