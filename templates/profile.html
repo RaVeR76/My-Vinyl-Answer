@@ -16,7 +16,11 @@
                             <div class="column"></div>
                             <div class="column col-pad">
                                 <figure class="image is-256x256">
-                                    <img src={{ users.profile_pic }} alt="Profile Pic">
+                            <!--        <img src={{ users.profile_pic }} alt="Profile Pic">
+                                    <img src={{ users.profile_pic }} onerror="this.onerror=null;this.src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg';"> 
+                                    <img src={{ users.profile_pic }} onerror="this.onerror=null; this.src='/static/images/vertical_vinyl.jpg';" alt=""> -->
+                                    <img src={{ users.profile_pic }}  alt="Sorry! Image not available at this time" 
+                                        onError="this.onerror=null;this.src='<?=base_url()?>static/images/upright_vinyl.jpg';">
                                 </figure>
                             </div>
                             <div class="column"></div>
