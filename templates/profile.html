@@ -16,7 +16,7 @@
                             <div class="column"></div>
                             <div class="column col-pad">
                                 <figure class="image is-256x256">
-                                    <img src={{ users.profile_pic }}>
+                                    <img src={{ users.profile_pic }} alt="Profile Pic">
                                 </figure>
                             </div>
                             <div class="column"></div>
@@ -25,15 +25,15 @@
 
                         <table class="table prof-font has-text-centered">
                             <tr>
-                                <td class="has-text-right">Full Name :</td>
+                                <td class="has-text-right"><strong>Full Name :</strong></td>
                                 <td>{{ users.fullname }}</td>
                             </tr>
                             <tr>
-                                <td class="has-text-right">Username :</td>
+                                <td class="has-text-right"><strong>Username :</strong></td>
                                 <td>{{ users.username }}</td>
                             </tr>
                             <tr>
-                                <td class="has-text-right">Email Address :</td>
+                                <td class="has-text-right"><strong>Email Address :</strong></td>
                                 <td>{{ users.email }}</td>
                             </tr>
                         </table>

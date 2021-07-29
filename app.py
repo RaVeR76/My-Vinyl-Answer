@@ -146,7 +146,8 @@ def edit_vinyl(vinyl_id):
             "release_year": request.form.get("release_year")
         }
         mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
-        flash("Your Vinyl Has Been Successfully Updated")
+        flash("{} Has Been Successfully Updated".format(
+            request.form.get("vinyl_name")))
 
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     genre = mongo.db.genre.find().sort("genre_name", 1)
