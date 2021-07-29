@@ -608,6 +608,8 @@ email validation wasn't working .... I had type="text" instead of type="email"
 I'm just thinking that if the user has a large collection and they edit after scrolling down through a lot of them, if they decide to edit at this point, will a redirectiion send the user back to the top of the list??? I'll have to think about this one and test tio see what happens :)
 
 
+Couldn't figure out how to get the profile pic in the middle of the form. So tried putting the image in the middle of 3 columns.
+And making the outer columns set to auto so that the middle column and therefore the image would stay in the middle of the device !
 
 
 
