@@ -128,6 +128,11 @@ select:focus, .sign-bord:hover, .log-bord {
 }
 
 
+.is-horizontal-center {
+    justify-content: center;
+  }
+
+
 /* Media Queries */
 
 /* Show in Large desktops and laptops */
