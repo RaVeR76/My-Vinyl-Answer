@@ -135,6 +135,7 @@ select:focus, .sign-bord:hover, .log-bord {
 
 .jumpy {
     animation: updown 2s ease infinite;
+    color: #F8F9FA;
 }
 
 @keyframes updown {

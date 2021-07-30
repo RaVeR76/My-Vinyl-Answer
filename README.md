@@ -624,6 +624,9 @@ Last night he showed me his ... screen and my wee project was displaying proudly
 
 
 
+
+Bouncing Animation - https://stackoverflow.com/questions/59135939/how-to-make-an-icon-move-up-and-down-with-css-animation
+
 Vinyl On Floor Pic - Photo by Eric Krull on Unsplash
 
 Vinyl Upright & Headphones Pic - Photo by blocks on Unsplash
