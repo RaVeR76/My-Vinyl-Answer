@@ -37,7 +37,7 @@ body, html {
 }
 
 .my-blue {
-    background-color: #a1e9f9;
+    background-color: #3ca9e9;
 }
 
 .my-blue-light {
@@ -45,11 +45,11 @@ body, html {
 }
 
 .my-red {
-    background-color: #f7a1ad;
+    background-color: #a41041;
 }
 
 .my-red-text:hover {
-    color: #f7a1ad;
+    color: #a41041;
 }
 
 div.navbar-item.logo { 
@@ -79,7 +79,7 @@ div.navbar-item.logo {
 }
 
 select, .sign-bord, .log-bord:hover {
-    border-color: #a1e9f9 !important;
+    border-color: #3ca9e9 !important;
 }
 
 select:focus, .sign-bord:hover, .log-bord {
@@ -130,6 +130,25 @@ select:focus, .sign-bord:hover, .log-bord {
 
 .is-horizontal-center {
     justify-content: center;
+  }
+
+
+.jumpy {
+    animation: updown 2s ease infinite;
+}
+
+@keyframes updown {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    50% {
+      transform: translateY(100%);
+    }
+  
+    100% {
+      transform: translateY(-100%);
+    }
   }
 
 
