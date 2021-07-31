@@ -48,17 +48,7 @@
     </header>
 
     <section>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="columns is-centered col-pad">
-                        <div class="column is-10 flash has-background-primary">
-                            <h4 class="title is-4 has-text-centered">{{ message }}</h4>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+     <!--   {% include 'components/flash_messages/flash_messages.html' %}  -->
 
     </section>
 
