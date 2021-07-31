@@ -98,8 +98,8 @@ def profile():
     return redirect(url_for("login"))
 
 
-@app.route("/get_vinyls")
-def get_vinyls():
+@app.route("/my_vinyls")
+def my_vinyls():
     vinyls = list(mongo.db.vinyl.find())
     return render_template("vinyl.html", vinyl=vinyls)
 
@@ -128,7 +128,7 @@ def add_vinyl():
 
         mongo.db.vinyl.insert_one(vinyl)
         flash("Your Vinyl Has Been Successfully Added")
-        return redirect(url_for("get_vinyls"))
+        return redirect(url_for("my_vinyls"))
 
     genre = mongo.db.genre.find().sort("genre_name", 1)
     return render_template("add_vinyl.html", genre=genre)
@@ -158,7 +158,7 @@ def edit_vinyl(vinyl_id):
 def delete_vinyl(vinyl_id):
     mongo.db.vinyl.remove({"_id": ObjectId(vinyl_id)})
     flash("Your Vinyl Has Been Deleted")
-    return redirect(url_for("get_vinyls"))
+    return redirect(url_for("my_vinyls"))
 
 
 @app.route("/confirm_modal/<vinyl_id>")

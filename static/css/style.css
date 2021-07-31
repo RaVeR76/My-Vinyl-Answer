@@ -133,6 +133,9 @@ select:focus, .sign-bord:hover, .log-bord {
   }
 
 
+  
+/* Bouncing Animation */
+
 .jumpy {
     animation: updown 2s ease infinite;
     color: #F8F9FA;
