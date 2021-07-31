@@ -131,7 +131,7 @@ def add_vinyl():
         return redirect(url_for("my_vinyls"))
 
     genre = mongo.db.genre.find().sort("genre_name", 1)
-    return render_template("add_vinyl.html", genre=genre)
+    return render_template("pages/add_vinyl.html", genre=genre)
 
 
 @app.route("/edit_vinyl/<vinyl_id>", methods=["GET", "POST"])
