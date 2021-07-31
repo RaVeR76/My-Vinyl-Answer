@@ -22,12 +22,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    return render_template("pages/home.html")
 
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("pages/about.html")
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -83,7 +83,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("pages/login.html")
 
 
 @app.route("/profile", methods=["GET", "POST"])
