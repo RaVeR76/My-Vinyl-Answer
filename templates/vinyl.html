@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+    {% include 'components/flash_messages/flash_messages.html' %}
+
     <h4 class="title is-3 has-text-centered col-pad text-my-white">My Vinyl Collection</h4>
 
     <div class="columns col-pad">
-        <div class="column is-8 is-offset-2 ">
-            
+        <div class="column is-8 is-offset-2 ">        
 
                 {% for vinyl in vinyl %}
 

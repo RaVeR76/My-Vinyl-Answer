@@ -621,6 +621,18 @@ Last night he showed me his ... screen and my wee project was displaying proudly
 
 
 
+I was refactoring all my code so I was doing it very slowly & in small parts so i didn't create a major headache on a Saturday night.
+SO when I refactored a part say the modal i waould test everything linked to that modal and in fact I would just go through the whole website to make sure it all worked.
+Anyway I was testing edit and delete from the vinyls page. I noticed that the when I made an edit and clicked the edit button it stayed on the edit vinyl page which is correct but when O went back the my vinyl page .... the wee vinyl had did a Hoodini and disappeared ! I was like WTF !
+So I added more vinyl and kept trying it but yip ... same thing again. I followed the paths between everything and couldn't see anything that was out of place. 
+I did a bit more investigating and went to my Mongodb collections and low n behold, there was all the vinyl that I had been adding. They had passed through the My Vinyl Anwser Bermuda Triangle or something mad-doggy like that.
+Only messing, what was happening was that when I created the add_vinyl function, I had added an ```owner``` field to utilise it when displaying the users own vinyl collection. So when the user edited the vinyl they were only editing the original fields, as I had not added ```owner``` to the edit_vinyl function .... D'OH !!!!
+To be honest it wasn't really deleting, as you know, it was just deleting the ```owner``` field and when it reloaded the users **My Vinyl** page again, the edited vinyl was just not loaded from the database as it only displays the users *aka owners* vinyl.
+So I simply rectified this by adding ```"owner": session["user"]``` to the ```vinyl_edit``` list before updating the database document in MongoDb.
+The edit function worked perfectly after this error was solved :)
+
+
+
 
 
 

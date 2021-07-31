@@ -143,7 +143,8 @@ def edit_vinyl(vinyl_id):
             "vinyl_artist": request.form.get("vinyl_artist"),
             "vinyl_label": request.form.get("vinyl_label"),
             "vinyl_description": request.form.get("vinyl_description"),
-            "release_year": request.form.get("release_year")
+            "release_year": request.form.get("release_year"),
+            "owner": session["user"]
         }
         mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
         flash("{} Has Been Successfully Updated".format(
@@ -167,7 +168,7 @@ def confirm_modal(vinyl_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template(
-        "confirm_modal.html", vinyl=vinyl, username=username)
+        "components/modals/confirm_modal.html", vinyl=vinyl, username=username)
 
 
 if __name__ == "__main__":
