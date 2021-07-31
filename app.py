@@ -101,7 +101,7 @@ def profile():
 @app.route("/my_vinyls")
 def my_vinyls():
     vinyls = list(mongo.db.vinyl.find())
-    return render_template("vinyl.html", vinyl=vinyls)
+    return render_template("pages/vinyl.html", vinyl=vinyls)
 
 
 @app.route("/logout")
