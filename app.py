@@ -152,7 +152,7 @@ def edit_vinyl(vinyl_id):
 
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     genre = mongo.db.genre.find().sort("genre_name", 1)
-    return render_template("edit_vinyl.html", vinyl=vinyl, genre=genre)
+    return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre)
 
 
 @app.route("/delete_vinyl/<vinyl_id>")
