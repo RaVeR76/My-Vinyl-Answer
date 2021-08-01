@@ -174,7 +174,7 @@ def confirm_modal(vinyl_id):
 @app.route("/admin/manage_site")
 def manage_site():
     genre = list(mongo.db.genre.find().sort("genre_name", 1))
-    return render_template("manage_site.html", genre=genre)
+    return render_template("pages/manage_site.html", genre=genre)
 
 
 if __name__ == "__main__":

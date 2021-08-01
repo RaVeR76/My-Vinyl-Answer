@@ -1,34 +1,59 @@
 {% extends "layout/base.html" %}
 {% block content %}
+    
+    {% include "components/navigation/navigation.html" %}
 
-    <div class="notification my-blue is-full">
-        <p class="has-text-centered text-my-white">Manage Site</p>
-    </div>
+        <div class="container">
+            <div class="notification my-blue is-full">
+                <p class="has-text-centered text-my-white">Manage Site</p>
+            </div>
 
-    <div class="card">
-        <header class="card-header">
-            <p class="card-header-title">
-                Component
-            </p>
-            <button class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-            </button>
-        </header>
-        <div class="card-content">
-            <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            <div class="columns">
+                <div class="column is-3">
+                    <div class="card">
+                        <header class="card-header">
+                            <div class="select  is-fullwidth">
+                                <select id="genre_name" name="genre_name" class="validate" required>
+                                    <option value="" disabled selected>Select Genre</option>
+                                    {% for genre in genre %}
+                                    <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Save</a>
+                            <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                    </div>
+                </div>
+
+                {% for genre in genre %}
+                <div class="column is-2">
+                    <div class="card">
+                        <header class="card-header">
+                            <span class="card-header-title">
+                                {{ genre.genre_name }}
+                            </span>
+                        </header>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                    </div>
+                </div>
+                {% endfor %}
+
             </div>
         </div>
-        <footer class="card-footer">
-            <a href="#" class="card-footer-item">Save</a>
-            <a href="#" class="card-footer-item">Edit</a>
-            <a href="#" class="card-footer-item">Delete</a>
-        </footer>
-    </div>
 
 {% endblock %}
