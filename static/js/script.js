@@ -1,8 +1,9 @@
 // Declare Constants
 
 const coll = document.getElementsByClassName("collapsible");
-
-
+const password = document.getElementById("password");
+const text = document.getElementById("caps-on");
+let i;
 
 $(document).ready(function() {
 
@@ -17,24 +18,22 @@ $(document).ready(function() {
 
 });
 
-// Taken from W3Schools for alerting when Caps Lock On at password input
-var input = document.getElementById("password");
-var text = document.getElementById("caps-on");
-input.addEventListener("keyup", function(event) {
 
-if (event.getModifierState("CapsLock")) {
-    text.style.display = "block";
-  } else {
-    text.style.display = "none"
-  }
-});
+//password.addEventListener("keyup", function(event) {
+
+//    if (event.getModifierState("CapsLock")) {
+//        text.style.display = "block";
+//    } else {
+//        text.style.display = "none"
+//    }
+//});
 
 
 
 
 
 // collapsible JS taken from W3Schools
-let i;
+
 for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function () {
         this.classList.toggle("active");
@@ -48,6 +47,12 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
-//$("img").on("error", function () {
-//    $(this).attr("src", "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg");
-//});
+// Taken from W3Schools for alerting when Caps Lock On at password input
+password.addEventListener("keyup", function(event) {
+
+    if (event.getModifierState("CapsLock")) {
+        text.style.display = "block";
+     } else {
+        text.style.display = "none"
+    }
+});

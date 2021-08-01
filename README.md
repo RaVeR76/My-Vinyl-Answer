@@ -662,6 +662,11 @@ I also used the Bulma classes of help and is-danger for colour, I removed the re
 I think it works well and will stop other users from being caught out like the developer himself ha ha !
 
 
+After I added Caps Lock On code my collapsibles wouldn't work, it worked when I swapped the position of the JS code for them around.
+I tried various test to figure out why it was doing this but I was spending too much time when I had a solution but I'll try come back to it & figure it out.
+Think it's to do with the display class but not sure. It was a head melter for sure.
+
+
 
 Bouncing Animation - https://stackoverflow.com/questions/59135939/how-to-make-an-icon-move-up-and-down-with-css-animation
 
