@@ -86,8 +86,9 @@ select:focus, .sign-bord:hover, .log-bord {
     border-color: #f7a1ad !important;
 }
 
-.button:hover {
-    font-weight: 600;
+.but-font:hover {
+    color: #F8F9FA;
+    font-weight: 700;
 }
 
 
