@@ -86,7 +86,7 @@ def login():
     return render_template("pages/login.html")
 
 
-@app.route("/profile", methods=["GET", "POST"])
+@app.route("/user/profile", methods=["GET", "POST"])
 def profile():
     # pull the session user's profile from the database
 
@@ -98,7 +98,7 @@ def profile():
     return redirect(url_for("login"))
 
 
-@app.route("/my_vinyls")
+@app.route("/vinyl/collection")
 def my_vinyls():
     vinyls = list(mongo.db.vinyl.find())
     return render_template("pages/vinyl.html", vinyl=vinyls)
@@ -112,7 +112,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_vinyl", methods=["GET", "POST"])
+@app.route("/vinyl/add", methods=["GET", "POST"])
 def add_vinyl():
     if request.method == "POST":
 
@@ -134,7 +134,7 @@ def add_vinyl():
     return render_template("pages/add_vinyl.html", genre=genre)
 
 
-@app.route("/edit_vinyl/<vinyl_id>", methods=["GET", "POST"])
+@app.route("/vinyl/edit/<vinyl_id>", methods=["GET", "POST"])
 def edit_vinyl(vinyl_id):
     if request.method == "POST":
         vinyl_edit = {
@@ -155,14 +155,14 @@ def edit_vinyl(vinyl_id):
     return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre)
 
 
-@app.route("/delete_vinyl/<vinyl_id>")
+@app.route("/vinyl/delete/<vinyl_id>")
 def delete_vinyl(vinyl_id):
     mongo.db.vinyl.remove({"_id": ObjectId(vinyl_id)})
     flash("Your Vinyl Has Been Deleted")
     return redirect(url_for("my_vinyls"))
 
 
-@app.route("/confirm_modal/<vinyl_id>")
+@app.route("/delete/confirm/<vinyl_id>")
 def confirm_modal(vinyl_id):
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     username = mongo.db.users.find_one(

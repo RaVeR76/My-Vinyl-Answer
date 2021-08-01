@@ -1,115 +1,119 @@
-<div class="columns col-pad">
-    <form autocomplete="off" class="column is-8 is-offset-2" method="POST" action="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}">
-        <div class="card my-white-light">
-            <div class="card-content">
-                <div class="content">
+<div class="container">
+    <div class="columns col-pad">
+        <form autocomplete="off" class="column is-8 is-offset-2" method="POST"
+            action="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}">
+            <div class="card my-white-light">
+                <div class="card-content">
+                    <div class="content">
 
-                    <div class="notification my-blue is-full">
-                        <p class="has-text-centered"><strong>Edit Vinyl</strong></p>
-                    </div>
+                        <div class="notification my-blue is-full">
+                            <p class="has-text-centered"><strong>Edit Vinyl</strong></p>
+                        </div>
 
-                    <!-- Genre Name -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="genre_name" class="label">Vinyl Genre</label>
-                        <div class="control has-icons-left">
-                            <div class="select">
-                                <select id="genre_name" name="genre_name" class="validate" required>
-                                    <option value="" disabled>Select Genre</option>
-                                    {% for genre in genre %}
+                        <!-- Genre Name -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="genre_name" class="label">Vinyl Genre</label>
+                            <div class="control has-icons-left">
+                                <div class="select">
+                                    <select id="genre_name" name="genre_name" class="validate" required>
+                                        <option value="" disabled>Select Genre</option>
+                                        {% for genre in genre %}
                                         {% if genre.genre_name == vinyl.genre_name %}
-                                            <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+                                        <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
                                         {% else %}
-                                            <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
                                         {% endif %}
-                                    {% endfor %}
-                                </select>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <span class="icon is-left">
+                                    <i class="fas fa-globe"></i>
+                                </span>
                             </div>
-                            <span class="icon is-left">
-                                <i class="fas fa-globe"></i>
-                            </span>
                         </div>
-                    </div>
 
-                    <!-- Vinyl Name -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="vinyl_name" class="label">Vinyl Name</label>
-                        <div class="control has-icons-left">
-                            <input id="vinyl_name" name="vinyl_name" class="input validate sign-bord" type="text" 
-                                value="{{ vinyl.vinyl_name }}" minlength="5" maxlength="50" placeholder="Vinyl Name" required>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-record-vinyl"></i>
-                            </span>
+                        <!-- Vinyl Name -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="vinyl_name" class="label">Vinyl Name</label>
+                            <div class="control has-icons-left">
+                                <input id="vinyl_name" name="vinyl_name" class="input validate sign-bord" type="text"
+                                    value="{{ vinyl.vinyl_name }}" minlength="5" maxlength="50" placeholder="Vinyl Name"
+                                    required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-record-vinyl"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Vinyl Artist -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="vinyl_artist" class="label">Vinyl Artist</label>
-                        <div class="control has-icons-left">
-                            <input id="vinyl_artist" name="vinyl_artist" class="input validate sign-bord" 
-                                type="text" value="{{ vinyl.vinyl_artist }}" minlength="5" 
-                                maxlength="50" placeholder="Vinyl Artist" required>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                            </span>
+                        <!-- Vinyl Artist -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="vinyl_artist" class="label">Vinyl Artist</label>
+                            <div class="control has-icons-left">
+                                <input id="vinyl_artist" name="vinyl_artist" class="input validate sign-bord"
+                                    type="text" value="{{ vinyl.vinyl_artist }}" minlength="5" maxlength="50"
+                                    placeholder="Vinyl Artist" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Vinyl Label -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="vinyl_label" class="label">Vinyl Label</label>
-                        <div class="control has-icons-left">
-                            <input id="vinyl_label" name="vinyl_label" class="input validate sign-bord" 
-                                type="text" value="{{ vinyl.vinyl_label }}" minlength="5" 
-                                maxlength="50" placeholder="Vinyl Label" required>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-tag"></i>
-                            </span>
+                        <!-- Vinyl Label -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="vinyl_label" class="label">Vinyl Label</label>
+                            <div class="control has-icons-left">
+                                <input id="vinyl_label" name="vinyl_label" class="input validate sign-bord" type="text"
+                                    value="{{ vinyl.vinyl_label }}" minlength="5" maxlength="50"
+                                    placeholder="Vinyl Label" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-tag"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Vinyl Description -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="vinyl_description" class="label">Vinyl Description</label>
-                        <div class="control">
-                            <textarea id="vinyl_description" name="vinyl_description" 
-                                class="textarea validate sign-bord has-fixed-size" type="text" minlength="5" 
-                                maxlength="200" placeholder="Vinyl Description" rows="3" required>
+                        <!-- Vinyl Description -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="vinyl_description" class="label">Vinyl Description</label>
+                            <div class="control">
+                                <textarea id="vinyl_description" name="vinyl_description"
+                                    class="textarea validate sign-bord has-fixed-size" type="text" minlength="5"
+                                    maxlength="200" placeholder="Vinyl Description" rows="3" required>
                                 {{- vinyl.vinyl_description -}}
                             </textarea>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Vinyl Release Year -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="release_year" class="label">Release Year</label>
-                        <div class="control has-icons-left">
-                            <input id="release_year" name="release_year" class="input validate sign-bord" 
-                            type="number" maxlength="4" pattern="^[0-9]{4}$" placeholder="Release Year" 
-                            min="1900" max="2099" step="1" value="{{ vinyl.release_year }}" required>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-calendar-alt"></i>
-                            </span>
+                        <!-- Vinyl Release Year -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="release_year" class="label">Release Year</label>
+                            <div class="control has-icons-left">
+                                <input id="release_year" name="release_year" class="input validate sign-bord"
+                                    type="number" maxlength="4" pattern="^[0-9]{4}$" placeholder="Release Year"
+                                    min="1900" max="2099" step="1" value="{{ vinyl.release_year }}" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
 
 
-                    <!-- Edit The Vinyl Button -->
-                    <div class="field column is-grouped is-grouped-centered">
-                        <div class="control">
-                            <a href="{{ url_for('my_vinyls') }}" class="button is-medium my-red">
-                                Cancel
-                            </a>
+                        <!-- Edit The Vinyl Button -->
+                        <div class="field column is-grouped is-grouped-centered">
+                            <div class="control">
+                                <a href="{{ url_for('my_vinyls') }}" class="button is-medium my-red">
+                                    Cancel
+                                </a>
 
-                            <button type="submit" class="button is-medium my-blue sign-bord">
-                                Edit Vinyl
-                            </button>
+                                <button type="submit" class="button is-medium my-blue sign-bord">
+                                    Edit Vinyl
+                                </button>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
