@@ -5,6 +5,7 @@ const password = document.getElementById("password");
 const text = document.getElementById("caps-on");
 let i;
 
+
 $(document).ready(function() {
 
     // Check for click events on the navbar burger icon

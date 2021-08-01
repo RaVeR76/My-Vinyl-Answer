@@ -12,6 +12,8 @@ body, html {
     scroll-behavior: smooth;
 }
 
+/* Text Sizes & Colours */
+
 .prof-font {
     font-size: 1.3rem;
 }
@@ -23,6 +25,16 @@ body, html {
 .text-my-black {
     color: #110303;
 }
+
+.text-my-red {
+    color: #a41041;
+}
+
+.my-red-text:hover {
+    color: #a41041;
+}
+
+/* Background Colours */
 
 .my-white {
     background-color: #F8F9FA;
@@ -48,13 +60,8 @@ body, html {
     background-color: #a41041;
 }
 
-.my-red-text:hover {
-    color: #a41041;
-}
-
-
 #caps-on {
-    display:none;
+    display:none;   
 }
 
 
