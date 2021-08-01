@@ -17,6 +17,20 @@ $(document).ready(function() {
 
 });
 
+// Taken from W3Schools for alerting when Caps Lock On at password input
+var input = document.getElementById("password");
+var text = document.getElementById("caps-on");
+input.addEventListener("keyup", function(event) {
+
+if (event.getModifierState("CapsLock")) {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none"
+  }
+});
+
+
+
 
 
 // collapsible JS taken from W3Schools

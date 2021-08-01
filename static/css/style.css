@@ -52,6 +52,12 @@ body, html {
     color: #a41041;
 }
 
+
+#caps-on {
+    display:none;
+}
+
+
 div.navbar-item.logo { 
     background-image: url("../images/logo.png");
     background-size: contain;
@@ -88,7 +94,7 @@ select:focus, .sign-bord:hover, .log-bord {
 
 .but-font:hover {
     color: #F8F9FA;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 

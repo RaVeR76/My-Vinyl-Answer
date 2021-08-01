@@ -655,6 +655,14 @@ He said you could call the Debug value anything you wanted in the ```env.py``` a
 
 
 
+I tried to log in and I couldn't. I tried using my various test login details but none would work. This was just after I had did some button styling so I was like tghere should be no connection. I investigated anyway and eventually found the reason.... I had CAPS LOCK ON ! How annoying yet secretly deceptive in that I wouldn't have realised that and din't realise that hence me delving into my code to find the reason.
+Solution - add some detection for passwords as the user cannot see any input values. I found some cool yet simple code for this in W3Schools, link shown below :
+https://www.w3schools.com/howto/howto_js_detect_capslock.asp
+I also used the Bulma classes of help and is-danger for colour, I removed the red from the W3School example as it overide it.
+I think it works well and will stop other users from being caught out like the developer himself ha ha !
+
+
+
 Bouncing Animation - https://stackoverflow.com/questions/59135939/how-to-make-an-icon-move-up-and-down-with-css-animation
 
 Vinyl On Floor Pic - Photo by Eric Krull on Unsplash
