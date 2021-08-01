@@ -171,6 +171,12 @@ def confirm_modal(vinyl_id):
         "components/modals/confirm_modal.html", vinyl=vinyl, username=username)
 
 
+@app.route("/admin/manage_site")
+def manage_site():
+    genre = list(mongo.db.genre.find().sort("genre_name", 1))
+    return render_template("manage_site.html", genre=genre)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
