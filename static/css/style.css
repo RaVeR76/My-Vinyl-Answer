@@ -86,6 +86,10 @@ select:focus, .sign-bord:hover, .log-bord {
     border-color: #f7a1ad !important;
 }
 
+.button:hover {
+    font-weight: 600;
+}
+
 
 /* Collapsible CSS taken from W3Schools */
 .collapsible {
