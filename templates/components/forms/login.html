@@ -1,58 +1,61 @@
-<div class="columns col-pad">
-    <form class="column is-8 is-offset-2 " method="POST" action="{{ url_for('login') }}">
-        <div class="card my-white-light">
-            <div class="card-content">
-                <div class="content">
+<div class="container">
+    <div class="columns col-pad">
+        <form class="column is-8 is-offset-2 " method="POST" action="{{ url_for('login') }}">
+            <div class="card my-white-light">
+                <div class="card-content">
+                    <div class="content">
 
-                    <div class="notification my-red is-full">
-                        <p class="has-text-centered text-my-white">Log In !</p>
-                    </div>
-
-
-
-                    <!-- Username Input -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="username" class="label">Username</label>
-                        <div class="control has-icons-left">
-                            <input id="username" name="username" class="input validate log-bord" type="text"
-                                minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Enter Username"
-                                required>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                            </span>
+                        <div class="notification my-red is-full">
+                            <p class="has-text-centered text-my-white">Log In !</p>
                         </div>
-                    </div>
 
-                    <!-- Password Input -->
-                    <div class="field column is-8 is-offset-2">
-                        <label for="password" class="label">Password</label>
-                        <div class="control has-icons-left">
-                            <input id="password" name="password" class="input validate log-bord" type="password"
-                                minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Enter Password"
-                                required>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-key"></i>
-                            </span>
+
+
+                        <!-- Username Input -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="username" class="label">Username</label>
+                            <div class="control has-icons-left">
+                                <input id="username" name="username" class="input validate log-bord" type="text"
+                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                                    placeholder="Enter Username" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Log In Button -->
-                    <div class="field column is-4 is-offset-4">
-                        <div class="control">
-                            <button class="button my-red text-my-white log-bord is-medium is-fullwidth">Log In</button>
+                        <!-- Password Input -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="password" class="label">Password</label>
+                            <div class="control has-icons-left">
+                                <input id="password" name="password" class="input validate log-bord" type="password"
+                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                                    placeholder="Enter Password" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-key"></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Sign-up Link For Non Users -->
-                    <div class="column is-12">
-                        <p class="has-text-centered">
-                            New Here?
-                            <a href="{{ url_for('signup') }}" class="my-red-text">Sign Up Now</a>
-                        </p>
-                    </div>
+                        <!-- Log In Button -->
+                        <div class="field column is-4 is-offset-4">
+                            <div class="control">
+                                <button class="button my-red text-my-white log-bord is-medium is-fullwidth">Log
+                                    In</button>
+                            </div>
+                        </div>
 
+                        <!-- Sign-up Link For Non Users -->
+                        <div class="column is-12">
+                            <p class="has-text-centered">
+                                New Here?
+                                <a href="{{ url_for('signup') }}" class="my-red-text">Sign Up Now</a>
+                            </p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
