@@ -649,9 +649,9 @@ at first I thought it had some connection with the URL validation so i checked i
 
 
 Nervous about getting the debugging wrong cause all you hear is you'll FAIL FAIL FAIL !!! ... if you leave it on. 
-So I researched a bit just to make sure I get it right as I dinny wanna FAIL ! I found this on very own Slack but my mentor said a good way ws the way I have it now.
-https://code-institute-room.slack.com/archives/C7JQY2RHC/p1618992182397900?thread_ts=1618985984.386500&cid=C7JQY2RHC
-He said you could call it anything you wanted in the ```env.py``` as long as it's a string so I think I had *CritterFace* at a time and also *DeCrittering* but I just settle on a simple *True* ha ha.
+So I researched a bit just to make sure I get it right as I dinny wanna FAIL ! I found this on our very own Slack 
+https://code-institute-room.slack.com/archives/C7JQY2RHC/p1618992182397900?thread_ts=1618985984.386500&cid=C7JQY2RHC plus advice from my mentor.
+He said you could call the Debug value anything you wanted in the ```env.py``` as long as it's a string so I think I had *CritterFace* at a time and also *DeCrittering* but I just settled on a simple *True* ha ha.
 
 
 
