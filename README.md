@@ -632,6 +632,19 @@ So I simply rectified this by adding ```"owner": session["user"]``` to the ```vi
 The edit function worked perfectly after this error was solved :)
 
 
+I refactored everything as mentioned about so I only had the navbar & base to refactor. Did the navbar but had some sizing issues afterwards.
+When the navbar was in the base it was covering the whole top part of the page but when I moved it to the components folder & used jinja logic to link it, it was only covering a smaller section. I found that becoasue I had added it to each page in the pages folder using Jinja logic it then becasme an extension of the base and this extension is sanwiched in it's own continer in the base html. Therefore the navbar was a navbar for the container. I therefore removed the main div with container class from the base.html and also the header section. This solved the navbar issue but the rest of the content was wider on each page ha ha .... it never rains but it pours as they say !
+Solution was to enclose each page in the pages folder within a div with a container class, which I did and everything look scool again :)
+
+
+Profile Issue Again - Didn't realise you could use a type="URL" for extra validation as I was worried about users just typing jibber jabber fool.
+I had tried javascript methods, I was thinking am I going to have to write logic to cover every eventuallity of what the user may or may not type .... this is going to take ages. After a little bit of reaearch that wee type="URL" aved the day. 
+It works a treat alomg with the *required* attribute so the user has to type a valid url before submitting their signup form.
+```https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url```
+If it doesn't work then it goes to the default pic .... a big raver smiley face :)
+
+Of the back of this validation adjustment, I found another bug that had raised it's ugly wee head, my default pic would not display no matter what.
+at first I thought it had some connection with the URL validation so i checked it all, I deleled to see as well but still no Smiley Face. I was beginning to crack uo to be honest but I kept going. I checked the database to see if anything was untoward in there but everything looked okay. I foujd the bug by copying my Smiley Face src link and pasting it in over the Jinja expression just to see if it displayed when first called but NO ... it did not either ! What was heppening you may ask cause I did too ... well when I was doing my Refacrtoring thing I had moved my profile page into a new pages folder so therefore my default link didn't work no more. I just needed to add a wee ```/``` at the start of the link which solved the problem and everyone who's profile pic url does not work will get a Big Smiley Face instead :)
 
 
 

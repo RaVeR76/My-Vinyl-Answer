@@ -19,8 +19,6 @@ $(document).ready(function() {
 
 
 
-
-
 // collapsible JS taken from W3Schools
 let i;
 for (i = 0; i < coll.length; i++) {
