@@ -667,6 +667,11 @@ I tried various test to figure out why it was doing this but I was spending too 
 Think it's to do with the display class but not sure. It was a head melter for sure.
 
 
+dropdown issues -its this new keyboard its a scud
+
+
+
+
 
 Bouncing Animation - https://stackoverflow.com/questions/59135939/how-to-make-an-icon-move-up-and-down-with-css-animation
 
