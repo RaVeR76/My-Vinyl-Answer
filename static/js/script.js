@@ -4,9 +4,11 @@ const coll = document.getElementsByClassName("collapsible");
 //const password = document.getElementById("password");
 //const text = document.getElementById("caps-on");
 const genre = document.getElementById("admin_genre");
+const genre_select = document.getElementById("genre_select");
 const addGenre = document.getElementById("add_genre");
 const editGenre = document.getElementById("edit_genre");
 const genre_input = document.getElementById("genre_input");
+
 
 let i;
 
@@ -55,7 +57,7 @@ function genreChoice(event) {
 
     event.preventDefault();
 
-    document.getElementById("genre_select").innerHTML = document.getElementById("admin_genre").value;
+    genre_select.innerHTML = genre.value;
 
 };
 
@@ -64,13 +66,14 @@ function genreAdd() {
 
     genre_input.placeholder = "Add New Genre Here";
     genre_input.style.visibility = "visible";
+    
 
 };
 
 
 function genreEdit() {
 
-    genre_input.placeholder = "Edit New Genre Here";
+    genre_input.value = genre.options[genre.selectedIndex].text;
     genre_input.style.visibility = "visible";
 
 };
