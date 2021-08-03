@@ -668,6 +668,7 @@ Think it's to do with the display class but not sure. It was a head melter for s
 
 
 dropdown issues -its this new keyboard its a scud .... I can't get my JS to work with two functions, they are conflicting with each other for some reason & i've spent about 6 hours on the bastardo. It's my Caps On function and my dropdown selector function so I'll blank the Caps On out for a while cause I need to move on.
+I decided to remove the password script from my main js file and place it on each of the login and signup pages. This solved the problem although I am reluctent to put any script on any of my pages, I hab=ve no alternative at the minuate as I want both functions to work :)
 
 
 

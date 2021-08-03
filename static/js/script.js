@@ -4,6 +4,10 @@ const coll = document.getElementsByClassName("collapsible");
 //const password = document.getElementById("password");
 //const text = document.getElementById("caps-on");
 const genre = document.getElementById("admin_genre");
+const addGenre = document.getElementById("add_genre");
+const editGenre = document.getElementById("edit_genre");
+const genre_input = document.getElementById("genre_input");
+
 let i;
 
 
@@ -56,6 +60,22 @@ function genreChoice(event) {
 };
 
 
+function genreAdd() {
+
+    genre_input.placeholder = "Add New Genre Here";
+    genre_input.style.visibility = "visible";
+
+};
+
+
+function genreEdit() {
+
+    genre_input.placeholder = "Edit New Genre Here";
+    genre_input.style.visibility = "visible";
+
+};
+
+
 //function capsOn(event) {
 
   //  event.preventDefault();
@@ -69,4 +89,9 @@ function genreChoice(event) {
 
 //password.addEventListener("keyup", capsOn); 
 genre.addEventListener("change", genreChoice);
+addGenre.addEventListener("click", genreAdd);
+editGenre.addEventListener("click", genreEdit);
+
+
+
 //password.addEventListener("keyup", capsOn);
