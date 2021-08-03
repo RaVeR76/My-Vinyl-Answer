@@ -1,8 +1,8 @@
 // Declare Constants
 
 const coll = document.getElementsByClassName("collapsible");
-const password = document.getElementById("password");
-const text = document.getElementById("caps-on");
+//const password = document.getElementById("password");
+//const text = document.getElementById("caps-on");
 const genre = document.getElementById("admin_genre");
 let i;
 
@@ -35,33 +35,6 @@ for (i = 0; i < coll.length; i++) {
 };
 
 
-//const passwordRef = document.querySelector('#password');
-//const capsOnRef = document.querySelector('#caps-on');
-//const genreRef = document.querySelector('#admin_genre');
-//const srtRef = document.querySelector('#srt');
-
-
-
-//function callMeWhatYouWAnt(event) {
-//  event.preventDefault();
-//  if (event.getModifierState('CapsLock')) {
-//    text.style.display = 'block';
-//  } else {
-//    text.style.display = 'none';
-//  }
-//  srtRef.innerHTML = genreRef.value;
-//};
-
-
-//password.addEventListener('keyup', callMeWhatYouWAnt);
-//genre.addEventListener('change', callMeWhatYouWAnt);
-
-
-
-
-
-
-
 
 // Taken from W3Schools for alerting when Caps Lock On at password input
 //password.addEventListener("keyup", function(event) {
@@ -78,22 +51,22 @@ function genreChoice(event) {
 
     event.preventDefault();
 
-        document.getElementById("genre_select").innerHTML = document.getElementById("admin_genre").value;
-    
-    };
+    document.getElementById("genre_select").innerHTML = document.getElementById("admin_genre").value;
 
-
-function capsOn(event) {
-
-    event.preventDefault();
-    
-        if (event.getModifierState("CapsLock")) {
-            text.style.display = "block";
-        } else {
-            text.style.display = "none";
-        };
 };
+
+
+//function capsOn(event) {
+
+  //  event.preventDefault();
+    
+   //     if (event.getModifierState("CapsLock")) {
+   //         text.style.display = "block";
+    //    } else {
+    //        text.style.display = "none";
+    //    };
+//};
 
 //password.addEventListener("keyup", capsOn); 
 genre.addEventListener("change", genreChoice);
-password.addEventListener("keyup", capsOn);
+//password.addEventListener("keyup", capsOn);
