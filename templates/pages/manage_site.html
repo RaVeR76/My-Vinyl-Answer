@@ -13,7 +13,7 @@
                     <div class="card">
                         <header class="card-header">
                             <div class="select is-fullwidth">
-                                <select id="admin_genre" name="admin_genre" class="validate" required>
+                                <select id="admin_genre" name="admin_genre" class="validate admin_genre" required>
                                     <option value="" disabled selected>Select Genre</option>
                                     {% for genre in genre %}
                                     <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
@@ -22,13 +22,13 @@
                             </div>
                         </header>
                         <div class="card-content">
-                            <div class="content">
-                                <p id="srt"></p>
+                            <div id="gen_add" class="content">
+                                <p id="genre_select" class="has-text-centered prof-font"></p>
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <a href="#" class="card-footer-item">Save</a>
                             <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Add</a>
                             <a href="#" class="card-footer-item">Delete</a>
                         </footer>
                     </div>

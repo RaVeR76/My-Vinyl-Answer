@@ -667,7 +667,7 @@ I tried various test to figure out why it was doing this but I was spending too 
 Think it's to do with the display class but not sure. It was a head melter for sure.
 
 
-dropdown issues -its this new keyboard its a scud
+dropdown issues -its this new keyboard its a scud .... I can't get my JS to work with two functions, they are conflicting with each other for some reason & i've spent about 6 hours on the bastardo. It's my Caps On function and my dropdown selector function so I'll blank the Caps On out for a while cause I need to move on.
 
 
 

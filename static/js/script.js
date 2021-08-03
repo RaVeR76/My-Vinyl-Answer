@@ -4,7 +4,7 @@ const coll = document.getElementsByClassName("collapsible");
 const password = document.getElementById("password");
 const text = document.getElementById("caps-on");
 const genre = document.getElementById("admin_genre");
-
+let i;
 
 
 $(document).ready(function() {
@@ -21,21 +21,7 @@ $(document).ready(function() {
 });
 
 
-
-
-
-function genreChoice() {
-    document.getElementById("srt").innerHTML = document.getElementById("admin_genre").value;
-};
-
-
-
-
-
-
-
 // collapsible JS taken from W3Schools
-let i;
 for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function () {
         this.classList.toggle("active");
@@ -47,6 +33,33 @@ for (i = 0; i < coll.length; i++) {
         }
     });
 };
+
+
+//const passwordRef = document.querySelector('#password');
+//const capsOnRef = document.querySelector('#caps-on');
+//const genreRef = document.querySelector('#admin_genre');
+//const srtRef = document.querySelector('#srt');
+
+
+
+//function callMeWhatYouWAnt(event) {
+//  event.preventDefault();
+//  if (event.getModifierState('CapsLock')) {
+//    text.style.display = 'block';
+//  } else {
+//    text.style.display = 'none';
+//  }
+//  srtRef.innerHTML = genreRef.value;
+//};
+
+
+//password.addEventListener('keyup', callMeWhatYouWAnt);
+//genre.addEventListener('change', callMeWhatYouWAnt);
+
+
+
+
+
 
 
 
@@ -61,33 +74,26 @@ for (i = 0; i < coll.length; i++) {
 //});
 
 
-//$("#password").on('keyup', function (event){
+function genreChoice(event) {
 
- //   event.preventDefault
+    event.preventDefault();
+
+        document.getElementById("genre_select").innerHTML = document.getElementById("admin_genre").value;
     
- //   if (event.getModifierState("CapsLock")) {
-//               text.style.display = "block";
- //           } else {
-//               text.style.display = "none";
- //           }
- //});
+    };
 
 
+function capsOn(event) {
 
-//function capsOn(event) {
+    event.preventDefault();
     
-//        if (event.getModifierState("CapsLock")) {
-//            text.style.display = "block";
-//            event.preventDefault();
-//        
-//        } else {
-//            text.style.display = "none";
-//            event.preventDefault();
-//            break;
-//        }
-//};
-
+        if (event.getModifierState("CapsLock")) {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        };
+};
 
 //password.addEventListener("keyup", capsOn); 
 genre.addEventListener("change", genreChoice);
-//password.addEventListener("keyup", capsOn);
+password.addEventListener("keyup", capsOn);
