@@ -150,7 +150,7 @@ select:focus, .sign-bord:hover, .log-bord {
     justify-content: center;
   }
 
-#genre_input {
+#genre_name {
     display: none;
 }
 

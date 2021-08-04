@@ -177,6 +177,33 @@ def manage_site():
     return render_template("pages/manage_site.html", genre=genre)
 
 
+@app.route("/admin/genre/add", methods=["GET", "POST"])
+def add_genre():
+    if request.method == "POST":
+        genre = {
+            "genre_name": request.form.get("genre_name")
+        }
+        mongo.db.genre.insert_one(genre)
+        flash("New Genre Added")
+        return redirect(url_for("manage_site"))
+
+    return render_template("pages/manage_site.html")
+
+
+@app.route("/admin/genre/edit<genre_id>", methods=["GET", "POST"])
+def edit_genre():
+    if request.method == "POST":
+        submit = {
+            "genre_name": request.form.get("genre_name")
+        }
+        mongo.db.genre.update({"_id": ObjectId(genre_id)}, submit)
+        flash("Genre Successfully Uddated")
+        return redirect(url_for("manage_site"))
+
+    genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
+    return render_template("pages/manage_site.html", genre=genre)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

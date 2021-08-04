@@ -3,6 +3,8 @@
     
     {% include "components/navigation/navigation.html" %}
 
+    {% include 'components/flash_messages/flash_messages.html' %}
+
         <div class="container">
             <div class="notification my-blue is-full col-pad">
                 <p class="has-text-centered text-my-white">Manage Site</p>
@@ -10,7 +12,7 @@
 
             <div class="columns">
                 <div class="column is-3">
-                    <div class="card">
+                    <form id="genre_form" class="card" method="POST" action="">
                         <header class="card-header">
                             <div class="select is-fullwidth">
                                 <select id="admin_genre" name="admin_genre" class="validate admin_genre" required>
@@ -24,7 +26,9 @@
                         <div class="card-content">
                             <div id="gen_add" class="content">
                                 
-                                <input id="genre_input" class="input genre_input has-text-centered prof-font" type="text" placeholder="">
+                                <input id="genre_name" name="genre_name" type="text" 
+                                    class="input validate genre_input has-text-centered prof-font" 
+                                        minlength="3" maxlength="25" placeholder="" required>
                                 <p id="genre_select" class="has-text-centered prof-font"></p>  
 
                             </div>
@@ -39,12 +43,12 @@
 
                         <footer class="card-footer">
                         <!--    <input id="genre_input" class="genre_input has-text-centered prof-font" type="text" placeholder="">   -->
-                            <a id="enter_genre" href="#" class="card-footer-item">Enter</a>
+                            <button id="enter_genre" type="submit" class="card-footer-item">Enter</button>
                         </footer>
-                    </div>
+                    </form>
                 </div>
 
-                {% for genre in genre %}
+   <!--             {% for genre in genre %}
                 <div class="column is-2">
                     <div class="card">
                         <header class="card-header">
@@ -59,7 +63,7 @@
                         
                     </div>
                 </div>
-                {% endfor %}
+                {% endfor %}   -->
 
             </div>
         </div>
