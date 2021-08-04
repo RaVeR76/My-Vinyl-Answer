@@ -151,10 +151,12 @@ select:focus, .sign-bord:hover, .log-bord {
   }
 
 #genre_input {
-    visibility: hidden;
+    display: none;
 }
 
-
+#genre_select {
+    display: block;
+}
   
 /* Bouncing Animation */
 

@@ -57,6 +57,8 @@ function genreChoice(event) {
 
     event.preventDefault();
 
+    genre_input.style.display = "none";
+    genre_select.style.display = "block";
     genre_select.innerHTML = genre.value;
 
 };
@@ -64,8 +66,10 @@ function genreChoice(event) {
 
 function genreAdd() {
 
+    genre_input.value = "";
     genre_input.placeholder = "Add New Genre Here";
-    genre_input.style.visibility = "visible";
+    genre_input.style.display = "block";
+    genre_select.style.display = "none";
     
 
 };
@@ -74,8 +78,8 @@ function genreAdd() {
 function genreEdit() {
 
     genre_input.value = genre.options[genre.selectedIndex].text;
-    genre_input.style.visibility = "visible";
-
+    genre_input.style.display = "block";
+    genre_select.style.display = "none";
 };
 
 
@@ -91,10 +95,10 @@ function genreEdit() {
 //};
 
 //password.addEventListener("keyup", capsOn); 
+editGenre.addEventListener("click", genreEdit);
 genre.addEventListener("change", genreChoice);
 addGenre.addEventListener("click", genreAdd);
-editGenre.addEventListener("click", genreEdit);
-
+//editGenre.addEventListener("click", genreEdit);
 
 
 //password.addEventListener("keyup", capsOn);
