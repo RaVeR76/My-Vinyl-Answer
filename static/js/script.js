@@ -7,7 +7,7 @@ const genre = document.getElementById("admin_genre");
 const genre_select = document.getElementById("genre_select");
 const addGenre = document.getElementById("add_genre");
 const editGenre = document.getElementById("edit_genre");
-const genre_input = document.getElementById("genre_name");
+const genre_input = document.getElementById("genre_input");
 const genre_method = document.getElementById("genre_form"); 
 
 
@@ -58,20 +58,20 @@ function genreChoice(event) {
 
     event.preventDefault();
 
-    genre_input.style.display = "none";
+    genre_input.style.display = "block";
     genre_select.style.display = "block";
-    genre_select.innerHTML = genre.value;
+    //genre_select.innerHTML = genre.value;
+    //genre_select.value = genre.value;
 
 };
 
 
 function genreAdd() {
 
-    genre_input.value = "";
     genre_input.placeholder = "Add New Genre Here";
     genre_input.style.display = "block";
-    genre_select.style.display = "none";
-    genre_method.setAttribute("action", "{{ url_for('add_genre') }}");
+    genre_select.style.display = "block";
+   // genre_method.setAttribute("action", "{{ url_for('add_genre') }}");
     
 
 };
@@ -79,10 +79,11 @@ function genreAdd() {
 
 function genreEdit() {
 
-    genre_input.value = genre.options[genre.selectedIndex].text;
+   //genre_input.value = genre.options[genre.selectedIndex].text;
     genre_input.style.display = "block";
-    genre_select.style.display = "none";
-    genre_method.setAttribute("action", "{{ url_for('edit_genre', genre_id=genre.id) }}");
+    genre_select.style.display = "block";
+    //genre_method.setAttribute("action", "{{ url_for('edit_genre', genre_id=genre.id) }}");
+    //genre_input.setAttribute("value", "{{ genre.genre_name }}")
 };
 
 

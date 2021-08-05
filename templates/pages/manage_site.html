@@ -12,7 +12,7 @@
 
             <div class="columns">
                 <div class="column is-3">
-                    <form id="genre_form" class="card" method="POST" action="">
+                    <form id="genre_form" class="card" method="POST" action="{{ url_for('edit_genre', genre_id=genre._id) }}">
                         <header class="card-header">
                             <div class="select is-fullwidth">
                                 <select id="admin_genre" name="admin_genre" class="validate admin_genre" required>
@@ -25,17 +25,17 @@
                         </header>
                         <div class="card-content">
                             <div id="gen_add" class="content">
-                                
-                                <input id="genre_name" name="genre_name" type="text" 
+                            
+                                <input id="genre_input" name="genre_input" type="text" 
                                     class="input validate genre_input has-text-centered prof-font" 
-                                        minlength="3" maxlength="25" placeholder="" required>
+                                        minlength="3" maxlength="25" value="{{ genre_name }}" required>
                                 <p id="genre_select" class="has-text-centered prof-font"></p>  
-
+                
                             </div>
                         </div>
                         <footer class="card-footer">
                             <a id="edit_genre" href="#" class="card-footer-item">Edit</a>
-                            <a href="#" class="card-footer-item">Delete</a>
+                            <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="card-footer-item">Delete</a>
                         </footer>
                         <footer class="card-footer">
                             <a id="add_genre" href="#" class="card-footer-item">Add</a>

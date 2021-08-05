@@ -173,7 +173,7 @@ def confirm_modal(vinyl_id):
 
 @app.route("/admin/manage_site")
 def manage_site():
-    genre = list(mongo.db.genre.find().sort("genre_name", 1))
+    genre = list(mongo.db.genre.find())
     return render_template("pages/manage_site.html", genre=genre)
 
 
@@ -181,7 +181,7 @@ def manage_site():
 def add_genre():
     if request.method == "POST":
         genre = {
-            "genre_name": request.form.get("genre_name")
+            "genre_name": request.form.get("genre_input")
         }
         mongo.db.genre.insert_one(genre)
         flash("New Genre Added")
@@ -190,18 +190,18 @@ def add_genre():
     return render_template("pages/manage_site.html")
 
 
-@app.route("/admin/genre/edit<genre_id>", methods=["GET", "POST"])
-def edit_genre():
+@app.route("/admin/genre/edit/<genre_id>", methods=["GET", "POST"])
+def edit_genre(genre_id):
     if request.method == "POST":
         submit = {
-            "genre_name": request.form.get("genre_name")
+            "genre_name": request.form.get("genre_input")
         }
         mongo.db.genre.update({"_id": ObjectId(genre_id)}, submit)
         flash("Genre Successfully Uddated")
         return redirect(url_for("manage_site"))
 
     genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
-    return render_template("pages/manage_site.html", genre=genre)
+    return render_template("pages/profile.html", genre=genre)
 
 
 if __name__ == "__main__":
