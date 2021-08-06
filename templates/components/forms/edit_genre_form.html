@@ -7,13 +7,13 @@
 
         <div class="container">
             <div class="columns col-pad">
-                <form autocomplete="off" class="column is-8 is-offset-2" method="POST" action="{{ url_for('add_genre') }}">
+                <form autocomplete="off" class="column is-8 is-offset-2" method="POST" action="{{ url_for('edit_genre', genre_id=genre._id) }}">
                     <div class="card my-white-light">
                         <div class="card-content">
                             <div class="content">
 
                                 <div class="notification my-blue is-full">
-                                    <p class="has-text-centered text-my-white">Add New Genre</p>
+                                    <p class="has-text-centered text-my-white">Edit Genre</p>
                                 </div>
 
                                 <!-- Genre Name -->
@@ -21,18 +21,19 @@
                                     <label for="genre_name" class="label">Genre Name</label>
                                     <div class="control has-icons-left">
                                         <input id="genre_name" name="genre_name" class="input validate sign-bord" type="text"
-                                            minlength="3" maxlength="25" placeholder="Genre Name" required>
+                                            minlength="3" maxlength="25" value="{{ genre.genre_name }}" required>
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-globe"></i>
                                         </span>
                                     </div>
                                 </div>
 
-                                <!-- Add New Genre Button -->
-                                <div class="field column is-4 is-offset-4">
+                                <!-- Edit Genre Button -->
+                                <div class="field column is-grouped is-grouped-centered">
                                     <div class="control">
-                                        <button type="submit" class="button my-blue text-my-white is-medium is-fullwidth but-font is-rounded">
-                                            Add Genre
+                                        <a href="{{ url_for('genre_list') }}" class="button is-medium my-red text-my-white but-font is-rounded">Cancel</a>
+                                        <button type="submit" class="button is-medium my-blue text-my-white but-font is-rounded">
+                                            Edit Genre
                                         </button>
                                     </div>
                                 </div>

@@ -218,14 +218,14 @@ def add_genre():
 def edit_genre(genre_id):
     if request.method == "POST":
         submit = {
-            "genre_name": request.form.get("genre_input")
+            "genre_name": request.form.get("genre_name")
         }
         mongo.db.genre.update({"_id": ObjectId(genre_id)}, submit)
         flash("Genre Successfully Uddated")
         return redirect(url_for("manage_site"))
 
     genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
-    return render_template("pages/manage_site.html", genre=genre)
+    return render_template("components/forms/edit_genre_form.html", genre=genre)
 
 
 if __name__ == "__main__":
