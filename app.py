@@ -22,7 +22,10 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("pages/home.html")
+
+    collection = mongo.db.collection_names(include_system_collections=False)
+
+    return render_template("pages/home.html", collection=collection)
 
 
 @app.route("/about")
@@ -201,7 +204,7 @@ def edit_genre(genre_id):
         return redirect(url_for("manage_site"))
 
     genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
-    return render_template("pages/profile.html", genre=genre)
+    return render_template("pages/manage_site.html", genre=genre)
 
 
 if __name__ == "__main__":

@@ -16,4 +16,24 @@
   <!--  jumpy fas fa-record-vinyl fas fa-8x -->
 </div>
 
+
+
+
+            {% for collection in collection %}
+                <div class="column is-2">
+                    <div class="card">
+                        <header class="card-header">
+                            <span class="card-header-title is-horizontal-center ">
+                                {{ collection }}
+                            </span>
+                        </header>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                        
+                    </div>
+                </div>
+            {% endfor %}
+
 {% endblock %}

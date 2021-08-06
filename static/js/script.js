@@ -4,11 +4,11 @@ const coll = document.getElementsByClassName("collapsible");
 //const password = document.getElementById("password");
 //const text = document.getElementById("caps-on");
 const genre = document.getElementById("admin_genre");
-const genre_select = document.getElementById("genre_select");
-const addGenre = document.getElementById("add_genre");
-const editGenre = document.getElementById("edit_genre");
-const genre_input = document.getElementById("genre_input");
-const genre_method = document.getElementById("genre_form"); 
+//const genre_select = document.getElementById("genre_select");
+//const addGenre = document.getElementById("add_genre");
+//const editGenre = document.getElementById("edit_genre");
+//const genre_input = document.getElementById("genre_input");
+//const genre_method = document.getElementById("genre_form"); 
 
 
 let i;
@@ -54,37 +54,37 @@ for (i = 0; i < coll.length; i++) {
 //});
 
 
-function genreChoice(event) {
+//function genreChoice(event) {
 
-    event.preventDefault();
+ //   event.preventDefault();
 
-    genre_input.style.display = "block";
-    genre_select.style.display = "block";
+  //  genre_input.style.display = "block";
+  //  genre_select.style.display = "block";
     //genre_select.innerHTML = genre.value;
     //genre_select.value = genre.value;
 
-};
+//};
 
 
-function genreAdd() {
+//function genreAdd() {
 
-    genre_input.placeholder = "Add New Genre Here";
-    genre_input.style.display = "block";
-    genre_select.style.display = "block";
+ //   genre_input.placeholder = "Add New Genre Here";
+ //   genre_input.style.display = "block";
+ //   genre_select.style.display = "block";
    // genre_method.setAttribute("action", "{{ url_for('add_genre') }}");
     
 
-};
+//};
 
 
-function genreEdit() {
+//function genreEdit() {
 
    //genre_input.value = genre.options[genre.selectedIndex].text;
-    genre_input.style.display = "block";
-    genre_select.style.display = "block";
+ //   genre_input.style.display = "block";
+  ///  genre_select.style.display = "block";
     //genre_method.setAttribute("action", "{{ url_for('edit_genre', genre_id=genre.id) }}");
     //genre_input.setAttribute("value", "{{ genre.genre_name }}")
-};
+//};
 
 
 //function capsOn(event) {
@@ -99,9 +99,9 @@ function genreEdit() {
 //};
 
 //password.addEventListener("keyup", capsOn); 
-editGenre.addEventListener("click", genreEdit);
+//editGenre.addEventListener("click", genreEdit);
 genre.addEventListener("change", genreChoice);
-addGenre.addEventListener("click", genreAdd);
+//addGenre.addEventListener("click", genreAdd);
 //editGenre.addEventListener("click", genreEdit);
 
 
