@@ -175,34 +175,43 @@ def confirm_modal(vinyl_id):
 def manage_site():
     collection = mongo.db.collection_names(include_system_collections=False)
     collection.sort()
-    #genre = list(mongo.db.genre.find())
+
     return render_template("pages/manage_site.html", collection=collection)
 
 
-@app.route("/admin/manage_genre/<collection>")
-def manage_genre(collection):
+@app.route("/admin/manage_collection/<collection>")
+def manage_collection(collection):
 
     if collection == "genre":
-        genre = list(mongo.db.genre.find().sort("genre_name", 1))
-        return render_template("pages/manage_genre.html", genre=genre)
+        return redirect(url_for("genre_list"))
     elif collection == "users":
         users = list(mongo.db.users.find().sort("username", 1))
         return render_template("pages/manage_users.html", users=users)
+    elif collection == "vinyl":
+        vinyl = list(mongo.db.vinyl.find().sort("vinyl_name", 1))
+        return render_template("pages/manage_vinyl.html", vinyl=vinyl)
     else:
         return redirect(url_for("manage_site"))
+
+
+@app.route("/admin/genre")
+def genre_list():
+
+    genre = list(mongo.db.genre.find().sort("genre_name", 1))
+    return render_template("pages/manage_genre.html", genre=genre)
 
 
 @app.route("/admin/genre/add", methods=["GET", "POST"])
 def add_genre():
     if request.method == "POST":
         genre = {
-            "genre_name": request.form.get("genre_input")
+            "genre_name": request.form.get("genre_name")
         }
         mongo.db.genre.insert_one(genre)
         flash("New Genre Added")
-        return redirect(url_for("manage_site"))
+        return redirect(url_for("genre_list"))
 
-    return render_template("pages/manage_site.html")
+    return render_template("components/forms/add_genre_form.html")
 
 
 @app.route("/admin/genre/edit/<genre_id>", methods=["GET", "POST"])

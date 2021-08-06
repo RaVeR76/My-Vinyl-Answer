@@ -8,22 +8,23 @@
 
         <div class="container">
             <div class="notification my-blue is-full col-pad">
-                <p class="has-text-centered text-my-white">Manage Site</p>
+                <p class="has-text-centered text-my-white">Manage Vinyl</p>
             </div>
-            <div class="columns is-centered col-pad">
+            <div class="columns is-centered">
 
-                {% for collection in collection %}
+                {% for vinyl in vinyl %}
                 <div class="column is-2">
                     <div class="card">
                         <header class="card-header">
-                            <span name="collection" class="card-header-title is-horizontal-center prof-font">
-                                {{ collection|upper }}
+                            <span class="card-header-title is-horizontal-center ">
+                                {{ vinyl.vinyl_name }}
                             </span>
                         </header>
                         <footer class="card-footer">
-                            <a href="{{ url_for('manage_collection', collection=collection) }}" class="card-footer-item">Select</a>
+                            <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
                         </footer>
-
+                        
                     </div>
                 </div>
                 {% endfor %}

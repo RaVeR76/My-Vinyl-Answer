@@ -19,35 +19,7 @@
                 <a href="{{ url_for('my_vinyls') }}" class="navbar-item">My Vinyl</a>
                     {% if session.user|lower == "leebo"|lower %}
 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a href="{{ url_for('manage_site') }}" class="navbar-link">
-                            Manage Site
-                        </a>
-                
-                        <div class="navbar-dropdown">
-                          <a class="navbar-item">
-                            Genre
-                          </a>
-                          <a class="navbar-item">
-                            Users
-                          </a>
-                          <a class="navbar-item">
-                            Vinyl
-                          </a>
-                          <hr class="navbar-divider">
-                          <a class="navbar-item">
-                            Report an issue
-                          </a>
-                        </div>
-                      </div>
-
-
-                    <!--    <a href="{{ url_for('manage_site') }}" class="navbar-item">Manage Site</a>  -->
-
-
-
-
-
+                        <a href="{{ url_for('manage_site') }}" class="navbar-item">Manage Site</a>
 
                     {% endif %}
                 <a href="{{ url_for('add_vinyl') }}" class="navbar-item">Add Vinyl</a>
