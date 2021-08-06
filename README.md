@@ -674,7 +674,8 @@ I decided to remove the password script from my main js file and place it on eac
 The keyboard is deffo a scud ha ha ..... just spent at least four hard spent evenings probably about 25 hours or so trying to get my all singing all dancing Admin CRUD box working and in the end I've had to give up. I couldn't get the certain functions working together and my JS was playing up again. Really guttted on this one to be hnest beacuse I put so much effort in and I couldn't get it right. Suppose it's another hard lessin to take but maybe if I had more time I would've got there in the end. If I have time at the end I will give it another go. But for now I have to move on and get my Admin CRUD simplified :(
 
 
-
+got database collection names from this code
+https://stackoverflow.com/questions/9805451/how-to-find-names-of-all-collections-using-pymongo
 
 
 Bouncing Animation - https://stackoverflow.com/questions/59135939/how-to-make-an-icon-move-up-and-down-with-css-animation

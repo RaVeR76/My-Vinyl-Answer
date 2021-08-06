@@ -22,10 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-
-    collection = mongo.db.collection_names(include_system_collections=False)
-
-    return render_template("pages/home.html", collection=collection)
+    return render_template("pages/home.html")
 
 
 @app.route("/about")
@@ -176,8 +173,23 @@ def confirm_modal(vinyl_id):
 
 @app.route("/admin/manage_site")
 def manage_site():
-    genre = list(mongo.db.genre.find())
-    return render_template("pages/manage_site.html", genre=genre)
+    collection = mongo.db.collection_names(include_system_collections=False)
+    collection.sort()
+    #genre = list(mongo.db.genre.find())
+    return render_template("pages/manage_site.html", collection=collection)
+
+
+@app.route("/admin/manage_genre/<collection>")
+def manage_genre(collection):
+
+    if collection == "genre":
+        genre = list(mongo.db.genre.find().sort("genre_name", 1))
+        return render_template("pages/manage_genre.html", genre=genre)
+    elif collection == "users":
+        users = list(mongo.db.users.find().sort("username", 1))
+        return render_template("pages/manage_users.html", users=users)
+    else:
+        return redirect(url_for("manage_site"))
 
 
 @app.route("/admin/genre/add", methods=["GET", "POST"])
