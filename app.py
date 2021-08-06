@@ -222,10 +222,18 @@ def edit_genre(genre_id):
         }
         mongo.db.genre.update({"_id": ObjectId(genre_id)}, submit)
         flash("Genre Successfully Uddated")
-        return redirect(url_for("manage_site"))
+        return redirect(url_for("genre_list"))
 
     genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
-    return render_template("components/forms/edit_genre_form.html", genre=genre)
+    return render_template(
+        "components/forms/edit_genre_form.html", genre=genre)
+
+
+@app.route("/admin/genre/delete/<genre_id>")
+def delete_genre(genre_id):
+    mongo.db.genre.remove({"_id": ObjectId(genre_id)})
+    flash("Genre Successfully Deleted")
+    return redirect(url_for("genre_list"))
 
 
 if __name__ == "__main__":
