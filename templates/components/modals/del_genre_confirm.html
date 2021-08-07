@@ -1,0 +1,22 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+    <div class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <section class="modal-card-body has-text-centered">
+                {{ username }}, are you sure you want to delete {{ genre.genre_name }} ?
+            </section>
+            <footer class="modal-card-foot">
+                <div class="field column is-grouped is-grouped-centered">
+                    <div class="control">
+                        <a href="{{ url_for('genre_list') }}" class="button my-white sign-bord">Cancel</a>
+                        <a href="{{ url_for('delete_genre', genre_id=genre._id) }}"
+                            class="button my-red text-my-white sign-bord but-font">Delete</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+{% endblock %}

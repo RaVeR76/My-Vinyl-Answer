@@ -161,14 +161,24 @@ def delete_vinyl(vinyl_id):
     flash("Your Vinyl Has Been Deleted")
     return redirect(url_for("my_vinyls"))
 
-
-@app.route("/delete/confirm/<vinyl_id>")
+# Vinyl Deletion Modal For Confirmation Purposes
+@app.route("/delete/vinyl/confirm/<vinyl_id>")
 def confirm_modal(vinyl_id):
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template(
         "components/modals/confirm_modal.html", vinyl=vinyl, username=username)
+
+
+# Genre Deletion Modal For Confirmation Purposes
+@app.route("/delete/genre/confirm/<genre_id>")
+def del_genre_confirm(genre_id):
+    genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template(
+        "components/modals/del_genre_confirm.html", genre=genre, username=username)
 
 
 @app.route("/admin/manage_site")
