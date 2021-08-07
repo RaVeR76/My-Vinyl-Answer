@@ -684,6 +684,11 @@ https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list
 
 
 
+BUG - Admin issues when editing a vinyl, it changed the vinyl owner name to admin 
+ 
+
+
+
 
 
 

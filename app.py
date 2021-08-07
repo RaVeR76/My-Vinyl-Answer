@@ -141,6 +141,10 @@ def add_vinyl():
 @app.route("/vinyl/edit/<vinyl_id>", methods=["GET", "POST"])
 def edit_vinyl(vinyl_id):
 
+    genre = mongo.db.genre.find().sort("genre_name", 1)
+    vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
+    users = mongo.db.users.find_one({"username": session["user"]})
+
     if request.method == "POST":
         vinyl_edit = {
             "genre_name": request.form.get("genre_name"),
@@ -148,16 +152,17 @@ def edit_vinyl(vinyl_id):
             "vinyl_artist": request.form.get("vinyl_artist"),
             "vinyl_label": request.form.get("vinyl_label"),
             "vinyl_description": request.form.get("vinyl_description"),
-            "release_year": request.form.get("release_year"),
-            "owner": session["user"]
+            "release_year": request.form.get("release_year")
         }
+
+        if users == 'admin':
+            return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
+        else:
+            users.update(vinyl_edit)
+
         mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
         flash("{} Has Been Successfully Updated".format(
             request.form.get("vinyl_name")))
-
-    genre = mongo.db.genre.find().sort("genre_name", 1)
-    vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
-    users = mongo.db.users.find_one({"username": session["user"]})
 
     return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
 
@@ -222,6 +227,7 @@ def genre_list():
     return render_template("pages/manage_genre.html", genre=genre)
 
 
+# Get vinyl List Function (Alphabetically)
 @app.route("/admin/vinyl")
 def vinyl_list():
 
