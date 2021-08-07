@@ -678,6 +678,16 @@ got database collection names from this code
 https://stackoverflow.com/questions/9805451/how-to-find-names-of-all-collections-using-pymongo
 
 
+
+Code for scroll on Admin Vinyl 
+https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list
+
+
+
+
+
+
+
 Bouncing Animation - https://stackoverflow.com/questions/59135939/how-to-make-an-icon-move-up-and-down-with-css-animation
 
 Vinyl On Floor Pic - Photo by Eric Krull on Unsplash

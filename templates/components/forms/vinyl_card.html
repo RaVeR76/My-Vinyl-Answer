@@ -1,0 +1,42 @@
+{% extends "layout/base.html" %}
+{% block content %}
+    
+    {% include "components/navigation/navigation.html" %}
+
+    {% include 'components/flash_messages/flash_messages.html' %}
+
+      <div class="container">
+        <div class="notification my-blue is-full col-pad">
+          <p class="has-text-centered text-my-white">Manage Vinyl</p>
+        </div>
+
+        <div class="column is-4 is-offset-4">
+          <div class="card">
+            <header class="card-header">
+              <span class="card-header-title is-horizontal-center prof-font">
+                  {{ vinyl.vinyl_name }}
+              </span>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <div class="column is-four-fifths text-my-black">
+                  <p><strong>Genre :</strong> {{ vinyl.genre_name }}</p>
+                  <p><strong>Artist :</strong> {{ vinyl.vinyl_artist }}</p>
+                  <p><strong>Label :</strong> {{ vinyl.vinyl_label }}</p>
+                  <p><strong>Description :</strong> {{ vinyl.vinyl_description }}</p>
+                  <p><strong>Release Year :</strong> {{ vinyl.release_year }}</p>
+                  <p><strong>Owner :</strong> {{ vinyl.owner }}</p>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="{{ url_for('vinyl_list') }}" class="card-footer-item">Back</a>
+              <a href="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}" class="card-footer-item">Edit</a>
+              <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+
+    {% endblock %}

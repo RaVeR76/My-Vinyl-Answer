@@ -140,6 +140,7 @@ def add_vinyl():
 # Edit Vinyl Function
 @app.route("/vinyl/edit/<vinyl_id>", methods=["GET", "POST"])
 def edit_vinyl(vinyl_id):
+
     if request.method == "POST":
         vinyl_edit = {
             "genre_name": request.form.get("genre_name"),
@@ -154,9 +155,11 @@ def edit_vinyl(vinyl_id):
         flash("{} Has Been Successfully Updated".format(
             request.form.get("vinyl_name")))
 
-    vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     genre = mongo.db.genre.find().sort("genre_name", 1)
-    return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre)
+    vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
+    users = mongo.db.users.find_one({"username": session["user"]})
+
+    return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
 
 
 # Delete Vinyl Function
@@ -206,8 +209,7 @@ def manage_collection(collection):
         users = list(mongo.db.users.find().sort("username", 1))
         return render_template("pages/manage_users.html", users=users)
     elif collection == "vinyl":
-        vinyl = list(mongo.db.vinyl.find().sort("vinyl_name", 1))
-        return render_template("pages/manage_vinyl.html", vinyl=vinyl)
+        return redirect(url_for("vinyl_list"))
     else:
         return redirect(url_for("manage_site"))
 
@@ -218,6 +220,13 @@ def genre_list():
 
     genre = list(mongo.db.genre.find().sort("genre_name", 1))
     return render_template("pages/manage_genre.html", genre=genre)
+
+
+@app.route("/admin/vinyl")
+def vinyl_list():
+
+    vinyl = list(mongo.db.vinyl.find().sort("vinyl_name", 1))
+    return render_template("pages/manage_vinyl.html", vinyl=vinyl)
 
 
 @app.route("/admin/genre/add", methods=["GET", "POST"])
@@ -253,6 +262,13 @@ def delete_genre(genre_id):
     mongo.db.genre.remove({"_id": ObjectId(genre_id)})
     flash("Genre Successfully Deleted")
     return redirect(url_for("genre_list"))
+
+
+@app.route("/admin/vinyl/vinyl_card/<vinyl_id>")
+def vinyl_card(vinyl_id):
+    vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
+    return render_template(
+        "components/forms/vinyl_card.html", vinyl=vinyl)
 
 
 if __name__ == "__main__":

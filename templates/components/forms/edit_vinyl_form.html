@@ -101,9 +101,15 @@
                         <!-- Edit The Vinyl Button -->
                         <div class="field column is-grouped is-grouped-centered">
                             <div class="control">
+                                {% if users.username == 'admin' %}
+                                <a href="{{ url_for('vinyl_card', vinyl_id=vinyl._id) }}" class="button is-medium my-red text-my-white but-font is-rounded">
+                                    Cancel
+                                </a>
+                                {% else %}
                                 <a href="{{ url_for('my_vinyls') }}" class="button is-medium my-red text-my-white but-font is-rounded">
                                     Cancel
                                 </a>
+                                {% endif %}
 
                                 <button type="submit" class="button is-medium my-blue text-my-white but-font is-rounded">
                                     Edit Vinyl
