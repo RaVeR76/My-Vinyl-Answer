@@ -98,12 +98,14 @@ def profile():
     return redirect(url_for("login"))
 
 
+# Get Vinyl Collection From The Database
 @app.route("/vinyl/collection")
 def my_vinyls():
     vinyls = list(mongo.db.vinyl.find())
     return render_template("pages/vinyl.html", vinyl=vinyls)
 
 
+# Logout Function
 @app.route("/logout")
 def logout():
     # remove user session cookies
@@ -112,6 +114,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Add Vinyl Function
 @app.route("/vinyl/add", methods=["GET", "POST"])
 def add_vinyl():
     if request.method == "POST":
@@ -134,6 +137,7 @@ def add_vinyl():
     return render_template("pages/add_vinyl.html", genre=genre)
 
 
+# Edit Vinyl Function
 @app.route("/vinyl/edit/<vinyl_id>", methods=["GET", "POST"])
 def edit_vinyl(vinyl_id):
     if request.method == "POST":
@@ -155,11 +159,13 @@ def edit_vinyl(vinyl_id):
     return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre)
 
 
+# Delete Vinyl Function
 @app.route("/vinyl/delete/<vinyl_id>")
 def delete_vinyl(vinyl_id):
     mongo.db.vinyl.remove({"_id": ObjectId(vinyl_id)})
     flash("Your Vinyl Has Been Deleted")
     return redirect(url_for("my_vinyls"))
+
 
 # Vinyl Deletion Modal For Confirmation Purposes
 @app.route("/delete/vinyl/confirm/<vinyl_id>")
@@ -181,6 +187,7 @@ def del_genre_confirm(genre_id):
         "components/modals/del_genre_confirm.html", genre=genre, username=username)
 
 
+# Find Database collection names for displaying to Admin
 @app.route("/admin/manage_site")
 def manage_site():
     collection = mongo.db.collection_names(include_system_collections=False)
@@ -189,6 +196,7 @@ def manage_site():
     return render_template("pages/manage_site.html", collection=collection)
 
 
+# Redirect Admin To Chosen Database Collection Name
 @app.route("/admin/manage_collection/<collection>")
 def manage_collection(collection):
 
@@ -204,6 +212,7 @@ def manage_collection(collection):
         return redirect(url_for("manage_site"))
 
 
+# Get Genre List Function (Alphabetically)
 @app.route("/admin/genre")
 def genre_list():
 

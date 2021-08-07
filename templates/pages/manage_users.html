@@ -6,30 +6,34 @@
     {% include 'components/flash_messages/flash_messages.html' %}
 
 
-        <div class="container">
+        <div class="container is-two-thirds">
+
             <div class="notification my-blue is-full col-pad">
                 <p class="has-text-centered text-my-white">Manage Users</p>
             </div>
-            <div class="columns is-centered">
 
-                {% for user in users %}
-                <div class="column is-2">
-                    <div class="card">
-                        <header class="card-header">
-                            <span class="card-header-title is-horizontal-center ">
-                                {{ user.username }}
-                            </span>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">Edit</a>
-                            <a href="#" class="card-footer-item">Delete</a>
-                        </footer>
-                        
+            <section class="section">
+                <div class="columns is-centered col-pad is-flex-wrap-wrap">
+
+                    {% for user in users %}
+                    <div class="column is-2">
+                        <div class="card">
+                            <header class="card-header">
+                                <span class="card-header-title is-horizontal-center ">
+                                    {{ user.username }}
+                                </span>
+                            </header>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Edit</a>
+                                <a href="#" class="card-footer-item">Delete</a>
+                            </footer>
+
+                        </div>
                     </div>
-                </div>
-                {% endfor %}
+                    {% endfor %}
 
-            </div>
+                </div>
+            </section>
         </div>
 
 {% endblock %}

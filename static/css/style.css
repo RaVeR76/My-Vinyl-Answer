@@ -12,6 +12,8 @@ body, html {
     scroll-behavior: smooth;
 }
 
+/*.notification { border-radius: 25px;}*/
+
 /* Text Sizes & Colours */
 
 .prof-font {
@@ -151,24 +153,11 @@ select:focus, .sign-bord:hover, .log-bord {
   }
 
 
-.vert-contain {
-    position: relative;
-    border: 3px solid green;
+nav .panel-size {
+    height:500px; width:100%;
 }
 
-.vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-
-
-
-
-
+nav .panel-size{overflow:hidden; overflow-y:scroll;}
 
 
 

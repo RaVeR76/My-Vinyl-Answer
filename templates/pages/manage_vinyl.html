@@ -10,7 +10,7 @@
             <div class="notification my-blue is-full col-pad">
                 <p class="has-text-centered text-my-white">Manage Vinyl</p>
             </div>
-            <div class="columns is-centered">
+     <!--       <div class="columns is-centered">
 
                 {% for vinyl in vinyl %}
                 <div class="column is-2">
@@ -28,8 +28,55 @@
                     </div>
                 </div>
                 {% endfor %}
+                </div>   -->
 
-            </div>
+                <div class="column is-8 is-offset-2">
+
+                    <nav class="panel my-white panel-size">
+                        <p class="panel-heading">
+                            All Vinyl
+                        </p>
+                        <div class="panel-block">
+                            <p class="control has-icons-left">
+                                <input class="input" type="text" placeholder="Search">
+                                <span class="icon is-left">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <p class="panel-tabs">
+                            <a class="is-active">All</a>
+                            <a>Hardcore</a>
+                            <a>House</a>
+                            <a>Techno</a>
+                            <a>Trance</a>
+                        </p>
+                        <div class="panel-size">
+                            {% for vinyl in vinyl %}
+                            <a class="panel-block is-active">
+                                <span class="panel-icon">
+                                    <i class="fas fa-record-vinyl" aria-hidden="true"></i>
+                                </span>
+                                Genre : {{ vinyl.genre_name }}
+                                <br>
+                                Song : {{ vinyl.vinyl_name }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                        <label class="panel-block">
+                            <input type="checkbox">
+                            remember me
+                        </label>
+                        <div class="panel-block">
+                            <button class="button is-link is-outlined is-fullwidth">
+                                Reset all filters
+                            </button>
+                        </div>
+                    </nav>
+
+                </div>
+
+           
         </div>
 
 {% endblock %}

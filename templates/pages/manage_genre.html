@@ -6,7 +6,7 @@
     {% include 'components/flash_messages/flash_messages.html' %}
 
 
-        <div class="container is-two-thirds">
+        <div class="container">
 
             <div class="notification my-blue is-full col-pad">
                 <p class="has-text-centered text-my-white">Manage Genre</p>
@@ -25,7 +25,7 @@
                             </header>
                             <footer class="card-footer">
                                 <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="card-footer-item">Edit</a>
-                                <a href="{{ url_for('del_genre_confirm', genre_id=genre._id) }}" class="card-footer-item">Delete</a>
+                                <a href="{{ url_for('del_genre_confirm', genre_id=genre._id) }}" class="card-footer-item ">Delete</a>
                             </footer>
 
                         </div>
