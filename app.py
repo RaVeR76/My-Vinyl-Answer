@@ -144,6 +144,7 @@ def edit_vinyl(vinyl_id):
     genre = mongo.db.genre.find().sort("genre_name", 1)
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     users = mongo.db.users.find_one({"username": session["user"]})
+    owner = vinyl.get('owner')
 
     if request.method == "POST":
         vinyl_edit = {
@@ -152,19 +153,32 @@ def edit_vinyl(vinyl_id):
             "vinyl_artist": request.form.get("vinyl_artist"),
             "vinyl_label": request.form.get("vinyl_label"),
             "vinyl_description": request.form.get("vinyl_description"),
-            "release_year": request.form.get("release_year")
+            "release_year": request.form.get("release_year"),
+            "owner": owner
         }
-
-        if users == 'admin':
-            return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
-        else:
-            users.update(vinyl_edit)
 
         mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
         flash("{} Has Been Successfully Updated".format(
             request.form.get("vinyl_name")))
 
-    return render_template("pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
+        if session["user"] == 'admin':
+           # mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
+           # flash("{} Has Been Successfully Updated".format(
+           #     request.form.get("vinyl_name")))
+            vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
+            return render_template(
+                "components/forms/vinyl_card.html", vinyl=vinyl, genre=genre, users=users)
+        else:
+           # vinyl_edit['owner'] = session["user"]
+           # mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
+            #flash("{} Has Been Successfully Updated".format(
+           #     request.form.get("vinyl_name")))
+            vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
+            return render_template(
+                "pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
+
+    return render_template(
+        "pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
 
 
 # Delete Vinyl Function
@@ -275,6 +289,11 @@ def vinyl_card(vinyl_id):
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     return render_template(
         "components/forms/vinyl_card.html", vinyl=vinyl)
+
+
+#@app.errorhandler(404)
+#def page_not_found(error):
+#    return render_template('page_not_found.html'), 404
 
 
 if __name__ == "__main__":

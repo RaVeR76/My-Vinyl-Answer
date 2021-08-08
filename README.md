@@ -685,6 +685,9 @@ https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list
 
 
 BUG - Admin issues when editing a vinyl, it changed the vinyl owner name to admin 
+Still trying to gigure this shit housery out
+This mofo ```owner = vinyl.get('owner')``` saved the day. I spent hours on this one as well .... unbelieveable I swear. Once you fix one wee bug another pops it's ugly head up. I wanted to utilize te edit_vinyl as both admin & a user but the owner key was causing my major headaches as the value was becoming admin then null & I couldnt figure it out for ages but then i found that piece of code, it worked.
+Only now when the page returned the flash message had the new name but the page didn't change. I got sstuvk on this one too. I coundn't figure out how to redirect to fucntion in my app.py and pass an _id too. I had to settle for finding the vinyl & redering the template again. Sorry if it was not the logical method but I'm still learning & my head is fried at the minute lol !
  
 
 
