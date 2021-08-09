@@ -263,6 +263,7 @@ def vinyl_list():
     return render_template("pages/manage_vinyl.html", vinyl=vinyl)
 
 
+# Admin Add Genre
 @app.route("/admin/genre/add", methods=["GET", "POST"])
 def add_genre():
     if request.method == "POST":
@@ -276,6 +277,7 @@ def add_genre():
     return render_template("components/forms/add_genre_form.html")
 
 
+# Admin Edit Genre
 @app.route("/admin/genre/edit/<genre_id>", methods=["GET", "POST"])
 def edit_genre(genre_id):
     if request.method == "POST":
@@ -299,14 +301,42 @@ def delete_genre(genre_id):
     return redirect(url_for("genre_list"))
 
 
+# Edit User Function
+@app.route("/admin/user/edit/<user_id>", methods=["GET", "POST"])
+def edit_user(user_id):
+
+    users = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    password = users.get('password')
+
+    if request.method == "POST":
+        user_edit = {
+            "fullname": request.form.get("fullname").lower(),
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": password,
+            "profile_pic": request.form.get("profile_pic").lower()
+        }
+
+        mongo.db.users.update({"_id": ObjectId(user_id)}, user_edit)
+        flash("{} Has Been Successfully Updated".format(
+            request.form.get("username")))
+
+        users = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+        return render_template(
+            "components/forms/edit_user_form.html", users=users)
+
+    return render_template(
+        "components/forms/edit_user_form.html", users=users)
+
+
 # Admin Delete User
 @app.route("/admin/users/delete/<users_id>")
 def delete_users(users_id):
     mongo.db.users.remove({"_id": ObjectId(users_id)})
-    flash("Genre Successfully Deleted")
+    flash("User Successfully Deleted")
     return redirect(url_for("users_list"))
 
-
+# Display vinyls to admin display card
 @app.route("/admin/vinyl/vinyl_card/<vinyl_id>")
 def vinyl_card(vinyl_id):
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
