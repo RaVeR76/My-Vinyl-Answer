@@ -32,7 +32,7 @@
             <footer class="card-footer">
               <a href="{{ url_for('vinyl_list') }}" class="card-footer-item">Back</a>
               <a href="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}" class="card-footer-item">Edit</a>
-              <a href="#" class="card-footer-item">Delete</a>
+              <a href="{{ url_for('confirm_modal', vinyl_id=vinyl._id) }}" class="card-footer-item">Delete</a>
             </footer>
           </div>
         </div>

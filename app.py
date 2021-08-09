@@ -162,17 +162,10 @@ def edit_vinyl(vinyl_id):
             request.form.get("vinyl_name")))
 
         if session["user"] == 'admin':
-           # mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
-           # flash("{} Has Been Successfully Updated".format(
-           #     request.form.get("vinyl_name")))
             vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
             return render_template(
                 "components/forms/vinyl_card.html", vinyl=vinyl, genre=genre, users=users)
         else:
-           # vinyl_edit['owner'] = session["user"]
-           # mongo.db.vinyl.update({"_id": ObjectId(vinyl_id)}, vinyl_edit)
-            #flash("{} Has Been Successfully Updated".format(
-           #     request.form.get("vinyl_name")))
             vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
             return render_template(
                 "pages/edit_vinyl.html", vinyl=vinyl, genre=genre, users=users)
@@ -186,7 +179,11 @@ def edit_vinyl(vinyl_id):
 def delete_vinyl(vinyl_id):
     mongo.db.vinyl.remove({"_id": ObjectId(vinyl_id)})
     flash("Your Vinyl Has Been Deleted")
-    return redirect(url_for("my_vinyls"))
+
+    if session["user"] == 'admin':
+        return redirect(url_for("vinyl_list"))
+    else:
+        return redirect(url_for("my_vinyls"))
 
 
 # Vinyl Deletion Modal For Confirmation Purposes
