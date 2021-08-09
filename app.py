@@ -196,6 +196,16 @@ def confirm_modal(vinyl_id):
         "components/modals/confirm_modal.html", vinyl=vinyl, username=username)
 
 
+# User Deletion Modal For Confirmation Purposes
+@app.route("/delete/user/confirm/<user_id>")
+def del_user_confirm(user_id):
+    users = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template(
+        "components/modals/del_user_confirm.html", users=users, username=username)
+
+
 # Genre Deletion Modal For Confirmation Purposes
 @app.route("/delete/genre/confirm/<genre_id>")
 def del_genre_confirm(genre_id):
@@ -222,8 +232,7 @@ def manage_collection(collection):
     if collection == "genre":
         return redirect(url_for("genre_list"))
     elif collection == "users":
-        users = list(mongo.db.users.find().sort("username", 1))
-        return render_template("pages/manage_users.html", users=users)
+        return redirect(url_for("users_list"))
     elif collection == "vinyl":
         return redirect(url_for("vinyl_list"))
     else:
@@ -236,6 +245,14 @@ def genre_list():
 
     genre = list(mongo.db.genre.find().sort("genre_name", 1))
     return render_template("pages/manage_genre.html", genre=genre)
+
+
+# Get User List Function (Alphabetically)
+@app.route("/admin/users")
+def users_list():
+
+    users = list(mongo.db.users.find().sort("username", 1))
+    return render_template("pages/manage_users.html", users=users)
 
 
 # Get vinyl List Function (Alphabetically)
@@ -274,11 +291,20 @@ def edit_genre(genre_id):
         "components/forms/edit_genre_form.html", genre=genre)
 
 
+# Admin Delete Genre
 @app.route("/admin/genre/delete/<genre_id>")
 def delete_genre(genre_id):
     mongo.db.genre.remove({"_id": ObjectId(genre_id)})
     flash("Genre Successfully Deleted")
     return redirect(url_for("genre_list"))
+
+
+# Admin Delete User
+@app.route("/admin/users/delete/<users_id>")
+def delete_users(users_id):
+    mongo.db.users.remove({"_id": ObjectId(users_id)})
+    flash("Genre Successfully Deleted")
+    return redirect(url_for("users_list"))
 
 
 @app.route("/admin/vinyl/vinyl_card/<vinyl_id>")
