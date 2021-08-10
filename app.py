@@ -106,7 +106,11 @@ def profile():
 @app.route("/vinyl/collection")
 def my_vinyls():
     vinyls = list(mongo.db.vinyl.find())
-    return render_template("pages/vinyl.html", vinyl=vinyls)
+
+    if session["user"] == 'admin':
+        return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+    else:
+        return render_template("pages/vinyl.html", vinyl=vinyls)
 
 
 # Vinyl Query Function
@@ -114,7 +118,11 @@ def my_vinyls():
 def vinyl_search():
     query = request.form.get("vinyl_query")
     vinyls = list(mongo.db.vinyl.find({"$text": {"$search": query}}))
-    return render_template("pages/vinyl.html", vinyl=vinyls)
+
+    if session["user"] == 'admin':
+        return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+    else:
+        return render_template("pages/vinyl.html", vinyl=vinyls)
 
 
 # Logout Function

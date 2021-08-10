@@ -10,38 +10,26 @@
             <div class="notification my-blue is-full col-pad">
                 <p class="has-text-centered text-my-white">Manage Vinyl</p>
             </div>
-     <!--       <div class="columns is-centered">
-
-                {% for vinyl in vinyl %}
-                <div class="column is-2">
-                    <div class="card">
-                        <header class="card-header">
-                            <span class="card-header-title is-horizontal-center ">
-                                {{ vinyl.vinyl_name }}
-                            </span>
-                        </header>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">Edit</a>
-                            <a href="#" class="card-footer-item">Delete</a>
-                        </footer>
-                        
-                    </div>
-                </div>
-                {% endfor %}
-                </div>   -->
 
                 <div class="column is-8 is-offset-2">
 
                     <nav class="panel my-white panel-size">
+                        <form action="{{ url_for('vinyl_search') }}" method="POST">
                         <p class="panel-heading">
                             All Vinyl
                         </p>
                         <div class="panel-block">
-                            <p class="control has-icons-left">
-                                <input class="input" type="text" placeholder="Search">
-                                <span class="icon is-left">
-                                    <i class="fas fa-search" aria-hidden="true"></i>
-                                </span>
+                            <p class="control has-icons-left has-addons is-expanded">
+                                <input id="vinyl_query" name="vinyl_query" class="input validate sign-bord"
+                                            minlength="3" type="text" placeholder="Search" required>
+                                        <span class="icon is-left">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </span>
+                                        <div class="control">
+                                            <button type="submit" class="button my-blue text-my-white">
+                                              Search
+                                            </button>
+                                          </div>
                             </p>
                         </div>
                         <p class="panel-tabs">
@@ -57,21 +45,22 @@
                                 <span class="panel-icon">
                                     <i class="fas fa-record-vinyl" aria-hidden="true"></i>
                                 </span>
-                                Song : {{ vinyl.vinyl_name }}
+                                Tune : {{ vinyl.vinyl_name }}
                                 <br>
                                 Genre : {{ vinyl.genre_name }}
+                                <br>
+                                Artist : {{ vinyl.vinyl_artist }}
+                                <br>
+                                Release Year : {{ vinyl.release_year }}
                             </a>
                             {% endfor %}
                         </div>
-                        <label class="panel-block">
-                            <input type="checkbox">
-                            remember me
-                        </label>
                         <div class="panel-block">
-                            <button class="button is-link is-outlined is-fullwidth">
+                            <a href="{{ url_for('my_vinyls') }}" class="button is-link is-outlined is-fullwidth">
                                 Reset all filters
-                            </button>
+                            </a>
                         </div>
+                        </form>
                     </nav>
 
                 </div>

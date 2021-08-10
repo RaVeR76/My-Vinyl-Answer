@@ -14,14 +14,14 @@
 
         <div id="navbarlist" class="navbar-menu">
             <div class="navbar-end">
-                {% if session.user %}
-                <a href="{{ url_for('profile') }}" class="navbar-item">Profile</a>
-                <a href="{{ url_for('my_vinyls') }}" class="navbar-item">My Vinyl</a>
-                    {% if session.user|lower == "admin"|lower %}
+                {% if session.user|lower == "admin"|lower %}
 
                         <a href="{{ url_for('manage_site') }}" class="navbar-item">Manage Site</a>
 
-                    {% endif %}
+                {% endif %}
+                {% if session.user %}
+                <a href="{{ url_for('profile') }}" class="navbar-item">Profile</a>
+                <a href="{{ url_for('my_vinyls') }}" class="navbar-item">My Vinyl</a>
                 <a href="{{ url_for('add_vinyl') }}" class="navbar-item">Add Vinyl</a>
                 <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a>
                 {% else %}
