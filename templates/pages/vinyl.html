@@ -10,6 +10,37 @@
                 <div class="notification my-red is-full">
                     <p class="has-text-centered text-my-white">My Vinyl Collection</p>
                 </div>
+
+                <div class="card my-white-light">
+                    <form action="" method="POST">
+                        <div class="card-content">
+                            <label for="vinyl_query" class="label">Vinyl Name</label>
+                            <div class="columns is-vcentered">
+                                
+                                <div class="column is-four-fifths">
+                                    <div class="control has-icons-left">
+                                        <input id="vinyl_query" name="vinyl_query" class="input validate sign-bord"
+                                            minlength="3" type="text" placeholder="Search" required>
+                                        <span class="icon is-left">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="column is-one-fifth">
+                                <div id="butt-center" class="">
+
+                                    <a href="#"
+                                        class="button my-white sign-bord">Reset</a>
+                                    <a href="#"
+                                        class="button my-white my-blue-font sign-bord">Search</a>
+    
+                                </div>
+                            </div>
+                            </div>
+ 
+                        </div>
+                    </form>
+                </div>
                 
                 {% for vinyl in vinyl %}
 

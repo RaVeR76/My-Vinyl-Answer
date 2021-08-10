@@ -19,17 +19,20 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("pages/home.html")
 
 
+# About 
 @app.route("/about")
 def about():
     return render_template("pages/about.html")
 
 
+# Signup Function
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -58,6 +61,7 @@ def signup():
     return render_template("pages/signup.html")
 
 
+# Login Function
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -86,10 +90,10 @@ def login():
     return render_template("pages/login.html")
 
 
+# Profile
 @app.route("/user/profile", methods=["GET", "POST"])
 def profile():
     # pull the session user's profile from the database
-
     users = mongo.db.users.find_one({"username": session["user"]})
 
     if session["user"]:
@@ -263,7 +267,7 @@ def vinyl_list():
     return render_template("pages/manage_vinyl.html", vinyl=vinyl)
 
 
-# Admin Add Genre
+# Admin Add Genre Function
 @app.route("/admin/genre/add", methods=["GET", "POST"])
 def add_genre():
     if request.method == "POST":
@@ -277,7 +281,7 @@ def add_genre():
     return render_template("components/forms/add_genre_form.html")
 
 
-# Admin Edit Genre
+# Admin Edit Genre Function
 @app.route("/admin/genre/edit/<genre_id>", methods=["GET", "POST"])
 def edit_genre(genre_id):
     if request.method == "POST":
@@ -293,7 +297,7 @@ def edit_genre(genre_id):
         "components/forms/edit_genre_form.html", genre=genre)
 
 
-# Admin Delete Genre
+# Admin Delete Genre Function
 @app.route("/admin/genre/delete/<genre_id>")
 def delete_genre(genre_id):
     mongo.db.genre.remove({"_id": ObjectId(genre_id)})
@@ -301,7 +305,7 @@ def delete_genre(genre_id):
     return redirect(url_for("genre_list"))
 
 
-# Edit User Function
+# Admin Edit User Function
 @app.route("/admin/user/edit/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
 
@@ -329,12 +333,13 @@ def edit_user(user_id):
         "components/forms/edit_user_form.html", users=users)
 
 
-# Admin Delete User
+# Admin Delete User Function
 @app.route("/admin/users/delete/<users_id>")
 def delete_users(users_id):
     mongo.db.users.remove({"_id": ObjectId(users_id)})
     flash("User Successfully Deleted")
     return redirect(url_for("users_list"))
+
 
 # Display vinyls to admin display card
 @app.route("/admin/vinyl/vinyl_card/<vinyl_id>")
