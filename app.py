@@ -109,6 +109,14 @@ def my_vinyls():
     return render_template("pages/vinyl.html", vinyl=vinyls)
 
 
+# Vinyl Query Function
+@app.route("/vinyl/search", methods=["GET", "POST"])
+def vinyl_search():
+    query = request.form.get("vinyl_query")
+    vinyls = list(mongo.db.vinyl.find({"$text": {"$search": query}}))
+    return render_template("pages/vinyl.html", vinyl=vinyls)
+
+
 # Logout Function
 @app.route("/logout")
 def logout():

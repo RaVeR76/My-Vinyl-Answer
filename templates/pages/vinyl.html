@@ -12,14 +12,14 @@
                 </div>
 
                 <div class="card my-white-light">
-                    <form action="" method="POST">
+                    <form action="{{ url_for('vinyl_search') }}" method="POST">
                         <div class="card-content">
-                            <label for="vinyl_query" class="label">Vinyl Name</label>
+            <!--                <label for="vinyl_query" class="label">Vinyl Name</label>   -->
                             <div class="columns is-vcentered">
                                 
                                 <div class="column is-four-fifths">
                                     <div class="control has-icons-left">
-                                        <input id="vinyl_query" name="vinyl_query" class="input validate sign-bord"
+                                        <input id="vinyl_query" name="vinyl_query" class="input validate log-bord"
                                             minlength="3" type="text" placeholder="Search" required>
                                         <span class="icon is-left">
                                             <i class="fas fa-search" aria-hidden="true"></i>
@@ -29,10 +29,9 @@
                                 <div class="column is-one-fifth">
                                 <div id="butt-center" class="">
 
-                                    <a href="#"
-                                        class="button my-white sign-bord">Reset</a>
-                                    <a href="#"
-                                        class="button my-white my-blue-font sign-bord">Search</a>
+                                    <a href="{{ url_for('my_vinyls') }}"
+                                        class="button my-white log-bord">Reset</a>
+                                    <button type="submit" class="button my-white log-bord">Search</button>
     
                                 </div>
                             </div>
@@ -42,17 +41,19 @@
                     </form>
                 </div>
                 
+
+                {% if vinyl|length > 0 %}
                 {% for vinyl in vinyl %}
 
                     {% if session.user|lower == vinyl.owner|lower %}
-
+                    
                     <button class="collapsible my-white-light">
                         <strong class="text-my-black">{{ vinyl.vinyl_name }}</strong>
                     </button>
 
-                    <div class="vinyl-content">
+                    <div class="vinyl-content text-my-white">
                         <div class="columns">
-                            <div class="column is-four-fifths text-my-black">
+                            <div class="column is-four-fifths text-my-white">
                                 <p><strong>Genre :</strong> {{ vinyl.genre_name }}</p>
                                 <p><strong>Artist :</strong> {{ vinyl.vinyl_artist }}</p>
                                 <p><strong>Label :</strong> {{ vinyl.vinyl_label }}</p>
@@ -74,6 +75,10 @@
                     {% endif %}
 
                 {% endfor %}
+
+                {% else %}
+                    <p class="has-text-centered text-my-white prof-font">No Result Found</p>
+                {% endif %}
 
             </div>
         </div>
