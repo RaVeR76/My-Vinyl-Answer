@@ -80,8 +80,7 @@ div.navbar-item.logo {
 
 .flash {
     border-radius: 1rem;
-   /* background-color: rgba(161, 233, 247, .5);  */                     /* rgba(161, 233, 247, .8) */
-    border: 3px solid rgba(227, 100, 100, .2);                           /* rgba(227, 100, 100) */
+    border: 3px solid rgba(227, 100, 100, .2);
 }
 
 .flash h4 {
@@ -91,6 +90,10 @@ div.navbar-item.logo {
 
 .col-pad {
     margin-top: 2rem;
+}
+
+.bot-marg {
+    margin-bottom: 1.5rem;
 }
 
 select, .sign-bord, .log-bord:hover {
@@ -137,7 +140,7 @@ select:focus, .sign-bord:hover, .log-bord {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: rgba(161, 233, 247, .3);
+    background-color: rgba(161, 233, 247, .5);
 }
 
 
@@ -162,6 +165,38 @@ nav .panel-size{
     overflow: hidden; 
     overflow-y: scroll;
 }
+
+
+.round-butt {
+    height: 75px;
+    width: 75px;
+    background-color: #F8F9FA;
+    border-radius: 50%;
+}
+
+
+.rotate{
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+     
+    overflow:hidden;
+ 
+    }  
+ 
+.rotate:hover  
+{
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+}
+
 
 
 

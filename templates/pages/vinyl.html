@@ -11,10 +11,9 @@
                     <p class="has-text-centered text-my-white">My Vinyl Collection</p>
                 </div>
 
-                <div class="card my-white-light">
+                <div class="card my-white-light bot-marg">
                     <form action="{{ url_for('vinyl_search') }}" method="POST">
                         <div class="card-content">
-            <!--                <label for="vinyl_query" class="label">Vinyl Name</label>   -->
                             <div class="columns is-vcentered">
                                 
                                 <div class="column is-four-fifths">
@@ -51,9 +50,9 @@
                         <strong class="text-my-black">{{ vinyl.vinyl_name }}</strong>
                     </button>
 
-                    <div class="vinyl-content text-my-white">
+                    <div class="vinyl-content">
                         <div class="columns">
-                            <div class="column is-four-fifths text-my-white">
+                            <div class="column is-four-fifths text-my-black">
                                 <p><strong>Genre :</strong> {{ vinyl.genre_name }}</p>
                                 <p><strong>Artist :</strong> {{ vinyl.vinyl_artist }}</p>
                                 <p><strong>Label :</strong> {{ vinyl.vinyl_label }}</p>

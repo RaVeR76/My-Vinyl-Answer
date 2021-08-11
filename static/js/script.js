@@ -42,18 +42,23 @@ for (i = 0; i < coll.length; i++) {
 };
 
 
-
+// Taken From Bulma for closing down the flash messages
 document.addEventListener('DOMContentLoaded', () => {
     (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      const $notification = $delete.parentNode;
+        const $notification = $delete.parentNode;
   
-      $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
-      });
+        $delete.addEventListener('click', () => {
+          $notification.parentNode.removeChild($notification);
+        });
     });
-  });
+});
 
 
+
+
+function goBack() {
+    window.history.back();
+  }
 
 // Taken from W3Schools for alerting when Caps Lock On at password input
 //password.addEventListener("keyup", function(event) {

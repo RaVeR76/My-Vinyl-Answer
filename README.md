@@ -700,7 +700,8 @@ One major fact if we are putting hinesty on the table that I had my else staemen
 Now to fix the admin post login link so it's naw Profile 
 
  
-
+https://www.w3schools.com/jsref/met_his_back.asp
+Added back button code from W3Schools
 
 
 
