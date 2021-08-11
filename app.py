@@ -130,7 +130,7 @@ def vinyl_search():
 def logout():
     # remove user session cookies
     flash("You have been logged out")
-    session.pop("user")
+    session.clear()
     return redirect(url_for("login"))
 
 

@@ -688,6 +688,17 @@ BUG - Admin issues when editing a vinyl, it changed the vinyl owner name to admi
 Still trying to gigure this shit housery out
 This mofo ```owner = vinyl.get('owner')``` saved the day. I spent hours on this one as well .... unbelieveable I swear. Once you fix one wee bug another pops it's ugly head up. I wanted to utilize te edit_vinyl as both admin & a user but the owner key was causing my major headaches as the value was becoming admin then null & I couldnt figure it out for ages but then i found that piece of code, it worked.
 Only now when the page returned the flash message had the new name but the page didn't change. I got sstuvk on this one too. I coundn't figure out how to redirect to fucntion in my app.py and pass an _id too. I had to settle for finding the vinyl & redering the template again. Sorry if it was not the logical method but I'm still learning & my head is fried at the minute lol !
+
+
+
+
+Admin Rights - I thought this would be easy to find and solve but hey ... is coding simple .... not for a noob like me
+I tried searching through the depths of the internet for such code but that's after I was offered someones kidney, 3 prostitutes & a WW2 Russian Tank .... the web can be so dark sometimes !
+I got there yay me ! All I wanted to do was show certain navbar links to the user & admin just the admin section & then the non loggy in pages when you first arrive :)
+I messed about which the jinja logic on my navigation code but struggled to get it right .... quite a few hours yet again but look ... I have to learn and as painful as it was I got there and it works for me. I had to duplicate the login line of code for admin and a user which may not be the correct way but it works and I need to move on. I just need to redirect my admin to a different page as it still shows there Profile page on first log in :)
+One major fact if we are putting hinesty on the table that I had my else staement as {else} and not {% else %} which 100% did not help the situation and totally threw me a curve ball but it's done and working the way I want it too !
+Now to fix the admin post login link so it's naw Profile 
+
  
 
 
