@@ -43,6 +43,18 @@ for (i = 0; i < coll.length; i++) {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      const $notification = $delete.parentNode;
+  
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      });
+    });
+  });
+
+
+
 // Taken from W3Schools for alerting when Caps Lock On at password input
 //password.addEventListener("keyup", function(event) {
 //

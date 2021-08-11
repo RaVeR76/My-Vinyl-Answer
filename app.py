@@ -26,7 +26,7 @@ def home():
     return render_template("pages/home.html")
 
 
-# About 
+# About
 @app.route("/about")
 def about():
     return render_template("pages/about.html")
@@ -76,7 +76,10 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome {}".format(
                         request.form.get("username")))
-                    return redirect(url_for("profile"))
+                    if session["user"] == 'admin':
+                        return redirect(url_for("manage_site"))
+                    else:
+                        return redirect(url_for("profile"))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
