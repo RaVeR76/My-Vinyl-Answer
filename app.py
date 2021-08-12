@@ -108,7 +108,6 @@ def logout():
     Allow the user to log out
     Redirect user back to login
     """
-    # remove user session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -131,7 +130,7 @@ def profile():
 @app.route("/vinyl/collection")
 def my_vinyls():
     """
-    Get vinyl collection from database
+    Get users vinyl collection from database
     Render vinyl templates depending if user / admin
     """
     vinyls = list(mongo.db.vinyl.find())
@@ -161,7 +160,7 @@ def vinyl_search():
 @app.route("/vinyl/add", methods=["GET", "POST"])
 def add_vinyl():
     """
-    Add vinyl form data to the database
+    Allow user to add new vinyl to the database
     Redirect for displaying vinyls with flash message
     Or return to 'add vinyl' page
     """
@@ -189,10 +188,10 @@ def add_vinyl():
 @app.route("/vinyl/edit/<vinyl_id>", methods=["GET", "POST"])
 def edit_vinyl(vinyl_id):
     """
+    Allow user to edit their vinyl
     Add edited vinyl to database
-    
+    Render templates depending if user / admin
     """
-
     genre = mongo.db.genre.find().sort("genre_name", 1)
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     users = mongo.db.users.find_one({"username": session["user"]})
@@ -230,6 +229,11 @@ def edit_vinyl(vinyl_id):
 # Delete Vinyl Function
 @app.route("/vinyl/delete/<vinyl_id>")
 def delete_vinyl(vinyl_id):
+    """
+    Allow user / admin to delete vinyl
+    Delete chosen vinyl
+    Redirect depending if user / admin
+    """
     mongo.db.vinyl.remove({"_id": ObjectId(vinyl_id)})
     flash("Your Vinyl Has Been Deleted")
 
@@ -242,6 +246,10 @@ def delete_vinyl(vinyl_id):
 # Vinyl Deletion Modal For Confirmation Purposes
 @app.route("/delete/vinyl/confirm/<vinyl_id>")
 def confirm_modal(vinyl_id):
+    """
+    Call vinyl delete modal for confirmation
+    Pass vinyl & username for personal modal
+    """
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -252,16 +260,25 @@ def confirm_modal(vinyl_id):
 # User Deletion Modal For Confirmation Purposes
 @app.route("/delete/user/confirm/<user_id>")
 def del_user_confirm(user_id):
+    """
+    Call user delete modal for confirmation
+    Pass users & username for personal modal
+    """
     users = mongo.db.users.find_one({"_id": ObjectId(user_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template(
-        "components/modals/del_user_confirm.html", users=users, username=username)
+        "components/modals/del_user_confirm.html",
+        users=users, username=username)
 
 
 # Genre Deletion Modal For Confirmation Purposes
 @app.route("/delete/genre/confirm/<genre_id>")
 def del_genre_confirm(genre_id):
+    """
+    Call genre delete modal for confirmation
+    Pass genre & username for personal modal
+    """
     genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -272,6 +289,11 @@ def del_genre_confirm(genre_id):
 # Find Database collection names for displaying to Admin
 @app.route("/admin/manage_site")
 def manage_site():
+    """
+    Allow admin to access collections
+    Find database collection names
+    Pass to manage_site for utilisation
+    """
     collection = mongo.db.collection_names(include_system_collections=False)
     collection.sort()
 
@@ -281,7 +303,10 @@ def manage_site():
 # Redirect Admin To Chosen Database Collection Name
 @app.route("/admin/manage_collection/<collection>")
 def manage_collection(collection):
-
+    """
+    Redirect admin to chosen collection list
+    Or back to manage site
+    """
     if collection == "genre":
         return redirect(url_for("genre_list"))
     elif collection == "users":
@@ -295,7 +320,9 @@ def manage_collection(collection):
 # Get Genre List Function (Alphabetically)
 @app.route("/admin/genre")
 def genre_list():
-
+    """
+    Get genre list & pass it to manage genre
+    """
     genre = list(mongo.db.genre.find().sort("genre_name", 1))
     return render_template("pages/manage_genre.html", genre=genre)
 
@@ -303,7 +330,9 @@ def genre_list():
 # Get User List Function (Alphabetically)
 @app.route("/admin/users")
 def users_list():
-
+    """
+    Get users list & pass it to manage users
+    """
     users = list(mongo.db.users.find().sort("username", 1))
     return render_template("pages/manage_users.html", users=users)
 
@@ -311,7 +340,9 @@ def users_list():
 # Get vinyl List Function (Alphabetically)
 @app.route("/admin/vinyl")
 def vinyl_list():
-
+    """
+    Get vinyl list & pass it to manage vinyl
+    """
     vinyl = list(mongo.db.vinyl.find().sort("vinyl_name", 1))
     return render_template("pages/manage_vinyl.html", vinyl=vinyl)
 
@@ -319,6 +350,10 @@ def vinyl_list():
 # Admin Add Genre Function
 @app.route("/admin/genre/add", methods=["GET", "POST"])
 def add_genre():
+    """
+    Allow admin to add a new genre
+    Update the database
+    """
     if request.method == "POST":
         genre = {
             "genre_name": request.form.get("genre_name")
@@ -333,6 +368,10 @@ def add_genre():
 # Admin Edit Genre Function
 @app.route("/admin/genre/edit/<genre_id>", methods=["GET", "POST"])
 def edit_genre(genre_id):
+    """
+    Allow admin to edit a genre
+    Update the database
+    """
     if request.method == "POST":
         submit = {
             "genre_name": request.form.get("genre_name")
@@ -349,6 +388,10 @@ def edit_genre(genre_id):
 # Admin Delete Genre Function
 @app.route("/admin/genre/delete/<genre_id>")
 def delete_genre(genre_id):
+    """
+    Allow admin to delete a genre
+    Remove from the database
+    """
     mongo.db.genre.remove({"_id": ObjectId(genre_id)})
     flash("Genre Successfully Deleted")
     return redirect(url_for("genre_list"))
@@ -357,7 +400,10 @@ def delete_genre(genre_id):
 # Admin Edit User Function
 @app.route("/admin/user/edit/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
-
+    """
+    Allow admin to edit a user
+    Update the database
+    """
     users = mongo.db.users.find_one({"_id": ObjectId(user_id)})
     password = users.get('password')
 
@@ -385,6 +431,10 @@ def edit_user(user_id):
 # Admin Delete User Function
 @app.route("/admin/users/delete/<users_id>")
 def delete_users(users_id):
+    """
+    Allow admin to delete a user
+    Remove from the database
+    """
     mongo.db.users.remove({"_id": ObjectId(users_id)})
     flash("User Successfully Deleted")
     return redirect(url_for("users_list"))
@@ -393,14 +443,32 @@ def delete_users(users_id):
 # Display vinyls to admin display card
 @app.route("/admin/vinyl/vinyl_card/<vinyl_id>")
 def vinyl_card(vinyl_id):
+    """
+    Display admins chosen vinyl in a card
+    """
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     return render_template(
         "components/forms/vinyl_card.html", vinyl=vinyl)
 
 
-#@app.errorhandler(404)
-#def page_not_found(error):
-#    return render_template('page_not_found.html'), 404
+@app.errorhandler(404)
+def page_not_found(error):
+    """
+    Renders custom error.html with 404 message.
+    """
+    error_message = str(error)
+    return render_template('pages/error.html',
+                           error_message=error_message), 404
+
+
+@app.errorhandler(500)
+def server_error(error):
+    """
+    Renders custom error.html with 500 message.
+    """
+    error_message = str(error)
+    return render_template('pages/error.html',
+                           error_message=error_message), 500
 
 
 if __name__ == "__main__":

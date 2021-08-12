@@ -1,0 +1,23 @@
+{% extends "layout/base.html" %}
+{% block content %}
+{% include "components/navigation/navigation.html" %}
+
+    <div class="modal is-active">
+        <div class="modal-background">
+        </div>
+        <div class="modal-card">
+            <section class="modal-card-body has-text-centered">
+                <p class="image is-4by3">
+                    <img src="static/images/error_monkey.jpg" alt="">
+                </p>
+                <h2 class="title is-2">Oops .... Something went wrong !</h2>
+                <p><strong>Lil Mona Key Says She Was Looking For A 404 Earlier But Couldn't Find One Either</strong> 
+                <br>
+                <br>
+                {{ error_message }}</p>
+            </section>
+            <a href="{{ url_for('home') }}" class="button my-blue text-my-white">Click here to go home !</a>
+        </div>
+    </div>
+
+{% endblock %}

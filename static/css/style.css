@@ -109,6 +109,10 @@ select:focus, .sign-bord:hover, .log-bord {
     font-weight: 600;
 }
 
+.error-back {
+    background-image: url("../images/error_monkey.jpg");
+}
+
 
 /* Collapsible CSS taken from W3Schools */
 .collapsible {
