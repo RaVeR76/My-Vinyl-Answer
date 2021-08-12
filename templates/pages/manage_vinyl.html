@@ -10,27 +10,27 @@
             <div class="notification my-blue is-full col-pad">
                 <p class="has-text-centered text-my-white">Manage Vinyl</p>
             </div>
-
+            <div class="columns">
                 <div class="column is-8 is-offset-2">
 
                     <nav class="panel my-white panel-size">
                         <form action="{{ url_for('vinyl_search') }}" method="POST">
-                        <p class="panel-heading">
+                        <p class="panel-heading has-text-centered">
                             All Vinyl
                         </p>
                         <div class="panel-block">
-                            <p class="control has-icons-left has-addons is-expanded">
+                            <div class="field control has-icons-left has-addons is-expanded">
                                 <input id="vinyl_query" name="vinyl_query" class="input validate sign-bord"
-                                            minlength="3" type="text" placeholder="Search" required>
-                                        <span class="icon is-left">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
-                                        </span>
-                                        <div class="control">
-                                            <button type="submit" class="button my-blue text-my-white">
-                                              Search
-                                            </button>
-                                          </div>
-                            </p>
+                                    minlength="3" type="text" placeholder="Search" required>
+                                <span class="icon is-left">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                </span>
+                                <div class="control">
+                                    <button type="submit" class="button my-blue text-my-white">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <p class="panel-tabs">
                             <a class="is-active">All</a>
@@ -48,15 +48,11 @@
                                 Tune : {{ vinyl.vinyl_name }}
                                 <br>
                                 Genre : {{ vinyl.genre_name }}
-                                <br>
-                                Artist : {{ vinyl.vinyl_artist }}
-                                <br>
-                                Release Year : {{ vinyl.release_year }}
                             </a>
                             {% endfor %}
                         </div>
                         <div class="panel-block">
-                            <a href="{{ url_for('my_vinyls') }}" class="button is-link is-outlined is-fullwidth">
+                            <a href="{{ url_for('my_vinyls') }}" class="button sign-bord is-outlined is-fullwidth">
                                 Reset all filters
                             </a>
                         </div>
@@ -64,7 +60,7 @@
                     </nav>
 
                 </div>
-
+            </div>
            
         </div>
 

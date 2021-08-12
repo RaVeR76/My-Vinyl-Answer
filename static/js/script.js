@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function goBack() {
-    window.history.back();
-  }
+//function goBack() {
+//    window.history.back();
+ // }
 
 // Taken from W3Schools for alerting when Caps Lock On at password input
 //password.addEventListener("keyup", function(event) {

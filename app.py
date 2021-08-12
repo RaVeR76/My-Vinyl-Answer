@@ -21,22 +21,31 @@ mongo = PyMongo(app)
 
 # Home
 @app.route("/")
-@app.route("/home")
 def home():
+    """
+    Homepage Function
+    """
     return render_template("pages/home.html")
 
 
 # About
 @app.route("/about")
 def about():
+    """
+    Genral Overview About The Website
+    """
     return render_template("pages/about.html")
 
 
 # Signup Function
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+    """
+    Allows a user to sign-up to the website
+    Checks if username already exists
+    Redirects user to their profile
+    """
     if request.method == "POST":
-        # check for username
         known_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -52,8 +61,6 @@ def signup():
             "profile_pic": request.form.get("profile_pic").lower()
         }
         mongo.db.users.insert_one(signup)
-
-        # Utilise Session Cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful !")
         return redirect(url_for("profile"))
@@ -64,50 +71,69 @@ def signup():
 # Login Function
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Allows user/admin to sign in with their username & password
+    Redirects to profile or manage site (depending on user)
+    Redirects back to login either don't match the criteria
+    """
     if request.method == "POST":
-        # check if username exists in the database
         known_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if known_user:
-            # check password matches user
-            if check_password_hash(
-                known_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome {}".format(
-                        request.form.get("username")))
-                    if session["user"] == 'admin':
-                        return redirect(url_for("manage_site"))
-                    else:
-                        return redirect(url_for("profile"))
+            if check_password_hash(known_user["password"],
+                request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome {}".format(
+                    request.form.get("username")))
+                if session["user"] == 'admin':
+                    return redirect(url_for("manage_site"))
+                else:
+                    return redirect(url_for("profile"))
             else:
-                # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username does not exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("pages/login.html")
 
 
+# Logout Function
+@app.route("/logout")
+def logout():
+    """
+    Allow the user to log out
+    Redirect user back to login
+    """
+    # remove user session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 # Profile
 @app.route("/user/profile", methods=["GET", "POST"])
 def profile():
-    # pull the session user's profile from the database
+    """
+    User's Profile
+    """
     users = mongo.db.users.find_one({"username": session["user"]})
-
     if session["user"]:
         return render_template("pages/profile.html", users=users)
 
     return redirect(url_for("login"))
 
 
-# Get Vinyl Collection From The Database
+# Vinyl Collection
 @app.route("/vinyl/collection")
 def my_vinyls():
+    """
+    Get vinyl collection from database
+    Render vinyl templates depending if user / admin
+    """
     vinyls = list(mongo.db.vinyl.find())
 
     if session["user"] == 'admin':
@@ -119,6 +145,9 @@ def my_vinyls():
 # Vinyl Query Function
 @app.route("/vinyl/search", methods=["GET", "POST"])
 def vinyl_search():
+    """
+    Search vinyl collection & display results
+    """
     query = request.form.get("vinyl_query")
     vinyls = list(mongo.db.vinyl.find({"$text": {"$search": query}}))
 
@@ -128,18 +157,14 @@ def vinyl_search():
         return render_template("pages/vinyl.html", vinyl=vinyls)
 
 
-# Logout Function
-@app.route("/logout")
-def logout():
-    # remove user session cookies
-    flash("You have been logged out")
-    session.clear()
-    return redirect(url_for("login"))
-
-
 # Add Vinyl Function
 @app.route("/vinyl/add", methods=["GET", "POST"])
 def add_vinyl():
+    """
+    Add vinyl form data to the database
+    Redirect for displaying vinyls with flash message
+    Or return to 'add vinyl' page
+    """
     if request.method == "POST":
 
         vinyl = {
@@ -163,6 +188,10 @@ def add_vinyl():
 # Edit Vinyl Function
 @app.route("/vinyl/edit/<vinyl_id>", methods=["GET", "POST"])
 def edit_vinyl(vinyl_id):
+    """
+    Add edited vinyl to database
+    
+    """
 
     genre = mongo.db.genre.find().sort("genre_name", 1)
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
@@ -187,7 +216,8 @@ def edit_vinyl(vinyl_id):
         if session["user"] == 'admin':
             vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
             return render_template(
-                "components/forms/vinyl_card.html", vinyl=vinyl, genre=genre, users=users)
+                "components/forms/vinyl_card.html",
+                vinyl=vinyl, genre=genre, users=users)
         else:
             vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
             return render_template(
