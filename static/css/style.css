@@ -109,10 +109,9 @@ select:focus, .sign-bord:hover, .log-bord {
     font-weight: 600;
 }
 
-.error-back {
-    background-image: url("../images/error_monkey.jpg");
+.fa-backward {
+    color: #F8F9FA !important;
 }
-
 
 /* Collapsible CSS taken from W3Schools */
 .collapsible {
@@ -172,8 +171,6 @@ nav .panel-size{
 
 
 .round-butt {
-    height: 75px;
-    width: 75px;
     background-color: #F8F9FA;
     border-radius: 50%;
 }
