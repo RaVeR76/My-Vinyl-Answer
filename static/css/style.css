@@ -175,6 +175,16 @@ nav .panel-size{
     border-radius: 50%;
 }
 
+.not-pos {
+    position: relative;
+}
+
+.back-pos {
+    position: absolute;
+    bottom: 5%;
+    left: 1%;
+}
+
 /*
 .rotate{
     -webkit-transition-duration: 0.8s;
@@ -230,7 +240,20 @@ nav .panel-size{
       transform: translateY(-100%);
     }
   }
+  
+  .movey {
+      animation: move 4s linear ;
+  }
 
+  @keyframes move {
+
+    0% {
+        transform:translate(0)
+    }
+    50% {
+        transform:translate(1000px);
+    }
+  }
 
 /* Media Queries */
 
