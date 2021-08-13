@@ -1,27 +1,24 @@
 {% extends "layout/base.html" %}
 {% block content %}
 {% include "components/navigation/navigation.html" %}
-
 <div class="container">
-    <h4 class="title is-3 has-text-centered col-pad text-my-black">Home Shit</h4>
+  <h4 class="title is-3 has-text-centered col-pad text-my-black">Home Shit</h4>
 
-    <section>
-
-    <figure class="image">
-        <i class="jumpy fas fa-record-vinyl fas fa-8x"></i>
-    </figure>
-
-    <figure class="image is-128x128">
-        <img src="static/images/vinyl_red.png" alt="Red Vinyl">
-    </figure>
-  <!--  jumpy fas fa-record-vinyl fas fa-8x -->
-</section>
-<section class="is-large">
-  <img src="static/images/logo.png">
-    <figure class="image is-128x128">
-  <img src="static/images/spin-vin.gif" class="movey"><a href="https://giphy.com/gifs/jaranarecords-disco-LwBTamVefKJxmYwDba"></a>
-</figure>
-</section>
+  <section class="is-large">
+    <div class="columns">
+      <div class="column is-align-items-center">
+        <figure class=" is-align-content-center">
+          <img src="static/images/my.png">
+        </figure>
+        <button class="is-align-content-center">
+          <img src="static/images/spin-vin.gif" class="movey">
+        </button>
+        <figure class="button is-128x128">
+          <img src="static/images/answer.png">
+        </figure>
+      </div>
+    </div>
+  </section>
 </div>
 
 {% endblock %}

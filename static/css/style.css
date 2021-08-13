@@ -171,7 +171,7 @@ nav .panel-size{
 
 
 .round-butt {
-    background-color: #F8F9FA;
+    background-color: #3ca9e9;
     border-radius: 50%;
 }
 
@@ -181,9 +181,10 @@ nav .panel-size{
 
 .back-pos {
     position: absolute;
-    bottom: 60%;
-    left: 1%;
+    bottom: 0;
+    left: 0;
 }
+
 
 /*
 .rotate{
@@ -222,7 +223,7 @@ nav .panel-size{
   
 /* Bouncing Animation */
 
-.jumpy {
+/*.jumpy {
     animation: updown 2s ease infinite;
     color: #F8F9FA;
 }
@@ -242,7 +243,7 @@ nav .panel-size{
   }
   
   .movey {
-      animation: move 4s linear ;
+      animation: move 4s linear infinite;
   }
 
   @keyframes move {
@@ -253,7 +254,7 @@ nav .panel-size{
     50% {
         transform:translate(1000px);
     }
-  }
+  }*/
 
 /* Media Queries */
 
@@ -278,8 +279,8 @@ nav .panel-size{
 @media (max-width: 767px) {
 
     body {
-        background-image: url("../images/deck.jpg");
-        background-size: contain;
+        background-image: url("../images/floor_vinyl.jpg");
+        background-size: cover;
     }
 
     .notification p {
@@ -289,7 +290,7 @@ nav .panel-size{
     }
 
     .col-pad {
-        margin-top: 0.8rem;
+        margin-top: 0;
     }
 
     .prof-font {
