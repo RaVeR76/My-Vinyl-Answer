@@ -167,6 +167,39 @@ def hardcore_search():
     return render_template("pages/manage_vinyl.html", vinyl=vinyls)
 
 
+# House Query Function
+@app.route("/vinyl/house/search")
+def house_search():
+    """
+    Search house vinyl collection & display results
+    """
+    vinyls = list(mongo.db.vinyl.find({"genre_name": "House"}))
+
+    return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+
+
+# Techno Query Function
+@app.route("/vinyl/techno/search")
+def techno_search():
+    """
+    Search techno vinyl collection & display results
+    """
+    vinyls = list(mongo.db.vinyl.find({"genre_name": "Techno"}))
+
+    return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+
+
+# Trance Query Function
+@app.route("/vinyl/trance/search")
+def trance_search():
+    """
+    Search trance vinyl collection & display results
+    """
+    vinyls = list(mongo.db.vinyl.find({"genre_name": "Trance"}))
+
+    return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+
+
 # Add Vinyl Function
 @app.route("/vinyl/add", methods=["GET", "POST"])
 def add_vinyl():

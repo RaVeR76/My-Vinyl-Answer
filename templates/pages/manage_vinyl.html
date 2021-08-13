@@ -40,9 +40,9 @@
                     <p class="panel-tabs">
                         <a href="{{ url_for('my_vinyls') }}" class="is-active">All</a>
                         <a href="{{ url_for('hardcore_search') }}">Hardcore</a>
-                        <a>House</a>
-                        <a>Techno</a>
-                        <a>Trance</a>
+                        <a href="{{ url_for('house_search') }}">House</a>
+                        <a href="{{ url_for('techno_search') }}">Techno</a>
+                        <a href="{{ url_for('trance_search') }}">Trance</a>
                     </p>
                     <div class="panel-size">
                         {% if vinyl|length > 0 %}
