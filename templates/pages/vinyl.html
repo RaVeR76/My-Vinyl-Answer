@@ -2,85 +2,84 @@
 {% block content %}
 {% include "components/navigation/navigation.html" %}
 
-    {% include 'components/flash_messages/flash_messages.html' %}
+{% include 'components/flash_messages/flash_messages.html' %}
 
-    <div class="container">
-        <div class="columns col-pad">
-            <div class="column is-8 is-offset-2 ">
-                <div class="notification my-red is-full">
-                    <p class="has-text-centered text-my-white">My Vinyl Collection</p>
-                </div>
+<div class="container">
+    <div class="columns col-pad">
+        <div class="column is-8 is-offset-2 ">
+            <div class="notification my-red is-full">
+                <p class="has-text-centered text-my-white">My Vinyl Collection</p>
+            </div>
 
-                <div class="card my-white-light bot-marg">
-                    <form action="{{ url_for('vinyl_search') }}" method="POST">
-                        <div class="card-content">
-                            <div class="columns is-vcentered">
-                                
-                                <div class="column is-four-fifths">
-                                    <div class="control has-icons-left">
-                                        <input id="vinyl_query" name="vinyl_query" class="input validate log-bord"
-                                            minlength="3" type="text" placeholder="Search" required>
-                                        <span class="icon is-left">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
+            <div class="card my-white-light bot-marg">
+                <form action="{{ url_for('vinyl_search') }}" method="POST">
+                    <div class="card-content">
+                        <div class="columns is-vcentered">
+
+                            <div class="column is-four-fifths">
+                                <div class="control has-icons-left">
+                                    <input id="vinyl_query" name="vinyl_query" class="input validate log-bord"
+                                        minlength="3" type="text" placeholder="Search" required>
+                                    <span class="icon is-left">
+                                        <i class="fas fa-search" aria-hidden="true"></i>
+                                    </span>
                                 </div>
-                                <div class="column is-one-fifth">
+                            </div>
+                            <div class="column is-one-fifth">
                                 <div id="butt-center">
 
-                                    <a href="{{ url_for('my_vinyls') }}"
-                                        class="button my-white log-bord">Reset</a>
+                                    <a href="{{ url_for('my_vinyls') }}" class="button my-white log-bord">Reset</a>
                                     <button type="submit" class="button my-white log-bord">Search</button>
-    
+
                                 </div>
                             </div>
-                            </div>
- 
                         </div>
-                    </form>
-                </div>
-                
 
-                {% if vinyl|length > 0 %}
-                {% for vinyl in vinyl %}
+                    </div>
+                </form>
+            </div>
 
-                    {% if session.user|lower == vinyl.owner|lower %}
-                    
-                    <button class="collapsible my-white-light">
-                        <strong class="text-my-black">{{ vinyl.vinyl_name }}</strong>
-                    </button>
 
-                    <div class="vinyl-content">
-                        <div class="columns">
-                            <div class="column is-four-fifths text-my-black">
-                                <p><strong>Genre :</strong> {{ vinyl.genre_name }}</p>
-                                <p><strong>Artist :</strong> {{ vinyl.vinyl_artist }}</p>
-                                <p><strong>Label :</strong> {{ vinyl.vinyl_label }}</p>
-                                <p><strong>Description :</strong> {{ vinyl.vinyl_description }}</p>
-                                <p><strong>Release Year :</strong> {{ vinyl.release_year }}</p>
-                            </div>
+            {% if vinyl|length > 0 %}
+            {% for vinyl in vinyl %}
 
-                            <div id="butt-center" class="column is-one-fifth">
+            {% if session.user|lower == vinyl.owner|lower %}
 
-                                <a href="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}"
-                                    class="button my-white sign-bord">Edit</a>
-                                <a href="{{ url_for('confirm_modal', vinyl_id=vinyl._id) }}"
-                                    class="button my-white my-blue-font sign-bord">Delete</a>
+            <button class="collapsible my-white-light">
+                <strong class="text-my-black">{{ vinyl.vinyl_name }}</strong>
+            </button>
 
-                            </div>
-                        </div>
+            <div class="vinyl-content">
+                <div class="columns">
+                    <div class="column is-four-fifths text-my-black">
+                        <p><strong>Genre :</strong> {{ vinyl.genre_name }}</p>
+                        <p><strong>Artist :</strong> {{ vinyl.vinyl_artist }}</p>
+                        <p><strong>Label :</strong> {{ vinyl.vinyl_label }}</p>
+                        <p><strong>Description :</strong> {{ vinyl.vinyl_description }}</p>
+                        <p><strong>Release Year :</strong> {{ vinyl.release_year }}</p>
                     </div>
 
-                    {% endif %}
+                    <div id="butt-center" class="column is-one-fifth">
 
-                {% endfor %}
+                        <a href="{{ url_for('edit_vinyl', vinyl_id=vinyl._id) }}"
+                            class="button my-white sign-bord">Edit</a>
+                        <a href="{{ url_for('confirm_modal', vinyl_id=vinyl._id) }}"
+                            class="button my-white my-blue-font sign-bord">Delete</a>
 
-                {% else %}
-                    <h1 class="title has-text-centered text-my-white">No Result Found</h1>
-                {% endif %}
-
+                    </div>
+                </div>
             </div>
-        </div>
 
+            {% endif %}
+
+            {% endfor %}
+
+            {% else %}
+            <h1 class="title has-text-centered text-my-white">No Result Found</h1>
+            {% endif %}
+
+        </div>
     </div>
+
+</div>
 {% endblock %}

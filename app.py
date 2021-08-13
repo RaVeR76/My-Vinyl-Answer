@@ -156,6 +156,17 @@ def vinyl_search():
         return render_template("pages/vinyl.html", vinyl=vinyls)
 
 
+# Hardcore Query Function
+@app.route("/vinyl/hardcore/search")
+def hardcore_search():
+    """
+    Search hardcore vinyl collection & display results
+    """
+    vinyls = list(mongo.db.vinyl.find({"genre_name": "Hardcore"}))
+
+    return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+
+
 # Add Vinyl Function
 @app.route("/vinyl/add", methods=["GET", "POST"])
 def add_vinyl():

@@ -563,6 +563,8 @@ I know I called this My Vinyl Answer so it't therefore mainly about vinyl and st
 user could make up their own personl database for whatever collection they wanted. Obviously, there would be limits put in place so they don't abuse the database ...
 nobody likes a db abuser !
 
+Some of the harder python was easiest to conquer and I was like who's the daddy but then again some the easier python twisted my napper & was like an uppercut from Drago in Rocky 4.
+
 
 ## **Credits**
 ---
