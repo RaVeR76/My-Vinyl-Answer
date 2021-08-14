@@ -188,8 +188,8 @@ nav .panel-size{
 
 .vin-spin {
     height: 120px;
-    margin-bottom: 30px;
-    margin-left: 10px;
+    margin-bottom: 40px;
+    margin-left: 20px;
 }
 
 .invert {
@@ -197,7 +197,7 @@ nav .panel-size{
 }
 
 .is-long {
-    height: 800px;
+    height: 500px;
 }
 
 .rel-pos {
@@ -207,15 +207,20 @@ nav .panel-size{
 }
 
 .abs-pos {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
     position:absolute;
     top:30%;
     left:0;
     right:0;
     bottom:0;
+    height: fit-content;
+    width: 80%;
     margin:auto;
 }
-
-
 
 
 
@@ -329,9 +334,4 @@ nav .panel-size{
     .prof-font {
         font-size: 0.9rem;
     }
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-  
 }
