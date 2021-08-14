@@ -186,6 +186,39 @@ nav .panel-size{
 }
 
 
+.vin-spin {
+    height: 120px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+.is-long {
+    height: 800px;
+}
+
+.rel-pos {
+    position:relative;
+    height: 100%;
+    width:100%;
+}
+
+.abs-pos {
+    position:absolute;
+    top:30%;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+
+
+
+
+
 /*
 .rotate{
     -webkit-transition-duration: 0.8s;

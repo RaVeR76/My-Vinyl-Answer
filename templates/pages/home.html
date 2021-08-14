@@ -1,24 +1,23 @@
 {% extends "layout/base.html" %}
 {% block content %}
 {% include "components/navigation/navigation.html" %}
-<div class="container">
-  <h4 class="title is-3 has-text-centered col-pad text-my-black">Home Shit</h4>
 
-  <section class="is-large">
-    <div class="columns">
-      <div class="column is-align-items-center">
-        <figure class=" is-align-content-center">
-          <img src="static/images/my.png">
-        </figure>
-        <button class="is-align-content-center">
-          <img src="static/images/spin-vin.gif" class="movey">
-        </button>
-        <figure class="button is-128x128">
-          <img src="static/images/answer.png">
-        </figure>
-      </div>
-    </div>
-  </section>
+<section class="is-long">
+<div class="container rel-pos">
+   
+            <div class="column height-auto"></div>
+      
+            <div class=" abs-pos">
+                <figure class="has-text-centered">
+                    <img src="static/images/my.png" class="invert"><img src="static/images/spin-vin.gif" class="vin-spin">
+                    <img src="static/images/answer.png" class="invert">
+                </figure>
+            </div>
+
+            <div class="column height-auto"></div>
+       
+ 
 </div>
+</section>
 
 {% endblock %}
