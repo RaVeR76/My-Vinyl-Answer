@@ -706,6 +706,10 @@ https://www.w3schools.com/jsref/met_his_back.asp
 Added back button code from W3Schools
 
 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blurred_bg
+background for home page logo taken from here
+
+
 passowrd issues when admin editing user - had to add some code to copy users passord & add it to new edited user so it wouldn't get wiped :)
 
 

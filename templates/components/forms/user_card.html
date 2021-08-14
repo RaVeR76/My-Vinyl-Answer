@@ -1,0 +1,37 @@
+{% extends "layout/base.html" %}
+{% block content %}
+    
+    {% include "components/navigation/navigation.html" %}
+
+    {% include 'components/flash_messages/flash_messages.html' %}
+
+      <div class="container">
+        <div class="notification my-blue is-full col-pad">
+          <p class="has-text-centered text-my-white">Manage Users Vinyl</p>
+        </div>
+
+        <div class="column is-4 is-offset-4">
+          <div class="card">
+            <header class="card-header">
+              <span class="card-header-title is-horizontal-center prof-font">
+                  {{ user.username }}'s' Vinyl Collection
+              </span>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                {% for vinyl in vinyls %}
+                <div class="column is-four-fifths text-my-black">
+                  <p><strong>Tune :</strong> {{ vinyl.vinyl_name }}</p>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="{{ url_for('users_list') }}" class="card-footer-item">Back</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+
+    {% endblock %}

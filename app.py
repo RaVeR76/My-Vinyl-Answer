@@ -200,6 +200,21 @@ def trance_search():
     return render_template("pages/manage_vinyl.html", vinyl=vinyls)
 
 
+# Owner Query Function
+@app.route("/vinyl/owner/search")
+def owner_search():
+    """
+    Search trance vinyl collection & display results
+    """
+   # owner = mongo.db.vinyl.find().sort("owner", 1)
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    vinyls = list(mongo.db.vinyl.find({"owner": username}))
+   # vinyls = list(mongo.db.vinyl.find({"$text": {"$search": owner}}))
+
+    return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+
+
 # Add Vinyl Function
 @app.route("/vinyl/add", methods=["GET", "POST"])
 def add_vinyl():
@@ -493,6 +508,19 @@ def vinyl_card(vinyl_id):
     vinyl = mongo.db.vinyl.find_one({"_id": ObjectId(vinyl_id)})
     return render_template(
         "components/forms/vinyl_card.html", vinyl=vinyl)
+
+
+# Display user to admin display card
+@app.route("/admin/users/user_card/<user_id>")
+def user_card(user_id):
+    """
+    Display admins chosen user in a card
+    """
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    username = user.get('username')
+    vinyls = list(mongo.db.vinyl.find({"owner": username}))
+    return render_template(
+        "components/forms/user_card.html", user=user, vinyls=vinyls)
 
 
 @app.errorhandler(404)
