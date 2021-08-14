@@ -2,16 +2,60 @@
 {% block content %}
 {% include "components/navigation/navigation.html" %}
 
-<div class="container">
-    <h4 class="title is-3 has-text-centered col-pad text-my-white">About Shit</h4>
-    <div class="card">
-        <div class="card-content">
-            <div class="content">
-                My Vinyl Answer .... what's it all about !
-                Any vinyl collector knows the pain of going through their collection every once in a while
+
+<div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <h2 class="has-text-centered">My Vinyl Answer .... what's it all about !</h2>
+                    Any vinyl collector knows the pain of going through their collection every once in a while and
+                    trying to figure out what genre is
+                    what or what year a tune is?
+                    You try with your wee pieces of paper or card to seperate certain groups of vinyl apart but these
+                    don't last very long then
+                    it's back to having a whole bunch of vinyl.
+                    Well have no fear cause My Vinyl Anwser is here !
+                    It will keep track of your very personal vinyl collection where you can create, read, update and
+                    delete your way to vinyl heaven.
+                    Slide through your vinyl collection wherever or whenever you want and don't forget to check your
+                    collection before you buy another
+                    copy of that awesome tune that you've already bought 3 times.
+                    Anyways, I hope you like it ..... peace out !
+                    RaVeR76
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a href="{{ url_for('home') }}" class="modal-close is-large" aria-label="close"></a>
+</div>
+
+
+<!--
+<section class="is-long">
+    <div class="container">
+        <div class="">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <h2 class="has-text-centered">My Vinyl Answer .... what's it all about !</h2>
+                        Any vinyl collector knows the pain of going through their collection every once in a while and trying to figure out what genre is 
+                        what or what year a tune is?
+                        You try with your wee pieces of paper or card to seperate certain groups of vinyl apart but these don't last very long then 
+                        it's back to having a whole bunch of vinyl.
+                        Well have no fear cause My Vinyl Anwser is here !
+                        It will keep track of your very personal vinyl collection where you can create, read, update and delete your way to vinyl heaven.
+                        Slide through your vinyl collection wherever or whenever you want and don't forget to check your collection before you buy another 
+                        copy of that awesome tune that you've already bought 3 times.
+                        Anyways, I hope you like it ..... peace out !
+                        RaVeR76
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>  -->
 
 {% endblock %}

@@ -5,13 +5,13 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <section class="modal-card-body has-text-centered">
-                <strong>{{ username }}</strong>, are you sure you want to delete the user <strong>{{ users.username }}</strong> ?
+                <strong>{{ username }}</strong>, are you sure you want to delete the user <strong>{{ user.username }}</strong> ?
             </section>
             <footer class="modal-card-foot">
                 <div class="field column is-grouped is-grouped-centered">
                     <div class="control">
                         <a href="{{ url_for('users_list') }}" class="button my-white sign-bord">Cancel</a>
-                        <a href="{{ url_for('delete_users', users_id=users._id) }}"
+                        <a href="{{ url_for('delete_users', user_id=user._id) }}"
                             class="button my-red text-my-white sign-bord but-font">Delete</a>
                     </div>
                 </div>

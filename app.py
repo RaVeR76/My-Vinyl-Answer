@@ -323,12 +323,12 @@ def del_user_confirm(user_id):
     Call user delete modal for confirmation
     Pass users & username for personal modal
     """
-    users = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template(
         "components/modals/del_user_confirm.html",
-        users=users, username=username)
+        user=user, username=username)
 
 
 # Genre Deletion Modal For Confirmation Purposes
@@ -488,13 +488,13 @@ def edit_user(user_id):
 
 
 # Admin Delete User Function
-@app.route("/admin/users/delete/<users_id>")
-def delete_users(users_id):
+@app.route("/admin/users/delete/<user_id>")
+def delete_users(user_id):
     """
     Allow admin to delete a user
     Remove from the database
     """
-    mongo.db.users.remove({"_id": ObjectId(users_id)})
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
     flash("User Successfully Deleted")
     return redirect(url_for("users_list"))
 
@@ -510,7 +510,7 @@ def vinyl_card(vinyl_id):
         "components/forms/vinyl_card.html", vinyl=vinyl)
 
 
-# Display user to admin display card
+# Display selected users vinyl collection to admin display card
 @app.route("/admin/users/user_card/<user_id>")
 def user_card(user_id):
     """
