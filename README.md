@@ -470,7 +470,9 @@ They can then submit the new vinyl information for storing in their personal acc
 with their vinyl collection incrementation and redirect back them to their **My Vinyl** page .... simples !
 
 * **Implementation**  
-
+It basically does what it says on the tin so to speak. The user has the option from the navbar to select **add vinyl** once this is selected, the add vinyl page is opened where the add a vinyl form is located. The user fills the form out meeting the validation criteria set by me such as minimum characters. I added the scrolling year just to make it easier for the user to input this. The information required is the basic info of a vinyl. 
+Once the user hits the add thy vinyl button (submit) the ```add_vinyl()``` function is initiated and within this function, the added form data is collected into a dictionary called vinyl. This dictionary is then inserted as a new document within my vinyls collection in the database. Pop goes my wee flash message and the user is returned to their vinyl page with the new addition to the family on full view .... awwwww, it's a beautifull baby Techno !
+I could maybe have made the overall design of the form a little smaller so that it would fit on a large screen without scrolling but that's just a small detai, overall I still thnk it's cool and this is the *CREATE* functionality for the user.
 
 * **Test**  
 
@@ -491,7 +493,11 @@ I want the user to be able to edit any vinyl information on any individual vinyl
 **My Vinyl** page by clicking the edit button hidden within each of the vinyls collapsibles. Once on the Edit Vinyl page the user will have access to a pre-loaded form with the current vinyl information already filled in. The user can then edit whatever section they want and when they are happy, they can submit again to the database the editted vinyl info. Once this is complete I will redirect them back to their **My Vinyl** page again where they can check on their current updated vinyl. I'm just thinking that if the user has a large collection and they edit after scrolling down through a lot of them, if they decide to edit at this point, will a redirectiion send the user back to the top of the list??? I'll have to think about this one and test to see what happens :)
 
 * **Implementation**  
+Very similar to the add vinyl function mentioned above. Although, the add vinyl has it's own wee slot in the navbar the edit button is hidden behind each collapsible. The user has to click onto the tune they want to edit or delete. When they select the edit button, the ```edit_vinyl()``` function is activated and the selected vinyl id is passed to it. On the first instance the function finds the genres, the session user and the vinyl data. It then passes these to the edit vinyl page which populates the form for the user to edit. I utilised the add vinyl form as they are basically exactly the same. After the user has finished editing their vinyl they will then submit the form by pressing the *Edit Vinyl* button. This calls the ```edit_vinyl()``` function again but this time we are **POSTING** the form data for updating within the database. The obligatory flash message makes another appearance and the user is redirected to the edit vinyl page again. They can hit cancel to go back to their vinyl collection and see the changes that were made.
 
+I added some admin changes so that if you are admin you get redirected to a card that displays all the vinyl information and from here you can move onto edit or delete the vinyl. I had to do this as I was using the Bulma panel format and wanted to keep it this shape instead of adding two buttons to it, I created the vinyl card for pop upping and offereing the required options.... clever I know ! 
+I did encounter an annoying bug with this one tbh and it was the fact as admin the *owner* field kept getting wrote over as *admin* if i was admin and *none* if i left it out but I talk about this in the bugs section.
+Again, I am happy with overall edit vinyl functionality and this is the *UPDATE* functionality for the user therefore covered.
 
 * **Test**  
 
