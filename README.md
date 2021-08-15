@@ -209,6 +209,7 @@ Anyway, you can have a wee look at my wireframes below:
 ### **Features To Be Implemented**
 
 Share list with other users for possible sales or swaps if duplicates
+5 star ratings or something
 
 
 [Back to Top](#contents)
@@ -360,7 +361,11 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 
 
 * **Implementation**  
+I stated some sort of search function was required and that the DJ ones were important. I think at the start fo this project I was possibily aiming done the DJ route again but as it developed I thought it would be great for all vinyl enthusists not just DJs.
+Moving on, I added a little search bar above the users vinyl collection with a reset button and a search button for submitting the input to the ```vinyl_search()``` function. Wthin here, it searches through the vinyl for the matching criteria and then displays the matching vinyls. I set up a collection index (query) using the vinyl_name, genre_name, vinyl_artist, release_year and owner as these would be the main searching points i felt. So basically, the user can search all their vinyl as long as it matches the required query fields. If not then a **No Results Found** message is displayed. 
+The user can also reset the page so that it goes back to there full collection. Again it's pretty basic but as my knowledge gets better so will the search functions.
 
+In Admin access I use a Bulma panel to display all vinyl and I think it looks quite well. You may wonder why not use this format for the user vinyl collection? Like I said before as I got used to Bulma moreso at the admin part plus I loved the original authenticity of the users vinyl collection format too so didn't want to change it at this late stage. For my the users looks more appealing than the admin one to be honest. Anyway, the admin has basically the same display functions and search functions as the user, only I added some panel tabs for quicker search functionality. I created a function for each genre that when selected it displays all vinyl associated with that genre. Don't get me wrong, I know there is probably a simpler method that uses less code to do all five functions in one ... but unfortunately I don't have time on my side at this moment in time so this works for me and I can look at simplifying it at a later date. I'm still super happy I got it working so well, mind you :)
 
 * **Test**  
 
@@ -387,7 +392,7 @@ On the other hand though .... I have some vinyl tunes that the devil himself wou
 
 
 * **Implementation**  
-
+Honesty alert ! I just didn't have the time to implement this so I'll have to add this to the *features to be implemented* section up above. I really wanted this as it would be a cool feature but again this may be more from a DJ perspective again. As a DJ you want to play all the 5 star tunes and if ever a 1 star slipped into that set then the dancefloor would come crashing down round them .... and we wouldn't want that. Anyways, sorry but that's one that will have to be looked at in the future.
 
 * **Test**  
 
@@ -412,7 +417,10 @@ I want the website to work on all devices which I believe Bulma will be a great 
 
 
 * **Implementation**  
-
+As I have mentioned before that as I progressed through this project I believe I got a little better at python, flask, jinja and bulma so as you see in the admin section I deffo utilise the Bulma framework for this. Navigation is pretty simple and I utilise the Bulma Logo Navbar for my pages. I designed the logo in Paint and Paint 3D, using the Bubble font I got for my MS2 project. I added a vinyl image and there ye go ... a wee logo ! I invert the colour in my CSS as the logo is black and I wanted my navbar to be black eventually. I think it works quite well as a white (black inverted) logo on a black navbar. 
+From the navbar the non-signed-in user has a selection of *home*, *about*, *signup* or *login* to navigate to. Although, *home* is their original starting point anyway. Once logged in the user has the options of *profile*, *my vinyl*, *add vinyl* and *logout* which the navigation to and what they do, is pretty much self explanatory.
+The admin user only has the *manage site* and *logout* options as I felt this is all they need as an admin. Within here they can navigate to various sections as regards the structure of the whole database and do various admin kinda things. I added some small back buttons to make the admin section navigation a little easier so they wouldn't have to always go back to the main manage site page everytime.
+Overall I think the navigation works well.
 
 * **Test**  
 
@@ -435,7 +443,9 @@ or possibly some sleeve damage too. This will also be useful information if you 
 
 
 * **Implementation**  
-
+This was quite simple to be honest. I just added a textarea input to the add vinyl form so the user could add anythng they wanted within this description.
+This discription will then be stored in the vinyls document along with all the other form data for future referencing by the user or admin.
+Nothing really else much more to say on this one to be fair.
 
 * **Test**  
 
@@ -503,6 +513,26 @@ Why would they do that, you may ask? Well maybe they have grew up, unlike me, an
 Life can be cruel so they will have to sell their vinyl collection .... could be a slow and painful sale were they slip from youir grasp in ones and twos ... or it could be a highest bid f'ing wins the f'ing lot :(
 Anyhow enough gibber jabber fool, there will therefore be a button of the deletion family required. This delete button will be also be hidden within each of the vinyls collapsibles besdie the edit button above. Once the user clicks the delete button, I will add some defensive programming to make sure this is what the user wants to do.
 This will hopefully eliminate the chance of deleting a vinyl by accident or mistake. Again once the user has completed their vinyl deletion, I will redirect them back to their **My Vinyl** page where their deleted vinyl has been removed and also removed from the database.
+
+* **Implementation**  
+
+
+* **Test**  
+
+
+* **Result**  
+
+
+* **Verdict**
+
+
+
+### ADMIN SHIT NEEDS ADDED HERE AND AT USER STORIES OOSSIBLY
+
+#### User Story :
+
+* **Plan** 
+
 
 * **Implementation**  
 
