@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="notification my-blue col-pad is-centered not-pos">
-        <p class="has-text-centered text-my-white">Manage Users</p>
+        <p class="has-text-centered text-my-white">Manage Vinyl</p>
         <figure class="image is-24x24 back-pos">
             <a href="{{ url_for('manage_site') }}">
                 <img src="/static/images/back.png" class="round-butt">
@@ -43,7 +43,6 @@
                         <a href="{{ url_for('house_search') }}">House</a>
                         <a href="{{ url_for('techno_search') }}">Techno</a>
                         <a href="{{ url_for('trance_search') }}">Trance</a>
-                        <a href="{{ url_for('owner_search') }}">Users</a>
                     </p>
                     <div class="panel-size">
                         {% if vinyl|length > 0 %}

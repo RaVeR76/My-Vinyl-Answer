@@ -201,18 +201,18 @@ def trance_search():
 
 
 # Owner Query Function
-@app.route("/vinyl/owner/search")
-def owner_search():
+#@app.route("/vinyl/owner/search")
+#def owner_search():
     """
     Search trance vinyl collection & display results
     """
    # owner = mongo.db.vinyl.find().sort("owner", 1)
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    vinyls = list(mongo.db.vinyl.find({"owner": username}))
+  #  username = mongo.db.users.find_one(
+ #       {"username": session["user"]})["username"]
+ #   vinyls = list(mongo.db.vinyl.find({"owner": username}))
    # vinyls = list(mongo.db.vinyl.find({"$text": {"$search": owner}}))
 
-    return render_template("pages/manage_vinyl.html", vinyl=vinyls)
+ #   return render_template("pages/manage_vinyl.html", vinyl=vinyls)
 
 
 # Add Vinyl Function

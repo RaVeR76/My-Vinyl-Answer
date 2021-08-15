@@ -147,6 +147,12 @@ Below is an image of the chosen colours .....
 
 ![My-Vinyl-Answer Colours](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/color-scheme.png)
 
+Follow up on the colours used above.....
+About half way in to this project whilst I love the colours above I just thought the overall website looked a bit boring and plain. so I jumped on the Google Image train to trans-central and searched for some free vinyl images I could use to revamp this project. I found a few and tried them but then I came across the reddish blueish vinyl on the deck one and I thought that's it there. I placed it as my body background and fell in love. The issue was my wee colours above were close but not close enough. I still use them for borders, buttons and my vinyl collasibles because they still fitted beautifully there but for the headers and titles then didn't. 
+So I used an online site called [Image Color Picker](https://imagecolorpicker.com/en) to select some colours from my image .... the red and the blue to be precise and using them with the image as a backdrop works really well throughout website, in my opinion but who's to say I'm right ... eh ! I do and it looks cool as feck .... alright ha ha !
+That's the story behind the colour changes but I had to, just to spice a little life into the visual aspect of the site.
+P.S. I'm not sure if I am to change the orginal colours out or keep them up as these were my intial thoughts but the Smoky Black is the only O.G. left from the orginal line up.  
+
 [Back to Top](#contents)
 
 ## **Wireframes**
@@ -247,7 +253,15 @@ I will add some defensive programming so that usernames will not be duplicated. 
 
 
 * **Implementation**  
-Password will be encripted by using hash method --- elaborate
+I created a simple *Sign up* page which has a simple form made from Bulma components. Onve the new user fills these in and hits the button. My ```signup ()``` function
+kicks into action and checks if the username exists, if so let the user know by a wee flash message and return them to the signup page.
+If the user doesn't exist then I take their filled in data and store it in a dictionary I called *signup* which I then *insert* into the Mongo Database. I also add the username to the session cookies for utilising whilst they are logged in. Let's not forget my wee flash message to welcome them to my website and  then send them to their profile page.
+I added an input for a the user to add a url of a pic they can use as a profile pic. It works ,ost of the time if the truth be told but it's not perfect at present. Google images says to share the image and then copy the link this way but i find this down't work. If you find the image then right click and copy image addreess then this works for me. ANyways, I've added like a big smiley raver face as a default image so no one should be left with blank image or broken link.
+I added validation to all inputs and added some requirements like min lengths or @ for the email.
+Password will be encripted by using hash method through the **werkzeug.security** utlity ..... generate_password_hash for generating and check_passowrd_hash for, well you've guessed it ... checking ha ha ! So basically your wee password is taken and mashed, hashed, bashed up and stored in the database and when you login it becomes unbashed, unhashed and unmashed so that it can be compared with the login password at the login stage. 
+That's the basic terms of it anyway .... all this hash talk is making me ***salivate*** to be honest, so let's move on quickly.
+I also added some Caps Lock code for super cool effect because if the truth be told, I sat for about an hour one evening trying to figure out why my login wasn't working and it was because i had Caps Lock on. You're thinking but should you not have noticed this at the username part ... well no is the answer because I was always clicking the selection from my input pop down history thingy so was never actually inputting my username. Anyway, that's the truth behind the reason why I have a Caps Lock check on the password entries.
+Finally, I had to put the Javascript for Caps Lock function on each password page because when it was in my main js file, it conflicted with the users vinyl collapsible but this was a bug which I'll talk about in the bugs section.
 
 * **Test**  
 
@@ -276,7 +290,9 @@ In production, you could probably give the user the ability to delete their prof
 for the ability to delete users.
 
 * **Implementation**  
-
+Ok so like I said above, the user signs up for the first time then they have access to their personal space moving forward. They can then use the simple login page for future logins. All they need here is their unique username and password. These two pieces of info are then passed to the ```login()``` function which basically checks the login combo against the database. If the user is unknown it will flash a generic error message and redirect to the login page again. If the user is known then it checks the users password using the hash method mentioned previously. If the password is incorrect it will flash the generic message and redirect the user to the login page yet again. 
+Now after all them mind challenging tests that if the user gets their username right and the correct password is entered ... they will then be accepted into their own wee world of My Vinyl Answer :) 
+Within the realms of My Vinyl ANswer they will first see their profile page then they will have acess to their personal vinyl collection ... obviously once they build it up over time. They will have access to the add vinyl form where they can start to build their collection. Finally a logout option. I know it's pretty basic for the user but it's got the potential to expand and be much better. Time constraints and lack of knowledge at this stage but as the project progresses, I think you'll see it gets better as I utilise Bulma a lot more as in the Admin secton.
 
 * **Test**  
 
@@ -298,7 +314,7 @@ Maybe it's just me that has an issue with keeping track of my vinyl but I know I
 generally don't know how many they have, what genre they are or what year they came out. I have seen some really well organised vinyl but these were
 basically like alphabetically but by genre. I just want the user to have a simple database of all their vinyl, that they can call upon using my application.
 The hard part is adding all the vinyl at the start but once it's done .... it's done !  
-I wish there was an easier way like scanning the barcode or something but some of these vinyls are pretty oldish and I honestlty don't kmnow if the barcode would 
+I wish there was an easier way like scanning the barcode or something but some of these vinyls are pretty oldish and I honestlty don't know if the barcode would 
 work or not. I'm now kinda intrigued to see if it would work anyway for possible a future add on :) I'll come back to that one and let you know sure !
 The point being that I want the user to be able to add, delete, lookup and edit any of their own personal vinyl collection as and when required.
 The database will store the name, the artist, the genre, the label, a brief description and the release year. 
@@ -309,7 +325,13 @@ Anyway, it's a simple database that the user can salivate over anytime or anywhe
 
 
 * **Implementation**  
-
+Each user has the ability to add vinyl with the add vinyl form. Once the user fills the correct details out that match my validation then this form data is passed into the ```add_vinyl()``` function where it adds this new vinyl to the database.
+I added the *secret* code of ```"owner": session["user"]``` to the document so that I can utilise this to display the users own vinyl later on. This data is inserted into the Mongodb database and my standard flash message makes an appearance as usual. I'm kind of thinking about added the Flash Gordon sound clip eveytime it pops up .... Flash !!! Woooo-ho .... Defender Of The Universe !!! Ha ha, I just googled that clip to make sure it was right, still not sure by the way but did you know that Ming The Merciless, Flash Gordons evil arch nemisis was actually from a planet called ***MONGO*** ..... sure you couldn't write it, could ye !!! That's one of them fate thingys for sure ... love it !
+Sorry, got off track there for a minute with my Ming Moment, so once the user adds some vinyl they will see their My Vinyl collection getting bigger.
+As I said above about the secret code, I use ```{% if session.user|lower == vinyl.owner|lower %}``` in the users main vinyl page html to only allow the current user in session to only see their own vinyl and no one elses (unless you're admin). Within their Vinyl Collection environment they can see all their vinyl and they have the ability to edit and delete each vinyl also. 
+They will be able to edit their vinyl by clicking the edit button which calls the ```edit_vinyl()``` function and passes the vinyl id of the chosen vinyl into it. The funsction then populates the edit_vinyl_form for the user to edit. Once the user makes their changes they can submit the changes back to the ```edit_vinyl()```function which updates the vinyl's document and redirects them to the edit vinyl form again. A cancel will take them back to their vinyl collection where the changes will have been updated too. 
+The user has the option to delete a vinyl from their collection too. Once they choose to delete one, the delete onfirmation modal is called for where I double check that they (the user in bold) wants to delete the vinyl (added name of vinyl in bold too). Once the user, selects to confimr delete then ```delete_vinyl()``` function is called for where the vinyl id is passed to. This function then deletes the document asscociated with the passed vinyl id and redirects the user to their vinyl collection again, not forgetting about the wee flash message. Here the user can see that their vinyl has been deleted from the list too. 
+I know the user vinyl interface is again pretty basic but this was the first thing i developed and as I got to use Bulma, I realised I could have used a lot more of it's components. Honestly, as basic as it looks, I still love it because I created it from the W3 Schools collapsibles and made it my own. I know it can  be made better but for me it just suits this wee project.
 
 * **Test**  
 
@@ -707,7 +729,7 @@ Added back button code from W3Schools
 
 
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blurred_bg
-background for home page logo taken from here
+background for home page logo taken from here  
 
 
 passowrd issues when admin editing user - had to add some code to copy users passord & add it to new edited user so it wouldn't get wiped :)
