@@ -539,7 +539,7 @@ Again, I am happy with overall delete vinyl functionality and this is the *DELET
 
 
 
-### ADMIN SHIT NEEDS ADDED HERE AND AT USER STORIES OOSSIBLY
+### ADMIN SHIT NEEDS ADDED HERE AND AT USER STORIES POSSIBLY
 
 #### User Story :
 
@@ -585,223 +585,205 @@ Again, I am happy with overall delete vinyl functionality and this is the *DELET
 ## **Bugs**
 ---
 
-### **Bug Title**
+### **Blue In The Face**
 
 * **Bug**
-
+Simple one to start off with ....
 Couldn't get dropdown border colour to change to my-blue which did my head in tbh . I tried everything but couldn't get it to work ......
-until I remembered something !important (pun inteneded) ..... this solved my issue as the 'select' class was overruling all my tries !!!
-
+until I remembered something !important (pun intended) ..... this solved my issue as the 'select' class was overruling all my tries !!!
 
 * **Fix**
-
+I remembered the **!important** property so used this to solve it by making all the select borders and input borders my-blue.
 
 * **Verdict**
+Easy fix to be fair but all works well now.
 
-
-### **Bug Title**
+### **Modal lay-od-lay-od-lay-he-hoo**
 
 * **Bug**
-tried to add jquery for calling the modal when you clicked on the 'delete button' but it wouldn't work.
-It worked when I used say a class = p1 but not an id = p1 .... couldn't figure it out for ages .... did my head absolutely in tnh
-but then i realised I was created id = p1 numourous times as it was within a for loop so therefore it was pissed off because there should only one 'id' & thats why it wouldn't work .... glad I figured it out tbh :)
-
+I tried to add jquery for calling the modal when you clicked on the 'delete button' but it wouldn't work.
+It worked when I used say a class = p1 but not an id = p1 .... couldn't figure it out for ages .... did my head absolutely in this one ha ha !
+Probably a bit of noob code to be honest as well but sure .... it's the joys of gaining experience.
 
 * **Fix**
+I realised, eventually, that I was creating id = p1 numourous times as it was within a for loop so therefore it was pissed off because there should only one 'id' & thats why it wouldn't work .... glad I figured it out tbh :)
 
 
 * **Verdict** 
+In the end I settled for calling a modal function which in turn diaplays the modal page for the suer or admin .... but a bug is a bug and I fixed it so might as well share.
 
-
-### **Bug Title**
+### **Modal lay-od-lay-od-lay-he-hoo Two**
 
 * **Bug**
-I couldn't get my modal to delete the correct db file & it would just delete the first one in the list.
-The selected vinyl_id wasn't linking to my delete route.
-SO I moved the modal to it's own page & created an app.route to it when the delete button is pressed.
-ANd I pass through the vinyl details using vinyl_id.
-so I can display any vinyl details I want plus pass the vinyl_id onto the delete route.
-
+I couldn't get my modal to delete the correct database document and it would just delete the first one in the collection.
+The selected vinyl_id wasn't linking to my delete route app.
 
 * **Fix**
-
+I tried a few things but in the end I moved the modal to it's own page & created an app.route to it when the delete button is pressed and I pass through the vinyl details using vinyl_id. This is so I can display any vinyl details I want plus pass the vinyl_id into the delete vinyl function. When the delete button in t he modal is pressed the vinyl gets deleted.
 
 * **Verdict** 
+I think this works really well now and by passing in the user also I could confirm with them on a personal level if they really wanted to delete that specific vinyl.
 
-
-### **Bug Title**
-
-* **Bug**
-Spent ages trying to figure out why my users database values would not display on my profile page as per user
-I was using jinja logic to display them but forgot to write the database name with each value i.e. {{ fullname }} should have been {{ users.fullname }}
-Pretty raging after that tbh but sure .... another learning poiunt noted & will be easier to notice next time !
-
-
-* **Fix**
-
-
-* **Verdict**
-
-
-### **Bug Title**
+### **Jinja Ninja Not So Logic**
 
 * **Bug**
-email validation wasn't working .... I had type="text" instead of type="email"
+Spent ages trying to figure out why my users document values would not display on my profile page as per user
+I was using jinja logic to display them so should have been simples ... right !
 
 * **Fix**
-
+Well butt munch here forgot to write the database name with the proper jinja logic value. I was using {{ fullname }} when it should have been {{ users.fullname }}
 
 * **Verdict**
+Pretty raging after that tbh but sure .... another learning point noted & will be easier to notice next time !
 
-
-### **Bug Title**
+### **Email Wasn't Playing Ball**
 
 * **Bug**
-Couldn't figure out how to get the profile pic in the middle of the form. So tried putting the image in the middle of 3 columns.
-And making the outer columns set to auto so that the middle column and therefore the image would stay in the middle of the device !
+Another simple one ....
+Email validation wasn't working
 
 * **Fix**
-
+I had type="text" instead of type="email"
 
 * **Verdict**
+Easy solution
 
-
-### **Bug Title**
+### **Image Not Rights**
 
 * **Bug**
-After a mentor sesh he said it would be good to have a default image in case the users url didn't load. well I tried various pieces of caode and couldn't get anything to work on a user I had made up but didn't have a profile pic url loaded. I tried for ages then realised he didn't have a profile_pic field in his database which didn't help because I had him made up before I decided to add a profile pic for to add to their Envinylonment (if I keep saying it maybe it'll catch on ha ha). Once I added this manually to the database the code I had be trying started to work ..... happy yet angry happy yet angry !!! Anyways, I tried have another url based image as back-up but while it maybe worked the first time, it was maybe missing on a reload and then back into vision on another reload. Not sure why this was happening to be honest but I didn't want to take any cvhances so I got a smiley face from my MS1. I edited Smiley Face image in Paint3D by removing some writing and I also removed the background. I added this to my images folder and using the code ```<img src="image.png" onError="this.onerror=null;this.src='/images/noimage.gif';" />``` I added my jinja link and my default Smiley Face ..... loads everytime ye boy ye (P.S. please don't come back saying it didn't work for you ..... just lie to me and say *worked dead on RaVeR76 !*)
-https://stackoverflow.com/questions/92720/jquery-javascript-to-replace-broken-images?page=1&tab=votes#tab-top
+Tried various ways and pieces of code to try get my image centered eveningly in the profile section. I know there is probably a simple solution but I settled on my wee fix.
 
 * **Fix**
-
+I tried putting the image in the middle of 3 columns and making the outer columns set to auto so that the middle column and therefore the image would stay in the middle of the device. It worked so I am happy and that's all that matters ha ha and all users too obviously ... I'm not that selfish ! 
 
 * **Verdict**
+This wee fix worked well and solved my bug so life is better for now .... woah stay away from the dark side RaVeR76 !
 
+### **It's Not The Image's Default**
 
-### **Bug Title**
+* **Bug**
+After a mentor sesh he said it would be good to have a default image in case the users url didn't load. Well I tried various pieces of code and couldn't get anything to work on a user I had made up but didn't have a profile pic url loaded. I tried for ages then after some glorous investigative work figured out he didn't have a profile_pic field in his document which didn't help because I had him made up before I decided to add a profile pic input, to add some flavour to their Envinylonment (if I keep saying it maybe it'll catch on ha ha).
+
+* **Fix**
+Once I added this manually to the database the code I had be trying started to work ..... happy yet angry happy yet angry !!! Anyways, I tried another url based image as back-up but while it maybe worked the first time, it was maybe missing on a reload and then back into vision on another reload. Not sure why this was happening to be honest but I didn't want to take any chances so I got a smiley face from my MS1. I edited the Smiley Face image in Paint3D by removing some writing and I also removed the background. I added this to my images folder and using the code ```<img src="image.png" onError="this.onerror=null;this.src='/images/noimage.gif';" />``` I added my jinja link and my default Smiley Face ..... Loads everytime ye boy ye (P.S. please don't come back saying it didn't work for you ..... just lie to me and say *worked dead on RaVeR76 !*)
+
+* **Verdict**
+Hopefully it works either way, I really want the user to have their own image but at least if it doesn't work they have a happy smiley face. I think it all depends on you copy the link from the image. Google tells you to share then copy link but this doesn't work for me. If i right click and copy image address and paste that then this works everytime for me.
+
+### **Nobody Likes A Faker**
 
 * **Bug**
 I honestly don't know why this keeps happening because with my MS2 a similar UFO (Unidentified Fecking Oversight) happened during my mentor session. 
-Last night he showed me his ... screen and my wee project was displaying proudly but I could see two vinyl being displayed. I was like how come there are two vinyls being diaplayed when you have't even logged in .... mind blown again. With my MS2 his cards would show the actually card underneath before he evn turned it whereas on my PC is was perfect. It was a Google vs Safari issue which I couldn't resolve and I thought this was another compatability issue. Anyway, Detective RaVeR was on the case and after some clever analysing, snooping around, interogation, I found that the culprit was none other than me .... RaVeR ! I hadn't added any *Owner* field to their individual collection document within Mongodb so my code I wrote for vinyl only to be displayed by the user would not work. Owner is a hidden field (not for display) that I use to do this and gets added when a new vinyl is added to their collection. Within the jinja for loop, I check that the current user ```session.user``` is the same as the owner ```vinyl.owner``` for each vinyl and if they are, their vinyl's will be displayed on screen.
-
+Last night he showed me his ... screen and my wee project was displaying proudly but I could see two vinyls being displayed. I was like how come there are two vinyls being displayed when you have't even logged in .... mind blown again. With my MS2 his cards would show the actually card underneath before he even turned it whereas on my PC is was perfect. It was a Google vs Safari issue which I couldn't resolve and I thought this was another compatability issue.
 
 * **Fix**
-
+Anyway, Detective RaVeR76 was on the case and after some clever analysing, snooping around, interogating, I found that the culprit was none other than me .... RaVeR76 ! I hadn't added any *Owner* field to their individual collection document within Mongodb so my code I wrote for vinyl only to be displayed by the user would not work. Owner is a hidden field (not for display) that I use to do this and gets added when a new vinyl is added to their collection. Within the jinja for loop, I check that the current user ```session.user``` is the same as the owner ```vinyl.owner``` for each vinyl and if they are, their vinyl's will be displayed on screen.
 
 * **Verdict**
+My fix works perfect as I have tried loads of fake users to make sure my code is working. I've that many passowrds in my head it's about to explode, should've just used the same one over and over again for test purposes. All fake users display their own vinyl so everything works well. 
 
-
-### **Bug Title**
+### **Vinyls M.I.A.**
 
 * **Bug**
 I was refactoring all my code so I was doing it very slowly & in small parts so i didn't create a major headache on a Saturday night.
-SO when I refactored a part say the modal i waould test everything linked to that modal and in fact I would just go through the whole website to make sure it all worked.
-Anyway I was testing edit and delete from the vinyls page. I noticed that the when I made an edit and clicked the edit button it stayed on the edit vinyl page which is correct but when O went back the my vinyl page .... the wee vinyl had did a Hoodini and disappeared ! I was like WTF !
-So I added more vinyl and kept trying it but yip ... same thing again. I followed the paths between everything and couldn't see anything that was out of place. 
+So when I refactored a part say the modal I would test everything linked to that modal and in fact I would just go through the whole website to make sure it all worked.
+Anyway I was testing the edit and delete functions from the vinyls page. I noticed that when I made an edit and clicked the edit button it stayed on the edit vinyl page which is correct but when I went back to the my_vinyl page .... the wee vinyl had did a Hoodini and disappeared ! I was like WTF !
+I added more vinyl and kept trying it but yip ... same thing again. I followed the paths between everything and couldn't see anything that was out of place. 
+
+* **Fix**
 I did a bit more investigating and went to my Mongodb collections and low n behold, there was all the vinyl that I had been adding. They had passed through the My Vinyl Anwser Bermuda Triangle or something mad-doggy like that.
 Only messing, what was happening was that when I created the add_vinyl function, I had added an ```owner``` field to utilise it when displaying the users own vinyl collection. So when the user edited the vinyl they were only editing the original fields, as I had not added ```owner``` to the edit_vinyl function .... D'OH !!!!
 To be honest it wasn't really deleting, as you know, it was just deleting the ```owner``` field and when it reloaded the users **My Vinyl** page again, the edited vinyl was just not loaded from the database as it only displays the users *aka owners* vinyl.
 So I simply rectified this by adding ```"owner": session["user"]``` to the ```vinyl_edit``` list before updating the database document in MongoDb.
+
+* **Verdict**
 The edit function worked perfectly after this error was solved :)
 
-* **Fix**
-
-
-* **Verdict**
-
-
-### **Bug Title**
+### **Hungry? Have A NavBar !**
 
 * **Bug**
-I refactored everything as mentioned about so I only had the navbar & base to refactor. Did the navbar but had some sizing issues afterwards.
-When the navbar was in the base it was covering the whole top part of the page but when I moved it to the components folder & used jinja logic to link it, it was only covering a smaller section. I found that becoasue I had added it to each page in the pages folder using Jinja logic it then becasme an extension of the base and this extension is sanwiched in it's own continer in the base html. Therefore the navbar was a navbar for the container. I therefore removed the main div with container class from the base.html and also the header section. This solved the navbar issue but the rest of the content was wider on each page ha ha .... it never rains but it pours as they say !
-Solution was to enclose each page in the pages folder within a div with a container class, which I did and everything look scool again :)
+I refactored everything as mentioned above, so I only had the navbar and base to refactor. I did the navbar but had some sizing issues afterwards.
+When the navbar was in the base it was covering the whole top part of the page but when I moved it to the components folder and used *Jinja Logic* to link it, it was only covering a smaller section at the top.
 
 * **Fix**
-
+I found that because I had added it to each page in the pages folder using *Jinja Logic* it then became an extension of the base and this extension is sanwiched in it's own container in the base html. Therefore the navbar was a navbar for the container. I therefore removed the main div with container class from the base.html and also the header section. This solved the navbar issue but the rest of the content was wider on each page ha ha .... it never rains but it pours as they say !
+Solution for this bug within a bug was to enclose each page in the pages folder within a div with a container class, which I did and everything looks cool again :)
 
 * **Verdict**
+ALl looks good and the navigation bar looks perfect.
 
-
-### **Bug Title**
+### **URL Avin A Laff**
 
 * **Bug**
-Profile Issue Again - Didn't realise you could use a type="URL" for extra validation as I was worried about users just typing jibber jabber fool.
-I had tried javascript methods, I was thinking am I going to have to write logic to cover every eventuallity of what the user may or may not type .... this is going to take ages. After a little bit of reaearch that wee type="URL" aved the day. 
-It works a treat alomg with the *required* attribute so the user has to type a valid url before submitting their signup form.
-```https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url```
+Profile Issue Again - Didn't realise you could use a ```type="URL"``` for extra validation as I was worried about users just typing jibber jabber fool.
+I had tried javascript methods, I was thinking am I going to have to write logic to cover every eventuallity of what the user may or may not type .... this is going to take ages.
+
+* **Fix**
+After a little bit of reaearch that wee ```type="URL"``` saved the day. 
+It works a treat along with the *required* attribute so the user has to type a valid url before submitting their signup form.
 If it doesn't work then it goes to the default pic .... a big raver smiley face :)
 
-* **Fix**
-
-
 * **Verdict**
+Very happy with the solution and the results.
 
-
-### **Bug Title**
+### **Moving Folder**
 
 * **Bug**
-Of the back of this validation adjustment, I found another bug that had raised it's ugly wee head, my default pic would not display no matter what.
-at first I thought it had some connection with the URL validation so i checked it all, I deleled to see as well but still no Smiley Face. I was beginning to crack uo to be honest but I kept going. I checked the database to see if anything was untoward in there but everything looked okay. I foujd the bug by copying my Smiley Face src link and pasting it in over the Jinja expression just to see if it displayed when first called but NO ... it did not either ! What was heppening you may ask cause I did too ... well when I was doing my Refacrtoring thing I had moved my profile page into a new pages folder so therefore my default link didn't work no more. I just needed to add a wee ```/``` at the start of the link which solved the problem and everyone who's profile pic url does not work will get a Big Smiley Face instead :)
+Off the back of this validation adjustment above, I found another bug that had raised it's ugly wee head, my default pic would not display no matter what.
+At first I thought it had some connection with the URL validation so I checked it all, I deleted it also just to see as well but still no Smiley Face. I was beginning to crack up to be honest but I kept going. I checked the database to see if anything was untoward in there but everything looked okay.
 
 * **Fix**
-
+I found the bug by copying my Smiley Face src link and pasting it in over the Jinja expression just to see if it displayed when first called but NO ... it did not either ! What was happening you may ask cause I did too ... well when I was doing my Refacrtoring thing I had moved my profile page into a new pages folder so therefore my default link didn't work no more. I just needed to add a wee ```/``` at the start of the link which solved the problem and everyone who's profile pic url does not work will get a Big Smiley Face instead :)
 
 * **Verdict**
+Happy with the solution and it was simple anyway just a silly mistake.
 
-
-### **Bug Title**
+### **Pop A Cap In Your Lock**
 
 * **Bug**
+I tried to log in and I couldn't. I tried using my various test login details but none would work. This was just after I had did some button styling so I was like there should be no connection here. It did my head in for about an hour trying to figure it out. I investigated anyway and eventually found the reason.... I had **CAPS LOCK ON !** How annoying yet secretly deceptive in that I wouldn't have realised that and didn't realise that, hence me delving into my code to find the reason.
 
-I tried to log in and I couldn't. I tried using my various test login details but none would work. This was just after I had did some button styling so I was like tghere should be no connection. I investigated anyway and eventually found the reason.... I had CAPS LOCK ON ! How annoying yet secretly deceptive in that I wouldn't have realised that and din't realise that hence me delving into my code to find the reason.
-Solution - add some detection for passwords as the user cannot see any input values. I found some cool yet simple code for this in W3Schools, link shown below :
-https://www.w3schools.com/howto/howto_js_detect_capslock.asp
+* **Fix**
+Added some detection for passwords as the user cannot see any input values. I found some cool yet simple code for this in W3Schools and link is in the credit section below.
 I also used the Bulma classes of help and is-danger for colour, I removed the red from the W3School example as it overide it.
-I think it works well and will stop other users from being caught out like the developer himself ha ha !
-
-* **Fix**
-
 
 * **Verdict**
+I think it works well and will stop other users from being caught out like me, RaVeR76, the developer himself ha ha !
 
-
-### **Bug Title**
+### **Caps Lock Caps Collapsibles From Collapsing**
 
 * **Bug**
-After I added Caps Lock On code my collapsibles wouldn't work, it worked when I swapped the position of the JS code for them around.
+After I added the Caps Lock On code my collapsibles for the users vinyl wouldn't work, it worked when I swapped the position of the JS functions around for them within the js file.
+
+* **Fix**
 I tried various test to figure out why it was doing this but I was spending too much time when I had a solution but I'll try come back to it & figure it out.
 Think it's to do with the display class but not sure. It was a head melter for sure.
 
-
-* **Fix**
-
-
 * **Verdict**
+Spent too much time on it so just used the solution above which works.
 
-
-### **Bug Title**
+### **Conflicting Functions**
 
 * **Bug**
-dropdown issues -its this new keyboard its a scud .... I can't get my JS to work with two functions, they are conflicting with each other for some reason & i've spent about 6 hours on the bastardo. It's my Caps On function and my dropdown selector function so I'll blank the Caps On out for a while cause I need to move on.
-I decided to remove the password script from my main js file and place it on each of the login and signup pages. This solved the problem although I am reluctant to put any script on any of my pages, I hab=ve no alternative at the minuate as I want both functions to work :)
+Dropdown issues -it was the new keyboard it was a complete scud I swear .... I couldn't get my JS to work with two functions, they were conflicting with each other for some reason and I'd spent about 6 hours on the two feckers. It was my Caps Lock On function and my dropdown selector function so I'll blank the Caps On out for a while cause I need to move on.
 
 * **Fix**
-
+I decided to remove the password caps lock script from my main js file and place it on each of the login and signup pages. This solved the problem although I am reluctant to put any script on any of my pages, I have no alternative at the minute as I want both functions to work :)
 
 * **Verdict**
+Fix works well and both functions are functioning lol.
 
-
-### **Bug Title**
+### **Super Duper Admin CRUD Box**
 
 * **Bug**
-The keyboard is deffo a scud ha ha ..... just spent at least four hard spent evenings probably about 25 hours or so trying to get my all singing all dancing Admin CRUD box working and in the end I've had to give up. I couldn't get the certain functions working together and my JS was playing up again. Really guttted on this one to be hnest beacuse I put so much effort in and I couldn't get it right. Suppose it's another hard lessin to take but maybe if I had more time I would've got there in the end. If I have time at the end I will give it another go. But for now I have to move on and get my Admin CRUD simplified :(
+The keyboard is deffo a scud ha ha ..... just spent at least four hard spent evenings probably about 25 hours or so trying to get my all singing all dancing Admin CRUD box working and in the end I've had to give up. I couldn't get the certain functions working together and my JS was playing up again. Really guttted on this one to be honest because I put so much effort in and I couldn't get it right. Suppose it's another hard lesson to take but maybe if I had more time I would've got there in the end. If I have time at the end I will give it another go. But for now I have to move on and get my Admin CRUD simplified :(
 
 * **Fix**
-
+I made a simple manage site page where the admin can navigate to the various collections within the My Vinyl Answer database.
+Within each collection the admin can carry out various CRUD functions and various searches. The vinyl panel probably could have been utilised across all collections but I tried using this for my super duper CRUD box and failed so I made a simplier approach for the Genre and User management. I tried the panel again for the vinyl collection only and figured it out. I think it works well but by this time it was too late to go back and change out the other two for panels plus they worked welll anyway withe there individual cards on display.
 
 * **Verdict**
-
+The more I used the Bulma framework the better I got as you can see this within Admin section, the last section I did. The bug is really hard to explain because it was one of them that I just lost control with so had to delete loads of test code etc and get back to were I was before I went into one. I think all admin sections look fine and maybe the all in one admin page will come with an update at a later time.
 
 
 ### **Bug Title**
@@ -879,6 +861,8 @@ https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div 
 
 https://www.w3schools.com/howto/howto_css_delete_modal.asp - Delete Confirmation Model
 
+Caps Lock On code taken from W3Schools - https://www.w3schools.com/howto/howto_js_detect_capslock.asp
+
 got database collection names from this code - https://stackoverflow.com/questions/9805451/how-to-find-names-of-all-collections-using-pymongo
 
 Code for scroll on Admin Vinyl - https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list
@@ -886,6 +870,10 @@ Code for scroll on Admin Vinyl - https://stackoverflow.com/questions/21998679/cs
 Added back button code from W3Schools - https://www.w3schools.com/jsref/met_his_back.asp
 
 background for home page logo taken from here - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blurred_bg
+
+Code for default image fix taken from here - https://stackoverflow.com/questions/92720/jquery-javascript-to-replace-broken-images?page=1&tab=votes#tab-top
+
+Code for url bug solution - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url
 
 
 
