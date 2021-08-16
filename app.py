@@ -25,7 +25,7 @@ def home():
     """
     Homepage Function
     """
-    #session.clear()
+    session.clear()
     return render_template("pages/home.html")
 
 
