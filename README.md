@@ -69,7 +69,6 @@ Again, this is were my project comes in ! I want to have a once and for all list
 * As a user, I want to delete any vinyl I want (if I sell one personally or on another site)
 
 
-
 ### **Site Owner Goals**
 
 * To have a great website that vinyl collectors can keep track of their personal vinyl collection
@@ -151,7 +150,7 @@ Follow up on the colours used above.....
 About half way in to this project whilst I love the colours above I just thought the overall website looked a bit boring and plain. so I jumped on the Google Image train to trans-central and searched for some free vinyl images I could use to revamp this project. I found a few and tried them but then I came across the reddish blueish vinyl on the deck one and I thought that's it there. I placed it as my body background and fell in love. The issue was my wee colours above were close but not close enough. I still use them for borders, buttons and my vinyl collasibles because they still fitted beautifully there but for the headers and titles then didn't. 
 So I used an online site called [Image Color Picker](https://imagecolorpicker.com/en) to select some colours from my image .... the red and the blue to be precise and using them with the image as a backdrop works really well throughout website, in my opinion but who's to say I'm right ... eh ! I do and it looks cool as feck .... alright ha ha !
 That's the story behind the colour changes but I had to, just to spice a little life into the visual aspect of the site.
-P.S. I'm not sure if I am to change the orginal colours out or keep them up as these were my intial thoughts but the Smoky Black is the only O.G. left from the original line up.  
+P.S. I'm not sure if I am to change the original colours out or keep them up as these were my intial thoughts but the Smoky Black is the only O.G. left from the original line up.  
 
 [Back to Top](#contents)
 
@@ -786,52 +785,131 @@ Within each collection the admin can carry out various CRUD functions and variou
 The more I used the Bulma framework the better I got as you can see this within Admin section, the last section I did. The bug is really hard to explain because it was one of them that I just lost control with so had to delete loads of test code etc and get back to were I was before I went into one. I think all admin sections look fine and maybe the all in one admin page will come with an update at a later time.
 
 
-### **Bug Title**
+### **I Vaunt All Zee Vinyl**
 
 * **Bug**
-BUG - Admin issues when editing a vinyl, it changed the vinyl owner name to admin 
-Still trying to gigure this shit housery out
-This mofo ```owner = vinyl.get('owner')``` saved the day. I spent hours on this one as well .... unbelieveable I swear. Once you fix one wee bug another pops it's ugly head up. I wanted to utilize te edit_vinyl as both admin & a user but the owner key was causing my major headaches as the value was becoming admin then null & I couldnt figure it out for ages but then i found that piece of code, it worked.
-Only now when the page returned the flash message had the new name but the page didn't change. I got sstuvk on this one too. I coundn't figure out how to redirect to fucntion in my app.py and pass an _id too. I had to settle for finding the vinyl & redering the template again. Sorry if it was not the logical method but I'm still learning & my head is fried at the minute lol !
+Admin issues when editing a vinyl because it changed the vinyl owner name to admin everytime. I knew why it was doing it but just couldn't find a solution quick enough.
 
 * **Fix**
-
+This simple piece of code ```owner = vinyl.get('owner')``` saved the day. I spent hours on this one as well .... unbelieveable I swear. Once you fix one wee bug another one pops it's ugly head up. I wanted to utilize the edit_vinyl as both admin & a user but the owner key was causing me major headaches as the value was becoming admin then null & I couldn't figure it out for ages but then I found that piece of code, it worked.
+Only now when the page returned the flash message had the new name but the page didn't change. I got stuck on this one too. I coundn't figure out how to redirect to function in my app.py and pass an _id too. I had to settle for finding the vinyl & rendering the template again. Sorry if it was not the logical method but I'm still learning & my head is fried at the minute lol !
 
 * **Verdict**
+Everything works well now, with a simple solution that took ages to **get** .... pun intended as always my dear :)
 
-
-### **Bug Title**
+### **If Your Name's Not Admin ... You're Not Coming In !**
 
 * **Bug**
-Admin Rights - I thought this would be easy to find and solve but hey ... is coding simple .... not for a noob like me
-I tried searching through the depths of the internet for such code but that's after I was offered someones kidney, 3 prostitutes & a WW2 Russian Tank .... the web can be so dark sometimes !
-I got there yay me ! All I wanted to do was show certain navbar links to the user & admin just the admin section & then the non loggy in pages when you first arrive :)
-I messed about which the jinja logic on my navigation code but struggled to get it right .... quite a few hours yet again but look ... I have to learn and as painful as it was I got there and it works for me. I had to duplicate the login line of code for admin and a user which may not be the correct way but it works and I need to move on. I just need to redirect my admin to a different page as it still shows there Profile page on first log in :)
-One major fact if we are putting hinesty on the table that I had my else staement as {else} and not {% else %} which 100% did not help the situation and totally threw me a curve ball but it's done and working the way I want it too !
+I wanted a set up where the user has access to the main pages and admin have access to the manage site pages only. I thought this would be a wee easy one to find and solve but hey ... is coding simple .... not for a noob like me unfortunately. I tried searching through the depths of the internet for such code but that's after I was offered someone's kidney, three pythons and a WW2 Russian Tank .... the web can be so so dark sometimes !
+I got there yay me ! All I wanted to do was show certain navbar links to the user and admin just the admin section and then the non loggy in pages when you first arrive :)
+
+* **Fix**
+I messed about which the jinja logic on my navigation code but struggled to get it right .... quite a few hours yet again but look ... I have to learn and as painful as it was I got there and it works for me. I had to duplicate the login line of code for admin and a user which may not be the correct way but it works and I need to move on. I just need to redirect my admin to a different page as it still shows their Profile page on first log in :)
+One major fact if we are putting honesty on the table that I had my else statement as {else} and not {% else %} which 100% did not help the situation and totally threw me a curve ball but it's done and working the way I want it to !
 Now to fix the admin post login link so it's naw Profile 
 
-* **Fix**
-
-
 * **Verdict**
+Everything working the way it should and admin now lands on the manage_site page after login login.
 
-
-### **Bug Title**
+### **I *get* It Now**
 
 * **Bug**
-passowrd issues when admin editing user - had to add some code to copy users passord & add it to new edited user so it wouldn't get wiped :)
+Very similar to a wee bug above about the vinyl owner but this time, the users password was disappearing after admin had edited the user.
 
 * **Fix**
-
+I used similar logic to solve another bug mentioned earlier, ```password = users.get('password')``` and then add this *password* to the new dictionary *user_edit*. 
 
 * **Verdict**
-
+The admin can edit the user details apart from their password which now stays the same after the edits are updated.
 
 
 [Back to Top](#contents)
 
 ## **Deployment**
 ---
+### Local Deployment
+For my project **My Vinyl Answer**, I used Github to create a repository with the Code Institute template as my base, and from here I used [Gitpod](https://www.gitpod.io/) to write all my code. Periodically I would commit my work to git and generally at the same time I would *git push* my code to Github.
+I've deployed this project to Heroku for a wee change and set up automatic deployment so when I push to Github, I also push to Heroku.
+
+To clone this project:
+
+1. From the application's repository, click the "code" button and download the zip of the repository.
+    Alternatively, you can clone the repository using the following line in your terminal:
+
+    ``` 
+    git clone https://github.com/RaVeR76/My-Vinyl-Answer.git
+    ``` 
+1. Access the folder in your terminal window and install the applications requirements using the following command:
+
+    ```
+    pip3 install -r requirements.txt
+    ```
+
+1. Sign-in or sign-up to [MongoDB](https://www.mongodb.com/) and create a new cluster
+    * Within the Sandbox, click the collections button and after click Create Database (Add My Own Data), I called mine **myVinylAnswer**
+    * Set up the following collections: users, genre, vinyl
+    * Under the Security Menu on the left, select Database Access.
+    * Add a new database user, and keep the credentials secure
+    * Within the Network Access option, add IP Address 0.0.0.0
+
+1. In Gitpod or your IDE, create a file containing your environmental variables called env.py at the root level of the application. 
+    It will need to contain the following lines and variables:
+    ```
+    import os
+
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
+    os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
+    os.environ.setdefault("MONGO_DBNAME", "DATABASE_NAME")
+    os.environ.setdefault("DEBUG", "True")
+    ```
+
+    Please note that you will need to update the **SECRET_KEY** with your own secret key, as well as the **MONGO_URI** and **MONGO_DBNAME** variables with those provided by MongoDB.
+    To find your MONGO_URI, go to your clusters and click on connect. Choose connect your application and copy the link provided. 
+    Don't forget to update the necessary fields like password and database name. 
+
+    If you plan on pushing this application to a public repository, ensure that *env.py* is added to your *.gitignore* file.
+
+1. The application can now be run locally. In your terminal, type the following command 
+    ```
+    python3 app.py. 
+    ```
+
+### To deploy your project on Heroku, use the following steps: 
+
+1. Log in to your Heroku account and create a new app. Choose your region. 
+1. Ensure the Procfile and requirements.txt files exist are present and up-to-date in your local repository.  
+    Requirements:
+    ```
+    pip3 freeze --local > requirements.txt
+    ```
+    Procfile:
+    ```
+    echo web: python app.py > Procfile
+    ```
+1. The Procfile should contain the following line:
+    ```
+    web: python app.py
+    ```
+
+1. Scroll down to the "deployment method" section. Choose "Github" for automatic deployment.
+1. From the inputs below, make sure your github user is selected, and then enter the name for your repository. Click "search". When it finds the repo, click the "connect" button.
+1. Scroll back up and click "settings". Scroll down and click "Reveal config vars". Set up the same variables as in your env.py (IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME):
+    !You shouldn't set the DEBUG variable in under config vars, only in your env.py to prevent DEBUG being active on live website. 
+
+    ```
+    IP = 0.0.0.0
+    PORT = 5000
+    SECRET_KEY = YOUR_SECRET_KEY
+    MONGO_URI = YOUR_MONGODB_URI
+    MONGO_DBNAME = DATABASE_NAME
+    ```
+
+1. Scroll back up and click "Deploy". Scroll down and click "Enable automatic deployment".
+1. Just beneath, click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
+1. In order to commit your changes to the branch, use git push to push your changes.
+
 
 
 ## **Conclusion**
@@ -849,31 +927,31 @@ Some of the harder python was easiest to conquer and I was like who's the daddy 
 
 **Code Credits**
 
-Collapsible taken from W3SChools
+[Collapsible taken from W3SChools](https://www.w3schools.com/howto/howto_js_collapsible.asp)
 
-JavaScript for a Bulma select dropdown taken from here - https://github.com/jgthms/bulma/issues/1870
+[JavaScript for a Bulma select dropdown taken from here](https://github.com/jgthms/bulma/issues/1870)
 
-https://stackoverflow.com/questions/34676752/can-i-use-an-html-input-type-date-to-collect-only-a-year/40662109 - Release Year Selection Code
+[Release year selection code](https://stackoverflow.com/questions/34676752/can-i-use-an-html-input-type-date-to-collect-only-a-year/40662109)
 
-https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css - Remove Autofill from Add Vinyl As turned background blue
+[Remove autofill from Add Vinyl as turned background blue](https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css)
 
-https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div - Align Edit Button with in my column
+[Align edit button within my column](https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div)
 
-https://www.w3schools.com/howto/howto_css_delete_modal.asp - Delete Confirmation Model
+[Delete confirmation modal](https://www.w3schools.com/howto/howto_css_delete_modal.asp)
 
-Caps Lock On code taken from W3Schools - https://www.w3schools.com/howto/howto_js_detect_capslock.asp
+[Caps Lock On code taken from W3Schools](https://www.w3schools.com/howto/howto_js_detect_capslock.asp)
 
-got database collection names from this code - https://stackoverflow.com/questions/9805451/how-to-find-names-of-all-collections-using-pymongo
+[Got database collection names from this code](https://stackoverflow.com/questions/9805451/how-to-find-names-of-all-collections-using-pymongo)
 
-Code for scroll on Admin Vinyl - https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list
+[Code for scroll on Admin Vinyl](https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list)
 
-Added back button code from W3Schools - https://www.w3schools.com/jsref/met_his_back.asp
+[Added back button code from W3Schools](https://www.w3schools.com/jsref/met_his_back.asp)
 
-background for home page logo taken from here - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blurred_bg
+[Background for home page logo taken from here](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blurred_bg)
 
-Code for default image fix taken from here - https://stackoverflow.com/questions/92720/jquery-javascript-to-replace-broken-images?page=1&tab=votes#tab-top
+[Code for default image fix taken from here](https://stackoverflow.com/questions/92720/jquery-javascript-to-replace-broken-images?page=1&tab=votes#tab-top)
 
-Code for url bug solution - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url
+[Code for url bug solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url)
 
 
 
