@@ -9,24 +9,25 @@
             <div class="notification my-blue is-full col-pad">
                 <p class="has-text-centered text-my-white">Manage Site</p>
             </div>
-
             <section class="section">
                 <div class="columns is-centered col-pad is-flex-wrap-wrap">
 
                     {% for collection in collection %}
-                    <div class="column is-2">
-                        <div class="card">
-                            <header class="card-header">
-                                <span name="collection" class="card-header-title is-horizontal-center prof-font">
-                                    {{ collection|upper }}
-                                </span>
-                            </header>
-                            <footer class="card-footer">
-                                <a href="{{ url_for('manage_collection', collection=collection) }}"
-                                    class="card-footer-item">Select</a>
-                            </footer>
+
+                        <div class="column is-2">
+                            <div class="card">
+                                <header class="card-header">
+                                    <span name="collection" class="card-header-title is-horizontal-center prof-font">
+                                        {{ collection|upper }}
+                                    </span>
+                                </header>
+                                <footer class="card-footer">
+                                    <a href="{{ url_for('manage_collection', collection=collection) }}"
+                                        class="card-footer-item">Select</a>
+                                </footer>
+                            </div>
                         </div>
-                    </div>
+
                     {% endfor %}
 
                 </div>

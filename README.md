@@ -823,6 +823,19 @@ I used similar logic to solve another bug mentioned earlier, ```password = users
 The admin can edit the user details apart from their password which now stays the same after the edits are updated.
 
 
+### **Master Py Thong**
+
+* **Bug**
+It was annoying me that whenever a user was logged in and they closed the page down. If they opened that page again they would still be logged in as that user, which let's face facts would not be a great piece of code for, let's say James Bond to get all his missions through. Let's play out a wee scene here .... The Evil Genius says "Well Mr. Bond, I've been expecting yeou" ! James Bond replies "But this is impossible .... how did you know about this top secret mission to capture you ... Master Py Thong". Master Py replies "Well you see Mr. Bond ... you only closed down your super secret webpage but not your browser so I still got your little cookies fool .... mwah ... mwah ... mwah ! 
+You get the gist of it anyway.
+
+* **Fix**
+I added ```session.clear()``` to the home page function so everytime the website is connection to, it clears the session cookies and therefore displays the home page and start navbar. Before it was the main homepage but with the user logged in navbar.
+
+* **Verdict**
+I have tested this through Heroku as well so it all looks good. 
+
+
 [Back to Top](#contents)
 
 ## **Deployment**

@@ -1,7 +1,10 @@
 {% extends "layout/base.html" %}
 {% block content %}
-{% include "components/navigation/navigation.html" %}
+    
+    {% include "components/navigation/navigation.html" %}
+    
     {% include 'components/flash_messages/flash_messages.html' %}
+      
         <div class="container">
             <div class="columns col-pad">
                 <div class="column is-8 is-offset-2">
@@ -21,7 +24,6 @@
                                     </div>
                                     <div class="column"></div>
                                 </div>
-
 
                                 <table class="table prof-font has-text-centered">
                                     <tr>
@@ -44,4 +46,5 @@
                 </div>
             </div>
         </div>
+
 {% endblock %}
