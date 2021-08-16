@@ -185,11 +185,15 @@ nav .panel-size{
     left: 0;
 }
 
+.fig-size {
+    height: 150px;
+}
+
 
 .vin-spin {
-    height: 120px;
-    margin-bottom: 40px;
-    margin-left: 20px;
+    height: 100px;
+    margin-bottom: 30px;
+    margin-left: 18px;
 }
 
 .invert {
@@ -211,14 +215,14 @@ nav .panel-size{
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-  /*  border: 3px solid #f1f1f1;*/
+    border: 3px solid #f1f1f1;
     position:absolute;
     top:30%;
     left:0;
     right:0;
     bottom:0;
     height: fit-content;
-    width: 80%;
+    width: 70%;
     margin:auto;
 }
 
@@ -264,4 +268,11 @@ nav .panel-size{
     .prof-font {
         font-size: 0.9rem;
     }
+
+    .vin-spin {
+        height: 100px;
+        margin-bottom: 0px;
+        margin-left: 18px;
+    }
+
 }
