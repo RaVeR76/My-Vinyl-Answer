@@ -1,91 +1,85 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-{% include "components/navigation/navigation.html" %}
+    {% include "components/navigation/navigation.html" %}
 
-{% include 'components/flash_messages/flash_messages.html' %}
+    {% include 'components/flash_messages/flash_messages.html' %}
 
+        <div class="container">
+            <div class="columns col-pad">
+                <form class="column is-8 is-offset-2 " method="POST">
+                    <div class="card my-white-light">
+                        <div class="card-content">
+                            <div class="content">
 
-<div class="container">
-    <div class="columns col-pad">
-        <form class="column is-8 is-offset-2 " method="POST">
-            <div class="card my-white-light">
-                <div class="card-content">
-                    <div class="content">
+                                <div class="notification my-blue is-full">
+                                    <p class="has-text-centered text-my-white">Edit User</p>
+                                </div>
 
-                        <div class="notification my-blue is-full">
-                            <p class="has-text-centered text-my-white">Edit User</p>
-                        </div>
+                                <!-- Full Name Input -->
+                                <div class="field column is-8 is-offset-2">
+                                    <label for="fullname" class="label">Full Name</label>
+                                    <div class="control has-icons-left">
+                                        <input id="fullname" name="fullname" class="input validate sign-bord" type="text"
+                                            value="{{ users.fullname }}" minlength="5" maxlength="30" 
+                                                placeholder="Enter Full Name" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-signature"></i>
+                                        </span>
+                                    </div>
+                                </div>
 
+                                <!-- Username Input -->
+                                <div class="field column is-8 is-offset-2">
+                                    <label for="username" class="label">Username</label>
+                                    <div class="control has-icons-left">
+                                        <input id="username" name="username" class="input validate sign-bord" type="text"
+                                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                                            value="{{ users.username }}" placeholder="Enter Username" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
 
-                        <!-- Full Name Input -->
-                        <div class="field column is-8 is-offset-2">
-                            <label for="fullname" class="label">Full Name</label>
-                            <div class="control has-icons-left">
-                                <input id="fullname" name="fullname" class="input validate sign-bord" type="text"
-                                    value="{{ users.fullname }}" minlength="5" maxlength="30" 
-                                        placeholder="Enter Full Name" required>
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-signature"></i>
-                                </span>
+                                <!-- Email Input -->
+                                <div class="field column is-8 is-offset-2">
+                                    <label for="email" class="label">Email</label>
+                                    <div class="control has-icons-left">
+                                        <input id="email" name="email" class="input validate sign-bord" type="email"
+                                            value="{{ users.email }}" placeholder="Enter Email Address" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-envelope-square"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Profile Image Url -->
+                                <div class="field column is-8 is-offset-2">
+                                    <label for="profile_pic" class="label">Profile Picture</label>
+                                    <div class="control has-icons-left">
+                                        <input id="profile_pic" name="profile_pic" class="input validate sign-bord" type="URL"
+                                            value="{{ users.profile_pic }}" maxlength="300" placeholder="Enter Profile Pic URL" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-portrait"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Edit Genre Button -->
+                                <div class="field column is-grouped is-grouped-centered">
+                                    <div class="control">
+                                        <a href="{{ url_for('users_list') }}" class="button is-medium my-red text-my-white but-font is-rounded">Cancel</a>
+                                        <button type="submit" class="button is-medium my-blue text-my-white but-font is-rounded">
+                                            Edit User
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-
-                        <!-- Username Input -->
-                        <div class="field column is-8 is-offset-2">
-                            <label for="username" class="label">Username</label>
-                            <div class="control has-icons-left">
-                                <input id="username" name="username" class="input validate sign-bord" type="text"
-                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
-                                    value="{{ users.username }}" placeholder="Enter Username" required>
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-user"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Email Input -->
-                        <div class="field column is-8 is-offset-2">
-                            <label for="email" class="label">Email</label>
-                            <div class="control has-icons-left">
-                                <input id="email" name="email" class="input validate sign-bord" type="email"
-                                    value="{{ users.email }}" placeholder="Enter Email Address" required>
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope-square"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Profile Image Url -->
-                        <div class="field column is-8 is-offset-2">
-                            <label for="profile_pic" class="label">Profile Picture</label>
-                            <div class="control has-icons-left">
-                                <input id="profile_pic" name="profile_pic" class="input validate sign-bord" type="URL"
-                                    value="{{ users.profile_pic }}" maxlength="300" placeholder="Enter Profile Pic URL" required>
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-portrait"></i>
-                                </span>
-                            </div>
-                        </div>
-
-
-
-                        <!-- Edit Genre Button -->
-                        <div class="field column is-grouped is-grouped-centered">
-                            <div class="control">
-                                <a href="{{ url_for('users_list') }}" class="button is-medium my-red text-my-white but-font is-rounded">Cancel</a>
-                                <button type="submit" class="button is-medium my-blue text-my-white but-font is-rounded">
-                                    Edit User
-                                </button>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
+        </div>
 
 {% endblock %}

@@ -1,29 +1,30 @@
 <header>
     <nav class="navbar is-black has-shadow" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <div class="navbar-item logo">
-                <!-- <img src="static/images/logo6blue.png" alt="My Vinyl Answer Logo">  -->
-            </div>
-
+            <div class="navbar-item logo"></div>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarlist">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
         <div id="navbarlist" class="navbar-menu">
             <div class="navbar-end">
 
                 {% if session.user and session.user|lower != "admin"|lower %}
-                <a href="{{ url_for('profile') }}" class="navbar-item">Profile</a>
-                <a href="{{ url_for('my_vinyls') }}" class="navbar-item">My Vinyl</a>
-                <a href="{{ url_for('add_vinyl') }}" class="navbar-item">Add Vinyl</a>
-                <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a>               
+
+                    <a href="{{ url_for('profile') }}" class="navbar-item">Profile</a>
+                    <a href="{{ url_for('my_vinyls') }}" class="navbar-item">My Vinyl</a>
+                    <a href="{{ url_for('add_vinyl') }}" class="navbar-item">Add Vinyl</a>
+                    <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a> 
+
                 {% elif session.user|lower == "admin"|lower %}
+
                     <a href="{{ url_for('manage_site') }}" class="navbar-item">Manage Site</a>
                     <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a> 
+
                 {% else %}
+
                 <a href="{{ url_for('home') }}" class="navbar-item">Home</a>
                 <a href="{{ url_for('about') }}" class="navbar-item">About</a>
                 <div class="navbar-item">
@@ -34,7 +35,9 @@
                         <a href="{{ url_for('login') }}" class="button my-red text-my-white but-font">Log in</a>
                     </div>
                 </div>
+
                 {% endif %}
+                
             </div>
         </div>
     </nav>

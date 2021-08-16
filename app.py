@@ -82,8 +82,8 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if known_user:
-            if check_password_hash(known_user["password"],
-                request.form.get("password")):
+            if check_password_hash(
+                known_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome {}".format(
                     request.form.get("username")))
@@ -199,21 +199,6 @@ def trance_search():
     vinyls = list(mongo.db.vinyl.find({"genre_name": "Trance"}))
 
     return render_template("pages/manage_vinyl.html", vinyl=vinyls)
-
-
-# Owner Query Function
-#@app.route("/vinyl/owner/search")
-#def owner_search():
-    """
-    Search trance vinyl collection & display results
-    """
-   # owner = mongo.db.vinyl.find().sort("owner", 1)
-  #  username = mongo.db.users.find_one(
- #       {"username": session["user"]})["username"]
- #   vinyls = list(mongo.db.vinyl.find({"owner": username}))
-   # vinyls = list(mongo.db.vinyl.find({"$text": {"$search": owner}}))
-
- #   return render_template("pages/manage_vinyl.html", vinyl=vinyls)
 
 
 # Add Vinyl Function
@@ -343,7 +328,8 @@ def del_genre_confirm(genre_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template(
-        "components/modals/del_genre_confirm.html", genre=genre, username=username)
+        "components/modals/del_genre_confirm.html",
+        genre=genre, username=username)
 
 
 # Find Database collection names for displaying to Admin

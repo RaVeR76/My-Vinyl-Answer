@@ -17,13 +17,21 @@
                                 <div class="select">
                                     <select id="genre_name" name="genre_name" class="validate" required>
                                         <option value="" disabled>Select Genre</option>
+
                                         {% for genre in genre %}
-                                        {% if genre.genre_name == vinyl.genre_name %}
-                                        <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
-                                        {% else %}
-                                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
-                                        {% endif %}
+
+                                            {% if genre.genre_name == vinyl.genre_name %}
+
+                                                <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+
+                                            {% else %}
+
+                                                <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                                                
+                                            {% endif %}
+
                                         {% endfor %}
+
                                     </select>
                                 </div>
                                 <span class="icon is-left">
@@ -96,19 +104,22 @@
                             </div>
                         </div>
 
-
-
                         <!-- Edit The Vinyl Button -->
                         <div class="field column is-grouped is-grouped-centered">
                             <div class="control">
+
                                 {% if users.username == 'admin' %}
-                                <a href="{{ url_for('vinyl_card', vinyl_id=vinyl._id) }}" class="button is-medium my-red text-my-white but-font is-rounded">
-                                    Cancel
-                                </a>
+
+                                    <a href="{{ url_for('vinyl_card', vinyl_id=vinyl._id) }}" class="button is-medium my-red text-my-white but-font is-rounded">
+                                        Cancel
+                                    </a>
+
                                 {% else %}
-                                <a href="{{ url_for('my_vinyls') }}" class="button is-medium my-red text-my-white but-font is-rounded">
-                                    Cancel
-                                </a>
+
+                                    <a href="{{ url_for('my_vinyls') }}" class="button is-medium my-red text-my-white but-font is-rounded">
+                                        Cancel
+                                    </a>
+
                                 {% endif %}
 
                                 <button type="submit" class="button is-medium my-blue text-my-white but-font is-rounded">
@@ -116,7 +127,6 @@
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -12,8 +12,6 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/*.notification { border-radius: 25px;}*/
-
 /* Text Sizes & Colours */
 
 .prof-font {
@@ -66,7 +64,6 @@ body, html {
     display:none;   
 }
 
-
 div.navbar-item.logo { 
     background-image: url("../images/logo.png");
     background-size: contain;
@@ -86,7 +83,6 @@ div.navbar-item.logo {
 .flash h4 {
     line-height: 2rem;
 }
-
 
 .col-pad {
     margin-top: 2rem;
@@ -146,18 +142,15 @@ select:focus, .sign-bord:hover, .log-bord {
     background-color: rgba(161, 233, 247, .5);
 }
 
-
 #butt-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
 .is-horizontal-center {
     justify-content: center;
   }
-
 
 nav .panel-size {
     height: 400px; 
@@ -168,7 +161,6 @@ nav .panel-size{
     overflow: hidden; 
     overflow-y: scroll;
 }
-
 
 .round-butt {
     background-color: #3ca9e9;
@@ -188,7 +180,6 @@ nav .panel-size{
 .fig-size {
     height: 150px;
 }
-
 
 .vin-spin {
     height: 100px;
@@ -225,8 +216,6 @@ nav .panel-size{
     width: 70%;
     margin:auto;
 }
-
-
 
 /* Media Queries */
 
