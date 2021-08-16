@@ -934,6 +934,9 @@ nobody likes a db abuser !
 
 Some of the harder python was easiest to conquer and I was like who's the daddy but then again some the easier python twisted my napper & was like an uppercut from Drago in Rocky 4.
 
+I know the overall layout could improve and maybe it will in version 2 ha ha but I am happy with what I have achieved in the allocated time plus having to learn Python too.
+Maybe I should have used all Bulma components which I have for 95% of it but just the user vinyl collection I left the way it is as I love the look and feel of it. 
+All in all, there could be a few upgrades in the future but I am super hapy with the overall outcome of this project.
 
 ## **Credits**
 ---
@@ -965,6 +968,8 @@ Some of the harder python was easiest to conquer and I was like who's the daddy 
 [Code for default image fix taken from here](https://stackoverflow.com/questions/92720/jquery-javascript-to-replace-broken-images?page=1&tab=votes#tab-top)
 
 [Code for url bug solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url)
+
+[Bouncing ball code used for my About smiley](https://codeburst.io/tutorial-make-a-bouncing-ball-entirely-with-css-1e7e3c853a50)
 
 
 

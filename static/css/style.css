@@ -105,13 +105,8 @@ select:focus, .sign-bord:hover, .log-bord {
     font-weight: 600;
 }
 
-.fa-backward {
-    color: #F8F9FA !important;
-}
-
 /* Collapsible CSS taken from W3Schools */
 .collapsible {
-    /*background-color: #a1e9f9;*/
     color: black;
     cursor: pointer;
     padding: 18px;
@@ -217,6 +212,19 @@ nav .panel-size{
     margin:auto;
 }
 
+.smiley-size {
+    height: 1.5rem;
+    animation: bounce 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    from { transform: translate3d(0, 0, 0);     }
+    to   { transform: translate3d(0, 15px, 0); }
+  }
+
+  
 /* Media Queries */
 
 /* Show in Large desktops and laptops */
