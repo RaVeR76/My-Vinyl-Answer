@@ -161,6 +161,7 @@ I think my wireframes look good & deffo give me a great starting point for the d
 
 Anyway, you can have a wee look at my wireframes below:
 
+#### Mobile Wireframes
 - [Mobile Home Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-home.pdf)
 
 - [Mobile About Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-about.pdf)
@@ -171,6 +172,7 @@ Anyway, you can have a wee look at my wireframes below:
 
 - [Mobile My Vinyl Collection Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/mobile-myvinylcollection.pdf)
 
+#### Tablet Wireframes
 - [Tablet Home Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-home.pdf)
 
 - [Tablet About Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-about.pdf)
@@ -181,6 +183,7 @@ Anyway, you can have a wee look at my wireframes below:
 
 - [Tablet My Vinyl Collection Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/tablet-myvinylcollection.pdf)
 
+#### Desktop Wireframes
 - [Desktop Home Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/desktop-home.pdf)
 
 - [Desktop About Wireframe](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/desktop-about.pdf)
@@ -233,6 +236,10 @@ Allow users to display their vinyl collection to other users but for view only
 - [GitPod](https://www.gitpod.io/)
 - [Bulma](https://bulma.io/)
 - [jQuery](https://jquery.com/)
+- [MongoDB Atlas](https://www.mongodb.com/)
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- [PyMongo](https://pymongo.readthedocs.io/en/stable/tutorial.html)
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
 - [Balsamiq](https://balsamiq.com/)
 - [W3C HTML Validation Service](https://validator.w3.org/)
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
@@ -934,6 +941,9 @@ nobody likes a db abuser !
 
 Some of the harder python was easiest to conquer and I was like who's the daddy but then again some the easier python twisted my napper & was like an uppercut from Drago in Rocky 4.
 
+Write overall USER questionnaire tests conclusiony thing at end of test section.
+
+
 I know the overall layout could improve and maybe it will in version 2 ha ha but I am happy with what I have achieved in the allocated time plus having to learn Python too.
 Maybe I should have used all Bulma components which I have for 95% of it but just the user vinyl collection I left the way it is as I love the look and feel of it. 
 All in all, there could be a few upgrades in the future but I am super hapy with the overall outcome of this project.
@@ -970,6 +980,8 @@ All in all, there could be a few upgrades in the future but I am super hapy with
 [Code for url bug solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url)
 
 [Bouncing ball code used for my About smiley](https://codeburst.io/tutorial-make-a-bouncing-ball-entirely-with-css-1e7e3c853a50)
+
+[Favicon Vinyl Image](https://www.pngfind.com/mpng/mRhxxh_vinyl-record-clip-art-hd-png-download/)
 
 
 
