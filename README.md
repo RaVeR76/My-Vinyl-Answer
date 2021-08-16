@@ -69,7 +69,6 @@ Again, this is were my project comes in ! I want to have a once and for all list
 * As a user, I want to delete any vinyl I want (if I sell one personally or on another site)
 
 
-
 ### **Site Owner Goals**
 
 * To have a great website that vinyl collectors can keep track of their personal vinyl collection
@@ -151,7 +150,7 @@ Follow up on the colours used above.....
 About half way in to this project whilst I love the colours above I just thought the overall website looked a bit boring and plain. so I jumped on the Google Image train to trans-central and searched for some free vinyl images I could use to revamp this project. I found a few and tried them but then I came across the reddish blueish vinyl on the deck one and I thought that's it there. I placed it as my body background and fell in love. The issue was my wee colours above were close but not close enough. I still use them for borders, buttons and my vinyl collasibles because they still fitted beautifully there but for the headers and titles then didn't. 
 So I used an online site called [Image Color Picker](https://imagecolorpicker.com/en) to select some colours from my image .... the red and the blue to be precise and using them with the image as a backdrop works really well throughout website, in my opinion but who's to say I'm right ... eh ! I do and it looks cool as feck .... alright ha ha !
 That's the story behind the colour changes but I had to, just to spice a little life into the visual aspect of the site.
-P.S. I'm not sure if I am to change the orginal colours out or keep them up as these were my intial thoughts but the Smoky Black is the only O.G. left from the original line up.  
+P.S. I'm not sure if I am to change the original colours out or keep them up as these were my intial thoughts but the Smoky Black is the only O.G. left from the original line up.  
 
 [Back to Top](#contents)
 
@@ -828,6 +827,89 @@ The admin can edit the user details apart from their password which now stays th
 
 ## **Deployment**
 ---
+### Local Deployment
+For my project **My Vinyl Answer**, I used Github to create a repository with the Code Institute template as my base, and from here I used [Gitpod](https://www.gitpod.io/) to write all my code. Periodically I would commit my work to git and generally at the same time I would *git push* my code to Github.
+I've deployed this project to Heroku for a wee change and set up automatic deployment so when I push to Github, I also push to Heroku.
+
+To clone this project:
+
+1. From the application's repository, click the "code" button and download the zip of the repository.
+    Alternatively, you can clone the repository using the following line in your terminal:
+
+    ``` 
+    git clone https://github.com/RaVeR76/My-Vinyl-Answer.git
+    ``` 
+1. Access the folder in your terminal window and install the applications requirements using the following command:
+
+    ```
+    pip3 install -r requirements.txt
+    ```
+
+1. Sign-in or sign-up to [MongoDB](https://www.mongodb.com/) and create a new cluster
+    * Within the Sandbox, click the collections button and after click Create Database (Add My Own Data), I called mine **myVinylAnswer**
+    * Set up the following collections: users, genre, vinyl
+    * Under the Security Menu on the left, select Database Access.
+    * Add a new database user, and keep the credentials secure
+    * Within the Network Access option, add IP Address 0.0.0.0
+
+1. In Gitpod or your IDE, create a file containing your environmental variables called env.py at the root level of the application. 
+    It will need to contain the following lines and variables:
+    ```
+    import os
+
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
+    os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
+    os.environ.setdefault("MONGO_DBNAME", "DATABASE_NAME")
+    os.environ.setdefault("DEBUG", "True")
+    ```
+
+    Please note that you will need to update the **SECRET_KEY** with your own secret key, as well as the **MONGO_URI** and **MONGO_DBNAME** variables with those provided by MongoDB.
+    To find your MONGO_URI, go to your clusters and click on connect. Choose connect your application and copy the link provided. 
+    Don't forget to update the necessary fields like password and database name. 
+
+    If you plan on pushing this application to a public repository, ensure that *env.py* is added to your *.gitignore* file.
+
+1. The application can now be run locally. In your terminal, type the following command 
+    ```
+    python3 app.py. 
+    ```
+
+### To deploy your project on Heroku, use the following steps: 
+
+1. Log in to your Heroku account and create a new app. Choose your region. 
+1. Ensure the Procfile and requirements.txt files exist are present and up-to-date in your local repository.  
+    Requirements:
+    ```
+    pip3 freeze --local > requirements.txt
+    ```
+    Procfile:
+    ```
+    echo web: python app.py > Procfile
+    ```
+1. The Procfile should contain the following line:
+    ```
+    web: python app.py
+    ```
+
+1. Scroll down to the "deployment method" section. Choose "Github" for automatic deployment.
+1. From the inputs below, make sure your github user is selected, and then enter the name for your repository. Click "search". When it finds the repo, click the "connect" button.
+1. Scroll back up and click "settings". Scroll down and click "Reveal config vars". Set up the same variables as in your env.py (IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME):
+    !You shouldn't set the DEBUG variable in under config vars, only in your env.py to prevent DEBUG being active on live website. 
+
+    ```
+    IP = 0.0.0.0
+    PORT = 5000
+    SECRET_KEY = YOUR_SECRET_KEY
+    MONGO_URI = YOUR_MONGODB_URI
+    MONGO_DBNAME = DATABASE_NAME
+    ```
+
+1. Scroll back up and click "Deploy". Scroll down and click "Enable automatic deployment".
+1. Just beneath, click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
+1. In order to commit your changes to the branch, use git push to push your changes.
+
 
 
 ## **Conclusion**
