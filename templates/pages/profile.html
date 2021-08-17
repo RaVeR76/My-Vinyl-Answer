@@ -2,47 +2,6 @@
 {% block content %}
     
     {% include 'components/messages/flash_messages.html' %}
-      
-        <div class="container">
-            <div class="columns col-pad">
-                <div class="column is-8 is-offset-2">
-                    <div class="card my-white-light">
-                        <div class="card-content">
-                            <div class="content">
-                                <div class="notification my-blue is-full">
-                                    <p class="has-text-centered text-my-white">My Profile</p>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column"></div>
-                                    <div class="column col-pad">
-                                        <figure class="image is-256x256">
-                                            <img src="{{ users.profile_pic }}" onerror="this.onerror=null; this.src='/static/images/smiley_big.png';" alt="Profile Pic">
-                                        </figure>
-                                    </div>
-                                    <div class="column"></div>
-                                </div>
-
-                                <table class="table prof-font has-text-centered">
-                                    <tr>
-                                        <td><strong>Full Name :</strong></td>
-                                        <td>{{ users.fullname }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Username :</strong></td>
-                                        <td>{{ users.username }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Email Address :</strong></td>
-                                        <td>{{ users.email }}</td>
-                                    </tr>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    {% include "user/user_profile.html" %}
 
 {% endblock %}
