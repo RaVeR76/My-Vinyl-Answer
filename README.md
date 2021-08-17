@@ -5,9 +5,9 @@
 
 ## **Project Goals**
 
-I'm a DJ (mainly a Bedroom one though .... see my MS1 project ha ha) & have been DJing for 25 years. I do it because I love the music, I love the people and I love the feeling of making people smile through the freedom of my sets :)
+I'm a DJ (mainly a Bedroom one though .... see my MS1 project ha ha) and have been DJing for 25 years. I do it because I love the music, I love the people and I love the feeling of making people smile through the freedom of my sets :)
 I have hundreds of records, aka Vinyl, which I have been collecting from the mid 90s to now and I am still buying them .... it's like an addiction to be honest !
-I've tried to attend V.A. classes (Vinyl Anonymous) but they will never change me so I may just try to keep track of what I am buying and why .....
+I've tried to attend V.A. classes *(Vinyls Anonymous)* but they will never change me so I may just try to keep track of what I am buying and why .....  
 This is were my idea for a project comes from. I don't know how many records I have, I don't know what genre they are when I look at them, obviously I know some like the classics, but the majority I need to play before I can ascertain what genre they are. The amount of times I have went through my whole record selection to try and get some sort of order and organistaion is completely criminal and so time consuming it's unreal. 
 Again, this is were my project comes in ! I want to have a once and for all list of my personal vinyl and as much information per record as possible which I can search and hopefully help my keep track of .... I may even add a random function to help me select some cool SETS to play from the various Genres I have :)
 
@@ -74,7 +74,7 @@ Again, this is were my project comes in ! I want to have a once and for all list
 * To have a great website that vinyl collectors can keep track of their personal vinyl collection
 * To have an easily accessible website where the user can find specific vinyl by an easy search method
 * Add login access for site user to perform CRUD (Create, Read, Update & Delete) within their personal vinyl collection / database
-* 
+* Have a easily navigated and user friendly admin area for admin CRUD duties
 
 
 [Back to Top](#contents)
@@ -147,7 +147,7 @@ Below is an image of the chosen colours .....
 ![My-Vinyl-Answer Colours](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/color-scheme.png)
 
 Follow up on the colours used above.....
-About half way in to this project whilst I love the colours above I just thought the overall website looked a bit boring and plain. so I jumped on the Google Image train to trans-central and searched for some free vinyl images I could use to revamp this project. I found a few and tried them but then I came across the reddish blueish vinyl on the deck one and I thought that's it there. I placed it as my body background and fell in love. The issue was my wee colours above were close but not close enough. I still use them for borders, buttons and my vinyl collasibles because they still fitted beautifully there but for the headers and titles then didn't. 
+About half way in to this project whilst I love the colours above I just thought the overall website looked a bit boring and plain. So I jumped on the Google Image train to trans-central and searched for some free vinyl images I could use to revamp this project. I found a few and tried them but then I came across the reddish blueish vinyl on the deck one and I thought that's it there. I placed it as my body background and fell in love. The issue was my wee colours above were close but not close enough. I still use them for borders, buttons and my vinyl collasibles because they still fitted beautifully there but for the headers and titles then didn't. 
 So I used an online site called [Image Color Picker](https://imagecolorpicker.com/en) to select some colours from my image .... the red and the blue to be precise and using them with the image as a backdrop works really well throughout website, in my opinion but who's to say I'm right ... eh ! I do and it looks cool as feck .... alright ha ha !
 That's the story behind the colour changes but I had to, just to spice a little life into the visual aspect of the site.
 P.S. I'm not sure if I am to change the original colours out or keep them up as these were my intial thoughts but the Smoky Black is the only O.G. left from the original line up.  
@@ -213,9 +213,12 @@ Anyway, you can have a wee look at my wireframes below:
 
 ### **Features To Be Implemented**
 
-Share list with other users for possible sales or swaps if duplicates
-Allow users to display their vinyl collection to other users but for view only
-5 star ratings or something
+* Share vinyl list with other users for possible sales or swaps if duplicates
+* Allow users to display their vinyl collection to other users but for view only
+* 5 star ratings or something for users vinyl
+* Add some pics of the vinyl for storage with the information in the database
+* Have change and forgotten password options
+* Add some visual graphics of the users collection per genre
 
 
 [Back to Top](#contents)
@@ -234,6 +237,7 @@ Allow users to display their vinyl collection to other users but for view only
 
 - [Git](https://en.wikipedia.org/wiki/Git) 
 - [GitPod](https://www.gitpod.io/)
+- [Heroku](https://id.heroku.com/login)
 - [Bulma](https://bulma.io/)
 - [jQuery](https://jquery.com/)
 - [MongoDB Atlas](https://www.mongodb.com/)
@@ -256,22 +260,22 @@ Allow users to display their vinyl collection to other users but for view only
 #### User Story : I want to be able to register for my own account
 
 * **Plan**  
-I want the user to have the ability to register for My Vinyl Answer so they can log in anytime in the future with ease.
-I will create a register form where they will have to input their full name, a username, a email address and a password. 
+I want the user to have the ability to register for **My Vinyl Answer** so they can log in anytime in the future with ease.
+I will create a register form where they will have to input their full name, a username, an email address and a password. 
 There will be a Sign Up button available which will POST the data to the database. 
 I will add some defensive programming so that usernames will not be duplicated. I will check to see if the new username already exists in the database and if so flash up a an alert but if not then render their profile page. This will be populated with the information they just input and also a welcome message will appear ... obviously I will not be displaying their **password** within their profile or anywhere in fact ha ha !
 
 
 
 * **Implementation**  
-I created a simple *Sign up* page which has a simple form made from Bulma components. Onve the new user fills these in and hits the button. My ```signup ()``` function
-kicks into action and checks if the username exists, if so let the user know by a wee flash message and return them to the signup page.
+I created a simple *Sign up* page which has a simple form made from Bulma components. Once the new user fills these in and hits the button. My ```signup ()``` function
+kicks into action and checks if the username exists, if it does then I let the user know by a wee flash message and return them to the signup page.
 If the user doesn't exist then I take their filled in data and store it in a dictionary I called *signup* which I then *insert* into the Mongo Database. I also add the username to the session cookies for utilising whilst they are logged in. Let's not forget my wee flash message to welcome them to my website and  then send them to their profile page.
-I added an input for a the user to add a url of a pic they can use as a profile pic. It works ,ost of the time if the truth be told but it's not perfect at present. Google images says to share the image and then copy the link this way but i find this down't work. If you find the image then right click and copy image addreess then this works for me. ANyways, I've added like a big smiley raver face as a default image so no one should be left with blank image or broken link.
+I added an input for the user to add a url of a pic they can use as a profile pic. It works most of the time if the truth be told but it's not perfect at present. Google images says to share the image and then copy the link this way but I find this doesn't work. If you find the image then right click and copy image address then this works for me. Anyways, I've added like a big smiley raver face as a default image so no one should be left with blank image or broken link.  
 I added validation to all inputs and added some requirements like min lengths or @ for the email.
-Password will be encripted by using hash method through the **werkzeug.security** utlity ..... generate_password_hash for generating and check_passowrd_hash for, well you've guessed it ... checking ha ha ! So basically your wee password is taken and mashed, hashed, bashed up and stored in the database and when you login it becomes unbashed, unhashed and unmashed so that it can be compared with the login password at the login stage. 
-That's the basic terms of it anyway .... all this hash talk is making me ***salivate*** to be honest, so let's move on quickly.
-I also added some Caps Lock code for super cool effect because if the truth be told, I sat for about an hour one evening trying to figure out why my login wasn't working and it was because i had Caps Lock on. You're thinking but should you not have noticed this at the username part ... well no is the answer because I was always clicking the selection from my input pop down history thingy so was never actually inputting my username. Anyway, that's the truth behind the reason why I have a Caps Lock check on the password entries.
+Password will be encripted by using hash method through the **werkzeug.security** utlity ..... generate_password_hash for generating and check_password_hash for, well you've guessed it ... checking ha ha ! So basically your wee password is taken and mashed, hashed, bashed up and stored in the database and when you login it becomes unbashed, unhashed and unmashed so that it can be compared with the login password at the login stage. 
+That's the basic terms of it anyway .... all this hash talk is making me ***salivate*** to be honest, so let's move on quickly.  
+I also added some Caps Lock code for super cool effect because if the truth be told, I sat for about an hour one evening trying to figure out why my login wasn't working and it was because I had Caps Lock on. You're thinking but should you not have noticed this at the username part ... well no is the answer because I was always clicking the selection from my input pop down history thingy so was never actually inputting my username. Anyway, that's the truth behind the reason why I have a Caps Lock check on the password entries.
 Finally, I had to put the Javascript for Caps Lock function on each password page because when it was in my main js file, it conflicted with the users vinyl collapsible but this was a bug which I'll talk about in the bugs section.
 
 * **Test**  
@@ -291,7 +295,7 @@ Let's face facts it's not gonna win **Best Form Design Of The Year** at the Inte
 
 * **Plan**  
 I want to create a website that is unique to each person and allows them to feel welcome everytime they log on.
-The user will first have to sign up with some basic details which will be added to their personal user database.
+The user will first have to sign up with some basic details which will be added to the user database.
 After this, each user will have a personal username which will be one of a kind, as I will add code to eliminate duplication.
 They will have access to their own vinyl collection which they will have to build from scratch themselves obviously, unless I'm
 some kinda vinyl stalker who knows what each user has in their record boxes or attics !
@@ -302,15 +306,14 @@ for the ability to delete users.
 
 * **Implementation**  
 Ok so like I said above, the user signs up for the first time then they have access to their personal space moving forward. They can then use the simple login page for future logins. All they need here is their unique username and password. These two pieces of info are then passed to the ```login()``` function which basically checks the login combo against the database. If the user is unknown it will flash a generic error message and redirect to the login page again. If the user is known then it checks the users password using the hash method mentioned previously. If the password is incorrect it will flash the generic message and redirect the user to the login page yet again. 
-Now after all them mind challenging tests that if the user gets their username right and the correct password is entered ... they will then be accepted into their own wee world of My Vinyl Answer :) 
-Within the realms of My Vinyl Answer they will first see their profile page then they will have access to their personal vinyl collection ... obviously once they build it up over time. They will have access to the add vinyl form where they can start to build their collection. Finally a logout option. I know it's pretty basic for the user but it's got the potential to expand and be much better. Time constraints and lack of knowledge at this stage but as the project progresses, I think you'll see it gets better as I utilise Bulma a lot more as in the Admin secton.
+Now after all them mind challenging tests that if the user gets their username right and the correct password is entered ... they will then be accepted into their own wee world of My Vinyl Answer :)  
+Within the realms of My Vinyl Answer they will first see their profile page then they will have access to their personal vinyl collection ... obviously once they build it up over time. They will have access to the add vinyl form where they can start to build their collection. Finally a logout option. I know it's pretty basic for the user but it's got the potential to expand and be much better. Time constraints and lack of knowledge at this stage but as the project progresses, I think you'll see it gets better as I utilise Bulma a lot more in the Admin secton.
 
 * **Test**  
-So once the user signs up or logs in, they get redirected to their profile page form here they can navigate to their personal vinyl collection, they can add new vinyls or they can log out. All these links worked well with no issues. The add vinyl form was easy to use and worked well. The My Vinyl Collection area was very beautiful was some of the statements from my testers. The colours worked really well and were not too over powering. The collapsibles were smooth and it was cool that they hid the edit and delete buttons. Search function worked well per user and everyone was happy with all functionaility and navigation within their User EnVINYLoment .... I'm I getting ye yet?
+So once the user signs up or logs in, they get redirected to their profile page form here they can navigate to their personal vinyl collection, they can add new vinyls or they can log out. All these links worked well with no issues. The add vinyl form was easy to use and worked well. The My Vinyl Collection area was very beautiful was some of the statements from my testers. The colours worked really well and were not too over powering. The collapsibles were smooth and it was cool that they hid the edit and delete buttons. Search function worked well per user and everyone was happy with all functionaility and navigation within their User EnVINYLoment .... Am I getting ye yet?
 
 * **Result**  
-I think the overall user environment works well and the navigation is straightforward and easy to understand. Again, I'll raise the point I've made a few times that the Admin vinyl collection format is probably a lot better functionality ways than the user vinyl collection page. I designed the user one first and I really like it so that's why it stayed. It's basic but visually more appealing for me. I love the admin one for use of ease and you can locate your genre collection with one click using the tabs.
-Overall, it all tes
+I think the overall user environment works well and the navigation is straightforward and easy to understand. Again, I'll raise the point I've made a few times that the Admin vinyl collection format is probably a lot better functionality ways than the user vinyl collection page. I designed the user one first and I really like it so that's why it stayed. It's basic but visually more appealing for me. I love the admin one for ease of use and you can locate your genre collection with one click using the tabs.
 
 * **Verdict**  
 Overall, the user experience was very positive and the special selected few who tested my admin section said it was awesome and easy to use too. Again, I think the blend of colours with my background image for the user vinyl collection page works so good that I couldn't change it to a Bulma format. 
@@ -341,9 +344,9 @@ Each user has the ability to add vinyl with the add vinyl form. Once the user fi
 I added the *secret* code of ```"owner": session["user"]``` to the document so that I can utilise this to display the users own vinyl later on. This data is inserted into the Mongodb database and my standard flash message makes an appearance as usual. I'm kind of thinking about added the Flash Gordon sound clip eveytime it pops up .... Flash !!! Woooo-ho .... Defender Of The Universe !!! Ha ha, I just googled that clip to make sure it was right, still not sure by the way but did you know that Ming The Merciless, Flash Gordons evil arch nemisis was actually from a planet called ***MONGO*** ..... sure you couldn't write it, could ye !!! That's one of them fate thingys for sure ... love it !
 Sorry, got off track there for a minute with my Ming Moment, so once the user adds some vinyl they will see their My Vinyl collection getting bigger.
 As I said above about the secret code, I use ```{% if session.user|lower == vinyl.owner|lower %}``` in the users main vinyl page html to only allow the current user in session to only see their own vinyl and no one elses (unless you're admin). Within their Vinyl Collection environment they can see all their vinyl and they have the ability to edit and delete each vinyl also. 
-They will be able to edit their vinyl by clicking the edit button which calls the ```edit_vinyl()``` function and passes the vinyl id of the chosen vinyl into it. The funsction then populates the edit_vinyl_form for the user to edit. Once the user makes their changes they can submit the changes back to the ```edit_vinyl()```function which updates the vinyl's document and redirects them to the edit vinyl form again. A cancel will take them back to their vinyl collection where the changes will have been updated too. 
-The user has the option to delete a vinyl from their collection too. Once they choose to delete one, the delete onfirmation modal is called for where I double check that they (the user in bold) wants to delete the vinyl (added name of vinyl in bold too). Once the user, selects to confimr delete then ```delete_vinyl()``` function is called for where the vinyl id is passed to. This function then deletes the document asscociated with the passed vinyl id and redirects the user to their vinyl collection again, not forgetting about the wee flash message. Here the user can see that their vinyl has been deleted from the list too. 
-I know the user vinyl interface is again pretty basic but this was the first thing i developed and as I got to use Bulma, I realised I could have used a lot more of it's components. Honestly, as basic as it looks, I still love it because I created it from the W3 Schools collapsibles and made it my own. I know it can  be made better but for me it just suits this wee project.
+They will be able to edit their vinyl by clicking the edit button which calls the ```edit_vinyl()``` function and passes the vinyl id of the chosen vinyl into it. The function then populates the edit_vinyl_form for the user to edit. Once the user makes their changes they can submit the changes back to the ```edit_vinyl()```function which updates the vinyl's document and redirects them to the edit vinyl form again. A cancel will take them back to their vinyl collection where the changes will have been updated too. 
+The user has the option to delete a vinyl from their collection too. Once they choose to delete one, the delete confirmation modal is called for where I double check that they (the user in bold) wants to delete the vinyl (added name of vinyl in bold too). Once the user, selects to confirm delete then ```delete_vinyl()``` function is called for where the vinyl id is passed to. This function then deletes the document asscociated with the passed vinyl id and redirects the user to their vinyl collection again, not forgetting about the wee flash message. Here the user can see that their vinyl has been deleted from the list too. 
+I know the user vinyl interface is again pretty basic but this was the first thing I developed and as I got to use Bulma, I realised I could have used a lot more of it's components. Honestly, as basic as it looks, I still love it because I created it from the W3 Schools collapsibles and made it my own. I know it can  be made better but for me it just suits this wee project.
 
 * **Test**  
 My testers, fakers and I .... now that really does sound like a Hollywood comedy classic ! Anyway, we all added various vinyl and tested the validation and all worked well. The vinyl form data was easy to fill out and once saved, it gets stored within the Vinyl collection in MongoDB. The user or admin can then access this document to do what ever they want to it but within the legality of the CRUD functionality. All worked well with no issues and each user could only see the vinyls they had added.
@@ -373,17 +376,16 @@ Alexa aka My Vinyl Answer ... what list of vinyls have I from the 1970's? BANG! 
 
 
 * **Implementation**  
-I stated some sort of search function was required and that the DJ ones were important. I think at the start fo this project I was possibily aiming done the DJ route again but as it developed I thought it would be great for all vinyl enthusists not just DJs.
-Moving on, I added a little search bar above the users vinyl collection with a reset button and a search button for submitting the input to the ```vinyl_search()``` function. Wthin here, it searches through the vinyl for the matching criteria and then displays the matching vinyls. I set up a collection index (query) using the vinyl_name, genre_name, vinyl_artist, release_year and owner as these would be the main searching points i felt. So basically, the user can search all their vinyl as long as it matches the required query fields. If not then a **No Results Found** message is displayed. 
-The user can also reset the page so that it goes back to there full collection. Again it's pretty basic but as my knowledge gets better so will the search functions.
-
-In Admin access I use a Bulma panel to display all vinyl and I think it looks quite well. You may wonder why not use this format for the user vinyl collection? Like I said before as I got used to Bulma moreso at the admin part plus I loved the original authenticity of the users vinyl collection format too so didn't want to change it at this late stage. For my the users looks more appealing than the admin one to be honest. Anyway, the admin has basically the same display functions and search functions as the user, only I added some panel tabs for quicker search functionality. I created a function for each genre that when selected it displays all vinyl associated with that genre. Don't get me wrong, I know there is probably a simpler method that uses less code to do all five functions in one ... but unfortunately I don't have time on my side at this moment in time so this works for me and I can look at simplifying it at a later date. I'm still super happy I got it working so well, mind you :)
+I stated some sort of search function was required and that the DJ ones were important. I think at the start fo this project I was possibily aiming down the DJ route again but as it developed I thought it would be great for all vinyl enthusists not just DJs.
+Moving on, I added a little search bar above the users vinyl collection with a reset button and a search button for submitting the input to the ```vinyl_search()``` function. Wthin here, it searches through the vinyl for the matching criteria and then displays the matching vinyls. I set up a collection index (query) using the vinyl_name, genre_name, vinyl_artist, release_year and owner as these would be the main searching points I felt. So basically, the user can search all their vinyl as long as it matches the required query fields. If not then a **No Results Found** message is displayed. 
+The user can also reset the page so that it goes back to there full collection. Again it's pretty basic but as my knowledge gets better so will the search functions.  
+In Admin access I use a Bulma panel to display all vinyl and I think it looks quite well. You may wonder why not use this format for the user vinyl collection? Like I said before as I got used to Bulma moreso at the admin part plus I loved the original authenticity of the users vinyl collection format too so didn't want to change it at this late stage. For me, the users looks more appealing than the admin one to be honest. Anyway, the admin has basically the same display functions and search functions as the user, only I added some panel tabs for quicker search functionality. I created a function for each genre that when selected it displays all vinyl associated with that genre. Don't get me wrong, I know there is probably a simpler method that uses less code to do all five functions in one ... but unfortunately I don't have time on my side at this moment in time so this works for me and I can look at simplifying it at a later date. I'm still super happy I got it working so well, mind you :)
 
 * **Test**  
 We all tested this as users using the search box with our user vinyl collection. I told the users what they could search for as there were two areas that weren't covered .... vinyl description and vinyl label. I covered the rest within my index set up. All worked well within the user environment and it is pretty simplistic to be honest. The admin search functionality has a little more oomph to be fair and is very user friendly. I really loved using Bulma for the first time ... just took me a wee while to get used to it. 
 
 * **Result**  
-All search functionality worked well across all users and admin. Any searches carried out across the key areas within the query where displayed and when no searches where found, a message was displayed to say No Results Found. 
+All search functionality worked well across all users and admin. Any searches carried out across the key areas within the query where displayed and when no searches where found, a message was displayed to say *No Results Found*. 
 
 * **Verdict**  
 Very happy with the search functions and everything works as planned.
@@ -422,7 +424,7 @@ You learn that while you spend more time trying to get some other piece of code 
 
 * **Plan**  
 I want the user to be able to move from page to page with ease. I want an easy to use database system that is understandable just from the layout.
-I am going to use the framework Bulma for assisting with my layout and css. I have used Bootstrap in my first two projects so under direction from my legendary mentor, I will be utilising The Bulma Frameowrk. 
+I am going to use the framework Bulma for assisting with my layout and css. I have used Bootstrap in my first two projects so under direction from my legendary mentor, I will be utilising The Bulma Framework. 
 It looks pretty awesome and will deffo have it's challenges, as did Bootstrap to be fair but I'm here to learn and become a better coder every day :)
 I have so many great ideas but I deffo lack knowledge and lack time unfortunately ..... I do know this will get better over time, with constant developing and total commitment.
 I want the website to work on all devices which I believe Bulma will be a great help with. I want the user to be able to freely navigate to where ever they want but within the confines of **My Vinyl Answer**, of course !
@@ -431,8 +433,10 @@ I want the website to work on all devices which I believe Bulma will be a great 
 * **Implementation**  
 As I have mentioned before that as I progressed through this project I believe I got a little better at python, flask, jinja and bulma so as you see in the admin section I deffo utilise the Bulma framework for this. Navigation is pretty simple and I utilise the Bulma Logo Navbar for my pages. I designed the logo in Paint and Paint 3D, using the Bubble font I got for my MS2 project. I added a vinyl image and there ye go ... a wee logo ! I invert the colour in my CSS as the logo is black and I wanted my navbar to be black eventually. I think it works quite well as a white (black inverted) logo on a black navbar. 
 From the navbar the non-signed-in user has a selection of *home*, *about*, *signup* or *login* to navigate to. Although, *home* is their original starting point anyway. Once logged in the user has the options of *profile*, *my vinyl*, *add vinyl* and *logout* which the navigation to and what they do, is pretty much self explanatory.
-The admin user only has the *manage site* and *logout* options as I felt this is all they need as an admin. Within here they can navigate to various sections as regards the structure of the whole database and do various admin kinda things. I added some small back buttons to make the admin section navigation a little easier so they wouldn't have to always go back to the main manage site page everytime.
-Overall I think the navigation works well.
+The admin user only has the *manage site* and *logout* options as I felt this is all they need as an admin. Within here they can navigate to various sections as regards the structure of the whole database and do various admin kinda things. I added some small back buttons to make the admin section navigation a little easier so they wouldn't have to always go back to the main manage site page everytime. 
+Overall I think the navigation works well.  
+I have now added better back buttons and added the various collection names to the admin navbar for easier navigation.
+Overall I think the navigation works weller ha ha, better for sure. 
 
 * **Test**  
  Between my test users and myself, we have tested the navigation, the sign ups, the log ins, the forms, the searching, and most importantly the CRUD functionality. Everything worked really well and as planned. All links worked as they should and all pages displayed the correct information that was requested. Obviously, it's fairly basic but it deffo has the basis to build apon for the future.
@@ -456,11 +460,11 @@ or possibly some sleeve damage too. This will also be useful information if you 
 
 * **Implementation**  
 This was quite simple to be honest. I just added a textarea input to the add vinyl form so the user could add anythng they wanted within this description.
-This discription will then be stored in the vinyls document along with all the other form data for future referencing by the user or admin.
+This description will then be stored in the vinyls document along with all the other form data for future referencing by the user or admin.
 Nothing really else much more to say on this one to be fair.
 
 * **Test**  
-All users and myself like this added feature. It allows the user to add a few things about the vinyl itself and not just as regards the tune. They all said it would be useful if they were going to sell it to have them details readily. 
+All users and myself like this added feature. It allows the user to add a few things about the vinyl itself and not just as regards the tune. They all said it would be useful if they were going to sell it to have the details readily available. 
 
 * **Result**  
 Simple text area for adding some descriptive infomation about the vinyl. All worked really well and most users wrote pleasantries with in this description box, during testing.
@@ -474,8 +478,7 @@ All in all, a simple user story with a happy ending ... like in a fairy tale or 
 #### User Story : I want to be able to add as many vinyls as I want
 
 * **Plan**  
-I want the user to be able to add as much vinyl as they want and with total ease. 
-
+I want the user to be able to add as much vinyl as they want and with total ease.
 The user will be able select this option from the navbar once they have logged in or registered.
 I will entail a simple form with the required inputs for the user to fill out.
 They can then submit the new vinyl information for storing in their personal accessible database. I will then flash up a notification to say that they have been successful
@@ -484,11 +487,11 @@ with their vinyl collection incrementation and redirect back them to their **My 
 * **Implementation**  
 It basically does what it says on the tin so to speak. The user has the option from the navbar to select **add vinyl** once this is selected, the add vinyl page is opened where the add a vinyl form is located. The user fills the form out meeting the validation criteria set by me such as minimum characters. I added the scrolling year just to make it easier for the user to input this. The information required is the basic info of a vinyl. 
 Once the user hits the add thy vinyl button (submit) the ```add_vinyl()``` function is initiated and within this function, the added form data is collected into a dictionary called vinyl. This dictionary is then inserted as a new document within my vinyls collection in the database. Pop goes my wee flash message and the user is returned to their vinyl page with the new addition to the family on full view .... awwwww, it's a beautifull baby Techno !
-I could maybe have made the overall design of the form a little smaller so that it would fit on a large screen without scrolling but that's just a small detai, overall I still thnk it's cool and this is the *CREATE* functionality for the user.
+I could maybe have made the overall design of the form a little smaller so that it would fit on a large screen without scrolling but that's just a minor detail, overall I still think it's cool and this is the *CREATE* functionality for the user.
 
 * **Test**  
-Once the users were logged in or signed up. They had access to **Add Vinyl** where they could fill in the required form to add their own vinyl to build u their collection. They did this with ease. Obviously, my users / testers were predominantly work colleagues who don't generally carry around a bag of vinyl, in the off chance some wee dude from Northern Ireland needs some specific vinyl details added as part of a Python project he has developed for vinyl freaks like him.
-Anyway, my users made some cool names, yet some explicit vinyl names up and added them through their user environment. The users were then able to see the added vinyl within their vinyl collection, and again do whatever they want with them, from a CRUD perspective of course. They repeated this a few times and everytime the new viny was added with ease.
+Once the users were logged in or signed up. They had access to **Add Vinyl** where they could fill in the required form to add their own vinyl to build up their collection. They did this with ease. Obviously, my users / testers were predominantly work colleagues who don't generally carry around a bag of vinyl, in the off chance some wee dude from Northern Ireland needs some specific vinyl details added as part of a Python project he has developed for vinyl freaks like him.
+Anyway, my users made up some cool names, yet some explicit vinyl names and added them through their user environment. The users were then able to see the added vinyl within their vinyl collection, and again do whatever they want with them, from a CRUD perspective of course. They repeated this a few times and everytime the new vinyl was added with ease.
 
 * **Result**  
 All vinyl that was tried was added with no issues. A flash message appears to let the user know that the vinyl has been added to their collection. The user can repeat this task over and over again to build up their vinyl collection.
@@ -503,17 +506,16 @@ Again, super happy with the results and the user feedback. Everyones vinyl got a
 
 * **Plan**  
 I want the user to be able to edit any vinyl information on any individual vinyl document in the database. They will be able to access the **Edit Vinyl** page from the 
-**My Vinyl** page by clicking the edit button hidden within each of the vinyls collapsibles. Once on the Edit Vinyl page the user will have access to a pre-loaded form with the current vinyl information already filled in. The user can then edit whatever section they want and when they are happy, they can submit again to the database the editted vinyl info. Once this is complete I will redirect them back to their **My Vinyl** page again where they can check on their current updated vinyl. I'm just thinking that if the user has a large collection and they edit after scrolling down through a lot of them, if they decide to edit at this point, will a redirectiion send the user back to the top of the list??? I'll have to think about this one and test to see what happens :)
+**My Vinyl** page by clicking the edit button hidden within each of the vinyls collapsibles. Once on the Edit Vinyl page the user will have access to a pre-loaded form with the current vinyl information already filled in. The user can then edit whatever section they want and when they are happy, they can submit again to the database the edited vinyl info. Once this is complete I will redirect them back to their **My Vinyl** page again where they can check on their current updated vinyl. I'm just thinking that if the user has a large collection and they edit after scrolling down through a lot of them, if they decide to edit at this point, will a redirection send the user back to the top of the list??? I'll have to think about this one and test to see what happens :)
 
 * **Implementation**  
-Very similar to the add vinyl function mentioned above. Although, the add vinyl has it's own wee slot in the navbar the edit button is hidden behind each collapsible. The user has to click onto the tune they want to edit or delete. When they select the edit button, the ```edit_vinyl()``` function is activated and the selected vinyl id is passed to it. On the first instance the function finds the genres, the session user and the vinyl data. It then passes these to the edit vinyl page which populates the form for the user to edit. I utilised the add vinyl form as they are basically exactly the same. After the user has finished editing their vinyl they will then submit the form by pressing the *Edit Vinyl* button. This calls the ```edit_vinyl()``` function again but this time we are **POSTING** the form data for updating within the database. The obligatory flash message makes another appearance and the user is redirected to the edit vinyl page again. They can hit cancel to go back to their vinyl collection and see the changes that were made.
-
-I added some admin changes so that if you are admin you get redirected to a card that displays all the vinyl information and from here you can move onto edit or delete the vinyl. I had to do this as I was using the Bulma panel format and wanted to keep it this shape instead of adding two buttons to it, I created the vinyl card for pop upping and offereing the required options.... clever I know ! 
-I did encounter an annoying bug with this one tbh and it was the fact as admin the *owner* field kept getting wrote over as *admin* if i was admin and *none* if i left it out but I talk about this in the bugs section.
+Very similar to the add vinyl function mentioned above. Although, the add vinyl has it's own wee slot in the navbar the edit button is hidden behind each collapsible. The user has to click onto the tune they want to edit or delete. When they select the edit button, the ```edit_vinyl()``` function is activated and the selected vinyl id is passed to it. On the first instance the function finds the genres, the session user and the vinyl data. It then passes these to the edit vinyl page which populates the form for the user to edit. I utilised the add vinyl form as they are basically exactly the same. After the user has finished editing their vinyl they will then submit the form by pressing the *Edit Vinyl* button. This calls the ```edit_vinyl()``` function again but this time we are **POSTING** the form data for updating within the database. The obligatory flash message makes another appearance and the user is redirected to the edit vinyl page again. They can hit cancel to go back to their vinyl collection and see the changes that were made.  
+I added some admin changes so that if you are admin you get redirected to a card that displays all the vinyl information and from here you can move onto edit or delete the vinyl. I had to do this as I was using the Bulma panel format and wanted to keep it this shape instead of adding two buttons to it, I created the vinyl card for pop upping and offering the required options.... clever I know ! 
+I did encounter an annoying bug with this one tbh and it was the fact as admin the *owner* field kept getting wrote over as *admin* if I was logged in as admin and *none* if I left it out, but I talk about this in the bugs section.
 Again, I am happy with overall edit vinyl functionality and this is the *UPDATE* functionality for the user therefore covered.
 
 * **Test**  
-Very similar to the add function above and the delete function below. Once the users add some vinyl then they tested the edit vinyl functionality. They all loved the fact the edit and delete buttons were hidden within the collapsible, they said it was cool (Sounds like I work with a bunch of hippies ha ha). All worked well and they could edit any field they wanted. Once they went back to their vinyl collection, they could see their vinyl with it's updated information. All worked well with no issues. I just had the admin issue with overwritting the vinyl owner value with admin but I rectified this and I tell all in a new explosive section within BUGS, called **I Vaunt All Zee Vinyl** ... bet you the excitement is killing you my little project marker person :) You know, these crap jokes are mostly for your benefit and maybe offer a README a little different from the norm so you can smile and have a laugh whilst thinking what a coding genius I am .... plus thinking about me thinking about you as I write my future jokes for ye !!! 
+Very similar to the add function above and the delete function below. Once the users add some vinyl then they tested the edit vinyl functionality. They all loved the fact the edit and delete buttons were hidden within the collapsible, they said it was cool (Sounds like I work with a bunch of hippies ha ha). All worked well and they could edit any field they wanted. Once they went back to their vinyl collection, they could see their vinyl with it's updated information. All worked well with no issues. I just had the admin issue with overwritting the vinyl owner value with admin but I rectified this and I tell all in a new explosive section within BUGS, called **I Vaunt All Zee Vinyl** ... bet you the excitement is killing you my little project marker person :) You know, these crap jokes are mostly for your benefit and maybe offer you a README a little different from the norm so you can smile and have a laugh whilst thinking what a coding genius I am .... plus thinking about me thinking about you as I write my future jokes for ye !!! 
    
 * **Result**  
 All tests passed and any vinyl tried and edited, the changes were made with no issues. All users were happy with the method and the functionality. The usual wee flash message for good measure. Admin vinyl edit functionality works super well as welly well .... so well, I'm welling up !
@@ -529,12 +531,12 @@ All worked really well and I am very happy with the user feedback.
 * **Plan**  
 I want the user to be able to delete any vinyl that they want. 
 Why would they do that, you may ask? Well maybe they have grew up, unlike me, and they want to have babies, settle down and live a vinyl free life !
-Life can be cruel so they will have to sell their vinyl collection .... could be a slow and painful sale were they slip from youir grasp in ones and twos ... or it could be a highest bid f'ing wins the f'ing lot :(
-Anyhow enough gibber jabber fool, there will therefore be a button of the deletion family required. This delete button will be also be hidden within each of the vinyls collapsibles besdie the edit button above. Once the user clicks the delete button, I will add some defensive programming to make sure this is what the user wants to do.
+Life can be cruel so they will have to sell their vinyl collection .... could be a slow and painful sale were they slip from your grasp in ones and twos ... or it could be a highest bid f'ing wins the f'ing lot :(
+Anyhow enough gibber jabber fool, there will therefore be a button of the deletion family required. This delete button will be also hidden within each of the vinyls collapsibles beside the edit button above. Once the user clicks the delete button, I will add some defensive programming to make sure this is what the user wants to do.
 This will hopefully eliminate the chance of deleting a vinyl by accident or mistake. Again once the user has completed their vinyl deletion, I will redirect them back to their **My Vinyl** page where their deleted vinyl has been removed and also removed from the database.
 
 * **Implementation**  
-Very similar to the above and the above above ha ha. Just like the edit button the delete button is hidden behind the vinyl collapsible. When the user clicks on the the vinyl, it opens up displaying the vinyl info and the two buttons. When the user selects the delete button, the ```confirm_modal()``` function is called for which opens up a confirmation modal which double checks the user want to delete that specific vinyl. I passed the user and the vinyl to the modal so that I could ask the user personally and emphasize the vinyl name to them as well before the continue on with the deletion. The user can cancel at this point were they will be be redirected back to their vinyl colletion through the ```my_vinyls()``` function. If the user continues on and presses the delete button in the confirmation modal then the ```delete_vinyl()``` function kicks in. The vinyl id is passed into the function for some unadulterated and never to be seen again deletion. The vinyl document is removed from the database and wee flashy mcflash magically appears again. Just so you know, I added the wee close down x in the corner as you can probably tell the flashes were getting on my nerves will testing and testing bits of code over again and again and again. So that needed to have an option to close down ha ha !
+Very similar to the above and the above above ha ha. Just like the edit button the delete button is hidden behind the vinyl collapsible. When the user clicks on the the vinyl, it opens up displaying the vinyl info and the two buttons. When the user selects the delete button, the ```confirm_modal()``` function is called for which opens up a confirmation modal which double checks the user want to delete that specific vinyl. I passed the user and the vinyl to the modal so that I could ask the user personally and emphasize the vinyl name to them as well before the continue on with the deletion. The user can cancel at this point were they will be be redirected back to their vinyl collection through the ```my_vinyls()``` function. If the user continues on and presses the delete button in the confirmation modal then the ```delete_vinyl()``` function kicks in. The vinyl id is passed into the function for some unadulterated and never to be seen again deletion. The vinyl document is removed from the database and wee flashy mcflash magically appears again. Just so you know, I added the wee close down x in the corner as you can probably tell the flashes were getting on my nerves with testing and testing bits of code over again and again and again. So that needed to have an option to close down ha ha !
 Once deleted the user gets directed to the their vinyl collection again or if admin, they get directed to their vinyl list and therefore the admin all vinyl collection.
 Again, I am happy with overall delete vinyl functionality and this is the *DELETE* functionality for the user therefore covered.
 
@@ -542,48 +544,28 @@ Again, I am happy with overall delete vinyl functionality and this is the *DELET
 Similar to the add and edit functions mentioned above. The users deleted numerous vinyls as did I. They loved the fact it was hidden along with the edit button. They also loved the dark screen thingy as they called it or a **modal** as we know it, that made sure the were making the correct life choice before deleting their vinyl. Once the user crossed that line their vinyl gets removed from the collection and never to be seen again .... unless that specific user re-enters that exact same information again ... then I suppose you can say it's the same so therefore technically it can be seen again .... sorry, well until that happens it's never to be seen again.
 
 * **Result**  
-All users tested this functionality and it worked very well. The admin deletion worked perfectly too. And if I wasn't sure about performing the deletion in the first place with the confirmation modal, the user gets a flash message to confirm that the deletion did in fact take place. All corners covered this boy ... as I rave to cheesy euro pop and type this work of art up, moi README :)
+All users tested this functionality and it worked very well. The admin deletion worked perfectly too. And if I wasn't sure about performing the deletion in the first place with the confirmation modal, the user gets a flash message to confirm that the deletion did in fact take place. All corners covered by this boy ... as I rave to cheesy euro pop and type this work of art up, moi README :)
 
 * **Verdict**
-
-
-
-### ADMIN SHIT NEEDS ADDED HERE AND AT USER STORIES POSSIBLY
-
-#### User Story :
-
-* **Plan** 
-
-
-* **Implementation**  
-
-
-* **Test**  
-
-
-* **Result**  
-
-
-* **Verdict**
-
+Deletion functionality worked for all users and all admin tests. Very happy with this and the CRUD functionality overall. 
 
 
 
 ### **Validation Checks**
 
 All my html passed all the checks at [W3C HTML Validation Service](https://validator.w3.org/). The only issue being that I had used an ID twice on my user vinyl page when grouping and centering the two sets of buttons. I just changed these to classes so both will work with no issues. Apart from that, it was all jinja logic errors and the fact most of my html didn't have any header information.
-All my CSS passed all checks at [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) with no errore what so ever.
+All my CSS passed all checks at [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) with no errors what so ever.
 
 
 ### **User Questionnaire And Overall Feedback**
 
-Over the previous two projects, I've seen the necessity for user feedback and user testing. In the first project I was really shy if the truth be told so I din't really show my project off or let people see it. This also affected my final score which I didn't realise was a mojor attributory to a decent score. WIth my last project, the JS one, I annoyed people with testing it as I wanted the get it right. The user feedback from that was awesome and very encouraging so I set out to get the same people, work colleagues, friends and family, to test my new project. I made a questionnaire of general questions, for them to fill out as they navigate around the site. I let a few of them try the admin access as I needed some testing and verification of that code too. The questionnaire can be found below:
+Over the previous two projects, I've seen the necessity for user feedback and user testing. In the first project I was really shy if the truth be told so I didn't really show my project off or let people see it. This also affected my final score which I didn't realise was a major attributory to a decent score. With my last project, the JS one, I annoyed people with testing it as I wanted to the get it right. The user feedback from that was awesome and very encouraging so I set out to get the same people, work colleagues, friends and family, to test my new project. I made a questionnaire of general questions, for them to fill out as they navigate around the site. I let a few of them try the admin access as I needed some testing and verification of that code too. The questionnaire can be found below:
 
 [User / Admin Questionnaire](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/user_questionnaire.pdf)
 
 The overall user / admin feedback from the questionnaire was very encouraging too.... 
-And don't be thinking as they fill in the blanks, I'm standing behind them with a large hunting knife whispering into their ear "I know where you live ... princess" so I get better results .... I wanted them to dig deep, try things, mess around and see if they could find anythng wrong.
-This is how you progress and if you cannot take critique then you're in the wrong business .... sounds like famous line from a Hollywood movie !
+And don't be thinking as they fill in the blanks, I'm standing behind them with a large hunting knife whispering into their ear "I know where you live ... princess" so I get better results .... I wanted them to dig deep, try things, mess around and see if they could find anything wrong.
+This is how you progress and if you cannot take critique then you're in the wrong business .... sounds like a famous line from a Hollywood movie !
 Anyways, the main points were as follows:
 
 - The site looks really awesome and the deck backdrop was cool 
@@ -628,11 +610,11 @@ It worked when I used say a class = p1 but not an id = p1 .... couldn't figure i
 Probably a bit of noob code to be honest as well but sure .... it's the joys of gaining experience.
 
 * **Fix**
-I realised, eventually, that I was creating id = p1 numourous times as it was within a for loop so therefore it was pissed off because there should only one 'id' & thats why it wouldn't work .... glad I figured it out tbh :)
+I realised, eventually, that I was creating id = p1 numourous times as it was within a for loop so therefore it was pissed off because there should only one 'id' and that's why it wouldn't work .... glad I figured it out tbh :)
 
 
 * **Verdict** 
-In the end I settled for calling a modal function which in turn diaplays the modal page for the suer or admin .... but a bug is a bug and I fixed it so might as well share.
+In the end I settled for calling a modal function which in turn displays the modal page for the user or admin .... but a bug is a bug and I fixed it so might as well share.
 
 ### **Modal lay-od-lay-od-lay-he-hoo Two**
 
@@ -641,7 +623,7 @@ I couldn't get my modal to delete the correct database document and it would jus
 The selected vinyl_id wasn't linking to my delete route app.
 
 * **Fix**
-I tried a few things but in the end I moved the modal to it's own page & created an app.route to it when the delete button is pressed and I pass through the vinyl details using vinyl_id. This is so I can display any vinyl details I want plus pass the vinyl_id into the delete vinyl function. When the delete button in t he modal is pressed the vinyl gets deleted.
+I tried a few things but in the end I moved the modal to it's own page and created a route to it when the delete button is pressed and I pass through the vinyl details using vinyl_id. This is so I can display any vinyl details I want plus pass the vinyl_id into the delete vinyl function. When the delete button in the modal is pressed the vinyl gets deleted.
 
 * **Verdict** 
 I think this works really well now and by passing in the user also I could confirm with them on a personal level if they really wanted to delete that specific vinyl.
@@ -653,7 +635,7 @@ Spent ages trying to figure out why my users document values would not display o
 I was using jinja logic to display them so should have been simples ... right !
 
 * **Fix**
-Well butt munch here forgot to write the database name with the proper jinja logic value. I was using {{ fullname }} when it should have been {{ users.fullname }}
+Well, butt munch here forgot to write the database name with the proper jinja logic value. I was using {{ fullname }} when it should have been {{ users.fullname }}
 
 * **Verdict**
 Pretty raging after that tbh but sure .... another learning point noted & will be easier to notice next time !
@@ -690,7 +672,7 @@ After a mentor sesh he said it would be good to have a default image in case the
 Once I added this manually to the database the code I had be trying started to work ..... happy yet angry happy yet angry !!! Anyways, I tried another url based image as back-up but while it maybe worked the first time, it was maybe missing on a reload and then back into vision on another reload. Not sure why this was happening to be honest but I didn't want to take any chances so I got a smiley face from my MS1. I edited the Smiley Face image in Paint3D by removing some writing and I also removed the background. I added this to my images folder and using the code ```<img src="image.png" onError="this.onerror=null;this.src='/images/noimage.gif';" />``` I added my jinja link and my default Smiley Face ..... Loads everytime ye boy ye (P.S. please don't come back saying it didn't work for you ..... just lie to me and say *worked dead on RaVeR76 !*)
 
 * **Verdict**
-Hopefully it works either way, I really want the user to have their own image but at least if it doesn't work they have a happy smiley face. I think it all depends on you copy the link from the image. Google tells you to share then copy link but this doesn't work for me. If i right click and copy image address and paste that then this works everytime for me.
+Hopefully it works either way, I really want the user to have their own image but at least if it doesn't work they have a happy smiley face. I think it all depends on you copy the link from the image. Google tells you to share then copy link but this doesn't work for me. If I right click and copy image address and paste that then this works everytime for me.
 
 ### **Nobody Likes A Faker**
 
@@ -702,12 +684,12 @@ Last night he showed me his ... screen and my wee project was displaying proudly
 Anyway, Detective RaVeR76 was on the case and after some clever analysing, snooping around, interogating, I found that the culprit was none other than me .... RaVeR76 ! I hadn't added any *Owner* field to their individual collection document within Mongodb so my code I wrote for vinyl only to be displayed by the user would not work. Owner is a hidden field (not for display) that I use to do this and gets added when a new vinyl is added to their collection. Within the jinja for loop, I check that the current user ```session.user``` is the same as the owner ```vinyl.owner``` for each vinyl and if they are, their vinyl's will be displayed on screen.
 
 * **Verdict**
-My fix works perfect as I have tried loads of fake users to make sure my code is working. I've that many passowrds in my head it's about to explode, should've just used the same one over and over again for test purposes. All fake users display their own vinyl so everything works well. 
+My fix works perfect as I have tried loads of fake users to make sure my code is working. I've that many passwords in my head it's about to explode, should've just used the same one over and over again for test purposes. All fake users display their own vinyl so everything works well. 
 
 ### **Vinyls M.I.A.**
 
 * **Bug**
-I was refactoring all my code so I was doing it very slowly & in small parts so i didn't create a major headache on a Saturday night.
+I was refactoring all my code so I was doing it very slowly and in small parts so I didn't create a major headache on a Saturday night.
 So when I refactored a part say the modal I would test everything linked to that modal and in fact I would just go through the whole website to make sure it all worked.
 Anyway I was testing the edit and delete functions from the vinyls page. I noticed that when I made an edit and clicked the edit button it stayed on the edit vinyl page which is correct but when I went back to the my_vinyl page .... the wee vinyl had did a Hoodini and disappeared ! I was like WTF !
 I added more vinyl and kept trying it but yip ... same thing again. I followed the paths between everything and couldn't see anything that was out of place. 
@@ -732,7 +714,7 @@ I found that because I had added it to each page in the pages folder using *Jinj
 Solution for this bug within a bug was to enclose each page in the pages folder within a div with a container class, which I did and everything looks cool again :)
 
 * **Verdict**
-ALl looks good and the navigation bar looks perfect.
+All looks good and the navigation bar looks perfect.
 
 ### **URL Avin A Laff**
 
@@ -763,7 +745,7 @@ Happy with the solution and it was simple anyway just a silly mistake.
 ### **Pop A Cap In Your Lock**
 
 * **Bug**
-I tried to log in and I couldn't. I tried using my various test login details but none would work. This was just after I had did some button styling so I was like there should be no connection here. It did my head in for about an hour trying to figure it out. I investigated anyway and eventually found the reason.... I had **CAPS LOCK ON !** How annoying yet secretly deceptive in that I wouldn't have realised that and didn't realise that, hence me delving into my code to find the reason.
+I tried to log in and I couldn't. I tried using my various test login details but none would work. This was just after I had did some button styling so I was like there should be no connection here. It did my head in for about an hour trying to figure it out. I investigated anyway and eventually found the reason.... I had **CAPS LOCK ON !** How annoying yet secretly deceptive, in that I wouldn't have realised that and didn't realise that, hence me delving into my code to find the reason.
 
 * **Fix**
 Added some detection for passwords as the user cannot see any input values. I found some cool yet simple code for this in W3Schools and link is in the credit section below.
@@ -778,7 +760,7 @@ I think it works well and will stop other users from being caught out like me, R
 After I added the Caps Lock On code my collapsibles for the users vinyl wouldn't work, it worked when I swapped the position of the JS functions around for them within the js file.
 
 * **Fix**
-I tried various test to figure out why it was doing this but I was spending too much time when I had a solution but I'll try come back to it & figure it out.
+I tried various test to figure out why it was doing this but I was spending too much time when I had a solution but I'll try come back to it and figure it out.
 Think it's to do with the display class but not sure. It was a head melter for sure.
 
 * **Verdict**
@@ -814,8 +796,8 @@ The more I used the Bulma framework the better I got as you can see this within 
 Admin issues when editing a vinyl because it changed the vinyl owner name to admin everytime. I knew why it was doing it but just couldn't find a solution quick enough.
 
 * **Fix**
-This simple piece of code ```owner = vinyl.get('owner')``` saved the day. I spent hours on this one as well .... unbelieveable I swear. Once you fix one wee bug another one pops it's ugly head up. I wanted to utilize the edit_vinyl as both admin & a user but the owner key was causing me major headaches as the value was becoming admin then null & I couldn't figure it out for ages but then I found that piece of code, it worked.
-Only now when the page returned the flash message had the new name but the page didn't change. I got stuck on this one too. I coundn't figure out how to redirect to function in my app.py and pass an _id too. I had to settle for finding the vinyl & rendering the template again. Sorry if it was not the logical method but I'm still learning & my head is fried at the minute lol !
+This simple piece of code ```owner = vinyl.get('owner')``` saved the day. I spent hours on this one as well .... unbelieveable I swear. Once you fix one wee bug another one pops it's ugly head up. I wanted to utilize the edit_vinyl as both admin and a user but the owner key was causing me major headaches as the value was becoming admin then null and I couldn't figure it out for ages but then I found that piece of code, it worked.
+Only now when the page returned the flash message had the new name but the page didn't change. I got stuck on this one too. I couldn't figure out how to redirect to function in my app.py and pass an _id too. I had to settle for finding the vinyl & rendering the template again. Sorry if it was not the logical method but I'm still learning and my head is fried at the minute lol !
 
 * **Verdict**
 Everything works well now, with a simple solution that took ages to **get** .... pun intended as always my dear :)
@@ -951,18 +933,14 @@ To clone this project:
 ## **Conclusion**
 ---
 
-I know I called this My Vinyl Answer so it't therefore mainly about vinyl and stacks of it ha ha, but this could have been further developed so the
+I know I called this My Vinyl Answer so it's therefore mainly about vinyl and stacks of it ha ha, but this could have been further developed so the
 user could make up their own personl database for whatever collection they wanted. Obviously, there would be limits put in place so they don't abuse the database ...
-nobody likes a db abuser !
-
-Some of the harder python was easiest to conquer and I was like who's the daddy but then again some the easier python twisted my napper & was like an uppercut from Drago in Rocky 4.
-
-Write overall USER questionnaire tests conclusiony thing at end of test section.
-
-
-I know the overall layout could improve and maybe it will in version 2 ha ha but I am happy with what I have achieved in the allocated time plus having to learn Python too.
+nobody likes a db abuser !  
+Overall I found python not to bad and really enjoyed it. Don't get me wrong there were times when I thought why won't you work you piece of chip ! It should have panned out differently and there were a few times when I got swallowed up in changes and lost my way. I just needed to take a step back and trace the code through which I learned through time. To be honest, some of the harder python was easiest to conquer and I was like who's the daddy but then again some the easier python twisted my napper and it was like an uppercut from Drago in Rocky 4.  
+I know the overall layout could improve and maybe it will in *Version 2* ha ha but I am happy with what I have achieved in the allocated time plus having to learn Python too.
 Maybe I should have used all Bulma components which I have for 95% of it but just the user vinyl collection I left the way it is as I love the look and feel of it. 
-All in all, there could be a few upgrades in the future but I am super hapy with the overall outcome of this project.
+All in all, there could be a few upgrades in the future but I am super hapy with the overall outcome of this project.  
+I hope you like it too !
 
 ## **Credits**
 ---
@@ -999,25 +977,27 @@ All in all, there could be a few upgrades in the future but I am super hapy with
 
 [Favicon Vinyl Image](https://www.pngfind.com/mpng/mRhxxh_vinyl-record-clip-art-hd-png-download/)
 
+[Debugging Help](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1618992182397900?thread_ts=1618985984.386500&cid=C7JQY2RHC)
 
+**Image Credits**
 
-
-Nervous about getting the debugging wrong cause all you hear is you'll FAIL FAIL FAIL !!! ... if you leave it on. 
-So I researched a bit just to make sure I get it right as I dinny wanna FAIL ! I found this on our very own Slack 
-https://code-institute-room.slack.com/archives/C7JQY2RHC/p1618992182397900?thread_ts=1618985984.386500&cid=C7JQY2RHC plus advice from my mentor.
-He said you could call the Debug value anything you wanted in the ```env.py``` as long as it's a string so I think I had *CritterFace* at a time and also *DeCrittering* but I just settled on a simple *True* ha ha.
-
-
-**Images**
+Deck Pic -  Photo by James Sutton on Unsplash 
 
 Vinyl On Floor Pic - Photo by Eric Krull on Unsplash
 
-Vinyl Upright & Headphones Pic - Photo by blocks on Unsplash
-  
-Deck Pic -  Photo by James Sutton on Unsplash 
+**Special Shout Outs**
 
-Vertical Vinyl - Photo by David Grandmougin on Unsplash
+* Firstly to my testers - my family, my work colleagues and Wee Ro .... with the main ones being Scott, Storm & Wee CJ
 
-Store Vinyl For Sale - Photo by Valentino Funghi on Unsplash
+* My **'patient'** mentor [Simen Daehlin](https://github.com/Eventyret), for helping me develop my coding skills by giving awesome advice and direction :)
+
+* [AnoukSmet](https://github.com/AnoukSmet), for her awesome README & cool website
+
+* Slack for continuous information, help links, tutorials, laughter, support .... I could go on
+
+* [Stackoverflow](https://stackoverflow.com/), useful resource site for finding solutions to many issues I had
+
+**This site is mainly for educational purposes only but chill out and face the Vinyl Frontier**
+
 
 [Back to Top](#contents)
