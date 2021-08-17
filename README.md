@@ -947,43 +947,43 @@ I hope you like it too !
 
 **Code Credits**
 
-[Collapsible taken from W3SChools](https://www.w3schools.com/howto/howto_js_collapsible.asp)
+* [Collapsible taken from W3SChools](https://www.w3schools.com/howto/howto_js_collapsible.asp)
 
-[JavaScript for a Bulma select dropdown taken from here](https://github.com/jgthms/bulma/issues/1870)
+* [JavaScript for a Bulma select dropdown taken from here](https://github.com/jgthms/bulma/issues/1870)
 
-[Release year selection code](https://stackoverflow.com/questions/34676752/can-i-use-an-html-input-type-date-to-collect-only-a-year/40662109)
+* [Release year selection code](https://stackoverflow.com/questions/34676752/can-i-use-an-html-input-type-date-to-collect-only-a-year/40662109)
 
-[Remove autofill from Add Vinyl as turned background blue](https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css)
+* [Remove autofill from Add Vinyl as turned background blue](https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css)
 
-[Align edit button within my column](https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div)
+* [Align edit button within my column](https://stackoverflow.com/questions/7560832/how-to-center-a-button-within-a-div)
 
-[Delete confirmation modal](https://www.w3schools.com/howto/howto_css_delete_modal.asp)
+* [Delete confirmation modal](https://www.w3schools.com/howto/howto_css_delete_modal.asp)
 
-[Caps Lock On code taken from W3Schools](https://www.w3schools.com/howto/howto_js_detect_capslock.asp)
+* [Caps Lock On code taken from W3Schools](https://www.w3schools.com/howto/howto_js_detect_capslock.asp)
 
-[Got database collection names from this code](https://stackoverflow.com/questions/9805451/how-to-find-names-of-all-collections-using-pymongo)
+* [Got database collection names from this code](https://stackoverflow.com/questions/9805451/how-to-find-names-of-all-collections-using-pymongo)
 
-[Code for scroll on Admin Vinyl](https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list)
+* [Code for scroll on Admin Vinyl](https://stackoverflow.com/questions/21998679/css-how-to-make-scrollable-list)
 
-[Added back button code from W3Schools](https://www.w3schools.com/jsref/met_his_back.asp)
+* [Added back button code from W3Schools](https://www.w3schools.com/jsref/met_his_back.asp)
 
-[Background for home page logo taken from here](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blurred_bg)
+* [Background for home page logo taken from here](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_blurred_bg)
 
-[Code for default image fix taken from here](https://stackoverflow.com/questions/92720/jquery-javascript-to-replace-broken-images?page=1&tab=votes#tab-top)
+* [Code for default image fix taken from here](https://stackoverflow.com/questions/92720/jquery-javascript-to-replace-broken-images?page=1&tab=votes#tab-top)
 
-[Code for url bug solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url)
+* [Code for url bug solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url)
 
-[Bouncing ball code used for my About smiley](https://codeburst.io/tutorial-make-a-bouncing-ball-entirely-with-css-1e7e3c853a50)
+* [Bouncing ball code used for my About smiley](https://codeburst.io/tutorial-make-a-bouncing-ball-entirely-with-css-1e7e3c853a50)
 
-[Favicon Vinyl Image](https://www.pngfind.com/mpng/mRhxxh_vinyl-record-clip-art-hd-png-download/)
+* [Favicon Vinyl Image](https://www.pngfind.com/mpng/mRhxxh_vinyl-record-clip-art-hd-png-download/)
 
-[Debugging Help](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1618992182397900?thread_ts=1618985984.386500&cid=C7JQY2RHC)
+* [Debugging Help](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1618992182397900?thread_ts=1618985984.386500&cid=C7JQY2RHC)
 
 **Image Credits**
 
-Deck Pic -  Photo by James Sutton on Unsplash 
+* Deck Pic -  Photo by James Sutton on Unsplash 
 
-Vinyl On Floor Pic - Photo by Eric Krull on Unsplash
+* Vinyl On Floor Pic - Photo by Eric Krull on Unsplash
 
 **Special Shout Outs**
 
