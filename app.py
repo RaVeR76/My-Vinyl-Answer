@@ -333,7 +333,7 @@ def del_genre_confirm(genre_id):
 
 
 # Find Database collection names for displaying to Admin
-@app.route("/admin/manage_site")
+@app.route("/admin/lobby")
 def manage_site():
     """
     Allow admin to access collections

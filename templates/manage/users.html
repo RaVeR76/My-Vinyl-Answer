@@ -1,0 +1,45 @@
+<div class="container is-two-thirds">
+    <div class="notification my-blue col-pad is-centered not-pos">
+        <p class="has-text-centered text-my-white">Manage Users</p>
+    </div>
+
+    <div class="row is-centered col-pad">
+        <div class="field column is-2 is-offset-5">
+            <div class="control">
+                <a href="{{ url_for('manage_site') }}"
+                    class="button my-blue-light text-my-white is-medium is-fullwidth but-font is-rounded">
+                    <span class="icon is-small">
+                        <i class="fas fa-backward"></i>
+                    </span>
+                    <span>Back</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="columns is-centered is-flex-wrap-wrap">
+
+            {% for user in users %}
+
+            <div class="column is-2">
+                <div class="card">
+                    <header class="card-header">
+                        <a href="{{ url_for('user_card', user_id=user._id) }}"
+                            class="card-header-title is-horizontal-center ">
+                            {{ user.username }}
+                        </a>
+                    </header>
+                    <footer class="card-footer">
+                        <a href="{{ url_for('edit_user', user_id=user._id) }}" class="card-footer-item">Edit</a>
+                        <a href="{{ url_for('del_user_confirm', user_id=user._id) }}"
+                            class="card-footer-item">Delete</a>
+                    </footer>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </section>
+</div>

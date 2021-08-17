@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="notification my-blue col-pad is-centered">
+        <p class="has-text-centered text-my-white">Manage Genre</p>
+    </div>
+
+    <div class="row is-centered col-pad">
+        <div class="field column is-2 is-offset-5">
+            <div class="control">
+                <a href="{{ url_for('manage_site') }}"
+                    class="button my-blue-light text-my-white is-medium is-fullwidth but-font is-rounded">
+                    <span class="icon is-small">
+                        <i class="fas fa-backward"></i>
+                    </span>
+                    <span>Back</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="columns is-centered is-flex-wrap-wrap">
+
+            {% for genre in genre %}
+
+            <div class="column is-2">
+                <div class="card">
+                    <header class="card-header">
+                        <span class="card-header-title is-horizontal-center prof-font">
+                            {{ genre.genre_name }}
+                        </span>
+                    </header>
+                    <footer class="card-footer">
+                        <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="card-footer-item">Edit</a>
+                        <a href="{{ url_for('del_genre_confirm', genre_id=genre._id) }}"
+                            class="card-footer-item ">Delete</a>
+                    </footer>
+
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+        <div class="row is-centered col-pad">
+            <div class="field column is-4 is-offset-4">
+                <div class="control">
+                    <a href="{{ url_for('add_genre') }}"
+                        class="button my-red text-my-white is-medium is-fullwidth but-font is-rounded">
+                        Add Genre
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
