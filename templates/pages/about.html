@@ -1,8 +1,6 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-    {% include "components/navigation/navigation.html" %}
-
         <div class="modal is-active">
             <div class="modal-background"></div>
             <div class="modal-content">
@@ -25,7 +23,9 @@
                             <p class="has-text-centered">Anyways, I hope you like it ..... peace out !</p>
                             <br>
                             <div>
-                                <p class="has-text-centered">Developed by <b>RaVeR76</b> (2<img src="{{ url_for('static', filename='images/smiley_small.png') }}" alt="A rave smiley face" class="smiley-size">21)</p>
+                                <p class="has-text-centered">Developed by <b>RaVeR76</b> 
+                                    (2<img src="{{ url_for('static', filename='images/smiley_small.png') }}" 
+                                        alt="A rave smiley face" class="smiley-size">2 1)</p>
                             </div> 
                         </div>
                     </div>
