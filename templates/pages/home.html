@@ -7,9 +7,9 @@
             <div class="container rel-pos">
                 <div class="abs-pos">
                     <figure class="has-text-centered">
-                        <img src="static/images/my.png" class="invert fig-size"><img src="static/images/spin-vin.gif"
+                        <img src="{{ url_for('static', filename='images/my.png') }}" class="invert fig-size"><img src="{{ url_for('static', filename='images/spin-vin.gif') }}"
                             class="vin-spin invert">
-                        <img src="static/images/answer.png" class="invert fig-size">
+                        <img src="{{ url_for('static', filename='images/answer.png') }}" class="invert fig-size">
                     </figure>
                 </div>
             </div>
