@@ -1,22 +1,6 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-        <div class="modal is-active">
-            <div class="modal-background">
-            </div>
-            <div class="modal-card">
-                <section class="modal-card-body has-text-centered">
-                    <p class="image is-4by3">
-                        <img src="{{ url_for('static', filename='images/error_monkey.jpg') }}" alt="Shocked Monkey Pic">
-                    </p>
-                    <h2 class="title is-2">Oops .... Something went wrong !</h2>
-                    <p><strong>Lil Mona Key says she was looking for an error earlier but couldn't find one either</strong> 
-                    <br>
-                    <br>
-                    {{ error_message }}</p>
-                </section>
-                <a href="{{ url_for('home') }}" class="button my-blue but-font text-my-white">Click here to go home !</a>
-            </div>
-        </div>
+    {% include "components/messages/error_messages.html" %}
 
 {% endblock %}
