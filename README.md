@@ -566,23 +566,36 @@ Again, I am happy with overall delete vinyl functionality and this is the *DELET
 
 
 
-### **User Story Title**
+### **Validation Checks**
 
-#### User Story : 
-
-* **Plan**  
-
-
-* **Implementation**  
+All my html passed all the checks at [W3C HTML Validation Service](https://validator.w3.org/). The only issue being that I had used an ID twice on my user vinyl page when grouping and centering the two sets of buttons. I just changed these to classes so both will work with no issues. Apart from that, it was all jinja logic errors and the fact most of my html didn't have any header information.
+All my CSS passed all checks at [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) with no errore what so ever.
 
 
-* **Test**  
+### **User Questionnaire And Overall Feedback**
 
+Over the previous two projects, I've seen the necessity for user feedback and user testing. In the first project I was really shy if the truth be told so I din't really show my project off or let people see it. This also affected my final score which I didn't realise was a mojor attributory to a decent score. WIth my last project, the JS one, I annoyed people with testing it as I wanted the get it right. The user feedback from that was awesome and very encouraging so I set out to get the same people, work colleagues, friends and family, to test my new project. I made a questionnaire of general questions, for them to fill out as they navigate around the site. I let a few of them try the admin access as I needed some testing and verification of that code too. The questionnaire can be found below:
 
-* **Result**  
+[User / Admin Questionnaire](https://github.com/RaVeR76/My-Vinyl-Answer/raw/master/wireframes/user_questionnaire.pdf)
 
+The overall user / admin feedback from the questionnaire was very encouraging too.... 
+And don't be thinking as they fill in the blanks, I'm standing behind them with a large hunting knife whispering into their ear "I know where you live ... princess" so I get better results .... I wanted them to dig deep, try things, mess around and see if they could find anythng wrong.
+This is how you progress and if you cannot take critique then you're in the wrong business .... sounds like famous line from a Hollywood movie !
+Anyways, the main points were as follows:
 
-* **Verdict**  
+- The site looks really awesome and the deck backdrop was cool 
+- The colours fit in well with the image
+- The navigation was smooth and very easy to follow
+- All links worked with no issues 
+- Flash messages were in abundance ha ha
+- Validation & requirements were all working good
+- User CRUD functions working with no issues
+- Admin CRUD functions working with no issues
+- Everything looked good on mobile too
+
+All in all, I am very happy with the user feedback and apart from the general lad banter, everyone though it was an amazing wee app that worked very well.
+Although they did say it wasn't as good as my MS2 project, my wee game, because there was no legendary status with my MS3 project ha ha.
+Overall, I am extremely happy with the results and all the feedback within my questionnaires.
 
 
 [Back to Top](#contents)

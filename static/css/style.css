@@ -137,7 +137,7 @@ select:focus, .sign-bord:hover, .log-bord {
     background-color: rgba(161, 233, 247, .5);
 }
 
-#butt-center {
+.butt-center {
     display: flex;
     align-items: center;
     justify-content: center;
