@@ -8,8 +8,8 @@
 I'm a DJ (mainly a Bedroom one though .... see my MS1 project ha ha) and have been DJing for 25 years. I do it because I love the music, I love the people and I love the feeling of making people smile through the freedom of my sets :)
 I have hundreds of records, aka Vinyl, which I have been collecting from the mid 90s to now and I am still buying them .... it's like an addiction to be honest !
 I've tried to attend V.A. classes *(Vinyls Anonymous)* but they will never change me so I may just try to keep track of what I am buying and why .....  
-This is were my idea for a project comes from. I don't know how many records I have, I don't know what genre they are when I look at them, obviously I know some like the classics, but the majority I need to play before I can ascertain what genre they are. The amount of times I have went through my whole record selection to try and get some sort of order and organistaion is completely criminal and so time consuming it's unreal. 
-Again, this is were my project comes in ! I want to have a once and for all list of my personal vinyl and as much information per record as possible which I can search and hopefully help my keep track of .... I may even add a random function to help me select some cool SETS to play from the various Genres I have :)
+This is were my idea for a project comes from. I don't know how many vinyls I have, I don't know what genre they are when I look at them, obviously I know some like the classics, but the majority I need to play before I can ascertain what genre they are. The amount of times I have went through my whole vinyl selection to try and get some sort of order and organistaion is completely criminal and so time consuming it's unreal. 
+Again, this is were my project comes in ! I want to have a once and for all list of my personal vinyl and as much information per vinyl as possible which I can search and hopefully help my keep track of .... I may even add a random function to help me select some cool SETS to play from the various genres I have :)
 
 
 **Remember ..... Hug Harder, Laugh Louder, Smile Bigger & Love Longer !** 
@@ -939,7 +939,7 @@ nobody likes a db abuser !
 Overall I found python not to bad and really enjoyed it. Don't get me wrong there were times when I thought why won't you work you piece of chip ! It should have panned out differently and there were a few times when I got swallowed up in changes and lost my way. I just needed to take a step back and trace the code through which I learned through time. To be honest, some of the harder python was easiest to conquer and I was like who's the daddy but then again some the easier python twisted my napper and it was like an uppercut from Drago in Rocky 4.  
 I know the overall layout could improve and maybe it will in *Version 2* ha ha but I am happy with what I have achieved in the allocated time plus having to learn Python too.
 Maybe I should have used all Bulma components which I have for 95% of it but just the user vinyl collection I left the way it is as I love the look and feel of it. 
-All in all, there could be a few upgrades in the future but I am super hapy with the overall outcome of this project.  
+All in all, there could be a few upgrades in the future but I am super happy with the overall outcome of this project.  
 I hope you like it too !
 
 ## **Credits**
