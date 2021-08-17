@@ -29,8 +29,8 @@
                                 </header>
                                 <footer class="card-footer">
                                     <a href="{{ url_for('edit_user', user_id=user._id) }}" class="card-footer-item">Edit</a>
-                                    <a href="{{ url_for('del_user_confirm', user_id=user._id) }}"
-                                        class="card-footer-item">Delete</a>
+                                    <a href="manage_site.htm" 
+                                        class="card-footer-item">Delete</a>   <!--{{ url_for('del_user_confirm', user_id=user._id) }}-->
                                 </footer>
                             </div>
                         </div>
