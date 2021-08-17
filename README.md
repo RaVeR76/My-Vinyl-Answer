@@ -1,6 +1,6 @@
 # **My-Vinyl-Answer**
  
-***HERO IMAGE OR WEBSITE DISPLAY IMAGE***
+![My Vinyl Answer](https://github.com/RaVeR76/my-vinyl-answer/raw/master/wireframes/vinyl-showcase.png)
  
 
 ## **Project Goals**
