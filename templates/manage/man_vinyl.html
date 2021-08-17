@@ -10,6 +10,7 @@
                         My Vinyl Answer
                     </p>
                     <div class="panel-block">
+                        <!-- Admin Vinyl Search Input & Button -->
                         <div class="field control has-icons-left has-addons is-expanded">
                             <input id="vinyl_query" name="vinyl_query" class="input validate sign-bord" minlength="3"
                                 type="text" placeholder="Search" required>
@@ -23,6 +24,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Quick Search Tabs -->
                     <p class="panel-tabs">
                         <a href="{{ url_for('my_vinyls') }}">All</a>
                         <a href="{{ url_for('hardcore_search') }}">Hardcore</a>
@@ -35,7 +37,7 @@
                         {% if vinyl|length > 0 %}
 
                         {% for vinyl in vinyl %}
-
+                        <!-- All Vinyl Displayed -->
                         <a href="{{ url_for('vinyl_card', vinyl_id=vinyl._id) }}" class="panel-block is-active">
                             <span class="panel-icon">
                                 <i class="fas fa-record-vinyl" aria-hidden="true"></i>
@@ -53,6 +55,7 @@
 
                         {% endif %}
                     </div>
+                    <!-- Not So Cool Back Button & Reset Filters Button -->
                     <div class="panel-block">
                         <a href="{{ url_for('manage_site') }}" class="button my-blue text-my-white but-font">
                             <span class="icon is-small">
