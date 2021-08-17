@@ -275,13 +275,13 @@ I also added some Caps Lock code for super cool effect because if the truth be t
 Finally, I had to put the Javascript for Caps Lock function on each password page because when it was in my main js file, it conflicted with the users vinyl collapsible but this was a bug which I'll talk about in the bugs section.
 
 * **Test**  
-
+I have logged in with various fake users and my test users registered too. If a username already exists it tells them and if the user data doesn't match the specific criteria then it alerts them. If the user has Caps Lock On when inputting their password, it tells them. The user account is created when all the criteria is met and the user is redirected to their personal profile page. To be honest the Profile pic worked most of the time but sometimes it didn't but I know it's to do with the copy url link the user makes. The user gets a Big Happy Smiley Face anyways, so who's complaining .... gotta love a default image :)
 
 * **Result**  
-
+Sign up form works really well and as planned. The users personal information is stored safely in the MongoDB Users Collection and then retrieved for displaying on their profile page. Validation and minimum / maximum lengths keeps the data limited and everything in check. The form looks aesthetically pleasing and easily understandable. A flash message also appears to welcome the user after sign up.
 
 * **Verdict** 
-
+Let's face facts it's not gonna win **Best Form Design Of The Year** at the International Coding Awards but I am so happy with it. I love the vibrant blue which blends in with the blue from the background image (because I stole the blue from the image ha ha). It's easy to fill in and the users data gets stored correctly.
 
 
 
@@ -303,16 +303,17 @@ for the ability to delete users.
 * **Implementation**  
 Ok so like I said above, the user signs up for the first time then they have access to their personal space moving forward. They can then use the simple login page for future logins. All they need here is their unique username and password. These two pieces of info are then passed to the ```login()``` function which basically checks the login combo against the database. If the user is unknown it will flash a generic error message and redirect to the login page again. If the user is known then it checks the users password using the hash method mentioned previously. If the password is incorrect it will flash the generic message and redirect the user to the login page yet again. 
 Now after all them mind challenging tests that if the user gets their username right and the correct password is entered ... they will then be accepted into their own wee world of My Vinyl Answer :) 
-Within the realms of My Vinyl ANswer they will first see their profile page then they will have acess to their personal vinyl collection ... obviously once they build it up over time. They will have access to the add vinyl form where they can start to build their collection. Finally a logout option. I know it's pretty basic for the user but it's got the potential to expand and be much better. Time constraints and lack of knowledge at this stage but as the project progresses, I think you'll see it gets better as I utilise Bulma a lot more as in the Admin secton.
+Within the realms of My Vinyl Answer they will first see their profile page then they will have access to their personal vinyl collection ... obviously once they build it up over time. They will have access to the add vinyl form where they can start to build their collection. Finally a logout option. I know it's pretty basic for the user but it's got the potential to expand and be much better. Time constraints and lack of knowledge at this stage but as the project progresses, I think you'll see it gets better as I utilise Bulma a lot more as in the Admin secton.
 
 * **Test**  
-
+So once the user signs up or logs in, they get redirected to their profile page form here they can navigate to their personal vinyl collection, they can add new vinyls or they can log out. All these links worked well with no issues. The add vinyl form was easy to use and worked well. The My Vinyl Collection area was very beautiful was some of the statements from my testers. The colours worked really well and were not too over powering. The collapsibles were smooth and it was cool that they hid the edit and delete buttons. Search function worked well per user and everyone was happy with all functionaility and navigation within their User EnVINYLoment .... I'm I getting ye yet?
 
 * **Result**  
-
+I think the overall user environment works well and the navigation is straightforward and easy to understand. Again, I'll raise the point I've made a few times that the Admin vinyl collection format is probably a lot better functionality ways than the user vinyl collection page. I designed the user one first and I really like it so that's why it stayed. It's basic but visually more appealing for me. I love the admin one for use of ease and you can locate your genre collection with one click using the tabs.
+Overall, it all tes
 
 * **Verdict**  
-
+Overall, the user experience was very positive and the special selected few who tested my admin section said it was awesome and easy to use too. Again, I think the blend of colours with my background image for the user vinyl collection page works so good that I couldn't change it to a Bulma format. 
 
 
 
@@ -345,13 +346,14 @@ The user has the option to delete a vinyl from their collection too. Once they c
 I know the user vinyl interface is again pretty basic but this was the first thing i developed and as I got to use Bulma, I realised I could have used a lot more of it's components. Honestly, as basic as it looks, I still love it because I created it from the W3 Schools collapsibles and made it my own. I know it can  be made better but for me it just suits this wee project.
 
 * **Test**  
-
+My testers, fakers and I .... now that really does sound like a Hollywood comedy classic ! Anyway, we all added various vinyl and tested the validation and all worked well. The vinyl form data was easy to fill out and once saved, it gets stored within the Vinyl collection in MongoDB. The user or admin can then access this document to do what ever they want to it but within the legality of the CRUD functionality. All worked well with no issues and each user could only see the vinyls they had added.
 
 * **Result**  
-
+Very happy with the results. All testers added their own vinyls with no issues and had access to them from their vinyl collection page. The user could search through their vinyl collection for vinyl that matched their search criteria. All worked perfectly and the reset buttons reset the search function. The admin tabs are cool in that you can you hit a genre and it filters the collection instantly. This would deffo be an add-on for the user at a later date as it's functionality is very useful.
 
 * **Verdict**  
-
+Overall, very happy again ... and that's coming from someone who is generally always happy and a little hyper !! The shock ... the horror ... I hear you say ... RaVeR76 HYPER ... Neeeeevvvvvveeeeeeerrrrrrr !!!
+Love it all so there .... 
 
 
 
@@ -378,13 +380,13 @@ The user can also reset the page so that it goes back to there full collection. 
 In Admin access I use a Bulma panel to display all vinyl and I think it looks quite well. You may wonder why not use this format for the user vinyl collection? Like I said before as I got used to Bulma moreso at the admin part plus I loved the original authenticity of the users vinyl collection format too so didn't want to change it at this late stage. For my the users looks more appealing than the admin one to be honest. Anyway, the admin has basically the same display functions and search functions as the user, only I added some panel tabs for quicker search functionality. I created a function for each genre that when selected it displays all vinyl associated with that genre. Don't get me wrong, I know there is probably a simpler method that uses less code to do all five functions in one ... but unfortunately I don't have time on my side at this moment in time so this works for me and I can look at simplifying it at a later date. I'm still super happy I got it working so well, mind you :)
 
 * **Test**  
-
+We all tested this as users using the search box with our user vinyl collection. I told the users what they could search for as there were two areas that weren't covered .... vinyl description and vinyl label. I covered the rest within my index set up. All worked well within the user environment and it is pretty simplistic to be honest. The admin search functionality has a little more oomph to be fair and is very user friendly. I really loved using Bulma for the first time ... just took me a wee while to get used to it. 
 
 * **Result**  
-
+All search functionality worked well across all users and admin. Any searches carried out across the key areas within the query where displayed and when no searches where found, a message was displayed to say No Results Found. 
 
 * **Verdict**  
-
+Very happy with the search functions and everything works as planned.
 
 
 
