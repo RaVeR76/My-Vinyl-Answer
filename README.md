@@ -407,13 +407,13 @@ On the other hand though .... I have some vinyl tunes that the devil himself wou
 Honesty alert ! I just didn't have the time to implement this so I'll have to add this to the *features to be implemented* section up above. I really wanted this as it would be a cool feature but again this may be more from a DJ perspective again. As a DJ you want to play all the 5 star tunes and if ever a 1 star slipped into that set then the dancefloor would come crashing down round them .... and we wouldn't want that. Anyways, sorry but that's one that will have to be looked at in the future.
 
 * **Test**  
-
+Nothing to test at present
 
 * **Result**  
-
+No results at present
 
 * **Verdict**  
-
+You learn that while you spend more time trying to get some other piece of code right ... others may not happen !
 
 
 ### You are here -->o
@@ -435,13 +435,13 @@ The admin user only has the *manage site* and *logout* options as I felt this is
 Overall I think the navigation works well.
 
 * **Test**  
-
+ Between my test users and myself, we have tested the navigation, the sign ups, the log ins, the forms, the searching, and most importantly the CRUD functionality. Everything worked really well and as planned. All links worked as they should and all pages displayed the correct information that was requested. Obviously, it's fairly basic but it deffo has the basis to build apon for the future.
 
 * **Result**  
-
+Everything worked accordingly and not issues or bugs whatsoever. Very happy with the feedback from the users and they were all very happy with overall feel of My Vinyl Answer.
 
 * **Verdict**
-
+I'm very happy again .... I'm like a wee Chesire Cat sitting here typing my results and user feedback up. Nearly there though so fingers crossed you like it too.
 
 
 ### Describe Me In Five Words
@@ -460,13 +460,13 @@ This discription will then be stored in the vinyls document along with all the o
 Nothing really else much more to say on this one to be fair.
 
 * **Test**  
-
+All users and myself like this added feature. It allows the user to add a few things about the vinyl itself and not just as regards the tune. They all said it would be useful if they were going to sell it to have them details readily. 
 
 * **Result**  
-
+Simple text area for adding some descriptive infomation about the vinyl. All worked really well and most users wrote pleasantries with in this description box, during testing.
 
 * **Verdict**
-
+All in all, a simple user story with a happy ending ... like in a fairy tale or a romatic comedy ... and let's be honest, who doesn't love a Happy Ending ???
 
 
 ### You Spent Our Life Savings On A Vinyl Job Lot
@@ -487,13 +487,14 @@ Once the user hits the add thy vinyl button (submit) the ```add_vinyl()``` funct
 I could maybe have made the overall design of the form a little smaller so that it would fit on a large screen without scrolling but that's just a small detai, overall I still thnk it's cool and this is the *CREATE* functionality for the user.
 
 * **Test**  
-
+Once the users were logged in or signed up. They had access to **Add Vinyl** where they could fill in the required form to add their own vinyl to build u their collection. They did this with ease. Obviously, my users / testers were predominantly work colleagues who don't generally carry around a bag of vinyl, in the off chance some wee dude from Northern Ireland needs some specific vinyl details added as part of a Python project he has developed for vinyl freaks like him.
+Anyway, my users made some cool names, yet some explicit vinyl names up and added them through their user environment. The users were then able to see the added vinyl within their vinyl collection, and again do whatever they want with them, from a CRUD perspective of course. They repeated this a few times and everytime the new viny was added with ease.
 
 * **Result**  
-
+All vinyl that was tried was added with no issues. A flash message appears to let the user know that the vinyl has been added to their collection. The user can repeat this task over and over again to build up their vinyl collection.
 
 * **Verdict**
-
+Again, super happy with the results and the user feedback. Everyones vinyl got added and they performed CRUD functions on them with ease. Powerful stuff I say ... powerful stuff !
 
 
 ### The Vinyl Edit Before It Goes To Press
@@ -512,13 +513,13 @@ I did encounter an annoying bug with this one tbh and it was the fact as admin t
 Again, I am happy with overall edit vinyl functionality and this is the *UPDATE* functionality for the user therefore covered.
 
 * **Test**  
-
-
+Very similar to the add function above and the delete function below. Once the users add some vinyl then they tested the edit vinyl functionality. They all loved the fact the edit and delete buttons were hidden within the collapsible, they said it was cool (Sounds like I work with a bunch of hippies ha ha). All worked well and they could edit any field they wanted. Once they went back to their vinyl collection, they could see their vinyl with it's updated information. All worked well with no issues. I just had the admin issue with overwritting the vinyl owner value with admin but I rectified this and I tell all in a new explosive section within BUGS, called **I Vaunt All Zee Vinyl** ... bet you the excitement is killing you my little project marker person :) You know, these crap jokes are mostly for your benefit and maybe offer a README a little different from the norm so you can smile and have a laugh whilst thinking what a coding genius I am .... plus thinking about me thinking about you as I write my future jokes for ye !!! 
+   
 * **Result**  
-
+All tests passed and any vinyl tried and edited, the changes were made with no issues. All users were happy with the method and the functionality. The usual wee flash message for good measure. Admin vinyl edit functionality works super well as welly well .... so well, I'm welling up !
 
 * **Verdict**
-
+All worked really well and I am very happy with the user feedback.
 
 
 ### Deletion Will Be My Vinyl Option
@@ -538,10 +539,10 @@ Once deleted the user gets directed to the their vinyl collection again or if ad
 Again, I am happy with overall delete vinyl functionality and this is the *DELETE* functionality for the user therefore covered.
 
 * **Test**  
-
+Similar to the add and edit functions mentioned above. The users deleted numerous vinyls as did I. They loved the fact it was hidden along with the edit button. They also loved the dark screen thingy as they called it or a **modal** as we know it, that made sure the were making the correct life choice before deleting their vinyl. Once the user crossed that line their vinyl gets removed from the collection and never to be seen again .... unless that specific user re-enters that exact same information again ... then I suppose you can say it's the same so therefore technically it can be seen again .... sorry, well until that happens it's never to be seen again.
 
 * **Result**  
-
+All users tested this functionality and it worked very well. The admin deletion worked perfectly too. And if I wasn't sure about performing the deletion in the first place with the confirmation modal, the user gets a flash message to confirm that the deletion did in fact take place. All corners covered this boy ... as I rave to cheesy euro pop and type this work of art up, moi README :)
 
 * **Verdict**
 
