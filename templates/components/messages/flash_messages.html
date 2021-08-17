@@ -1,14 +1,14 @@
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
 
-                <div class="columns is-centered col-pad">
-                    <div class="column flash notification is-8">
-                        <button class="delete"></button>
-                        <h4 class="title is-4 has-text-centered">{{ message }}</h4>
-                    </div>
-                </div>
+<div class="columns is-centered col-pad">
+    <div class="column flash notification is-8">
+        <button class="delete"></button>
+        <h4 class="title is-4 has-text-centered">{{ message }}</h4>
+    </div>
+</div>
 
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+{% endfor %}
+{% endif %}
+{% endwith %}

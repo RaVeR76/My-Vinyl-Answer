@@ -20,15 +20,15 @@
 
                                         {% for genre in genre %}
 
-                                            {% if genre.genre_name == vinyl.genre_name %}
+                                        {% if genre.genre_name == vinyl.genre_name %}
 
-                                                <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+                                        <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
 
-                                            {% else %}
+                                        {% else %}
 
-                                                <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
-                                                
-                                            {% endif %}
+                                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+
+                                        {% endif %}
 
                                         {% endfor %}
 
@@ -110,19 +110,22 @@
 
                                 {% if users.username == 'admin' %}
 
-                                    <a href="{{ url_for('vinyl_card', vinyl_id=vinyl._id) }}" class="button is-medium my-red text-my-white but-font is-rounded">
-                                        Cancel
-                                    </a>
+                                <a href="{{ url_for('vinyl_card', vinyl_id=vinyl._id) }}"
+                                    class="button is-medium my-red text-my-white but-font is-rounded">
+                                    Cancel
+                                </a>
 
                                 {% else %}
 
-                                    <a href="{{ url_for('my_vinyls') }}" class="button is-medium my-red text-my-white but-font is-rounded">
-                                        Cancel
-                                    </a>
+                                <a href="{{ url_for('my_vinyls') }}"
+                                    class="button is-medium my-red text-my-white but-font is-rounded">
+                                    Cancel
+                                </a>
 
                                 {% endif %}
 
-                                <button type="submit" class="button is-medium my-blue text-my-white but-font is-rounded">
+                                <button type="submit"
+                                    class="button is-medium my-blue text-my-white but-font is-rounded">
                                     Edit Vinyl
                                 </button>
                             </div>

@@ -1,44 +1,45 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-    {% include 'components/messages/flash_messages.html' %}
+{% include 'components/messages/flash_messages.html' %}
 
-        <div class="container">
-            <div class="columns col-pad">
-                <form autocomplete="off" class="column is-8 is-offset-2" method="POST" action="{{ url_for('add_genre') }}">
-                    <div class="card my-white-light">
-                        <div class="card-content">
-                            <div class="content">
+<div class="container">
+    <div class="columns col-pad">
+        <form autocomplete="off" class="column is-8 is-offset-2" method="POST" action="{{ url_for('add_genre') }}">
+            <div class="card my-white-light">
+                <div class="card-content">
+                    <div class="content">
 
-                                <div class="notification my-blue is-full">
-                                    <p class="has-text-centered text-my-white">Add New Genre</p>
-                                </div>
+                        <div class="notification my-blue is-full">
+                            <p class="has-text-centered text-my-white">Add New Genre</p>
+                        </div>
 
-                                <!-- Genre Name -->
-                                <div class="field column is-8 is-offset-2">
-                                    <label for="genre_name" class="label">Genre Name</label>
-                                    <div class="control has-icons-left">
-                                        <input id="genre_name" name="genre_name" class="input validate sign-bord" type="text"
-                                            minlength="3" maxlength="25" placeholder="Genre Name" required>
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-globe"></i>
-                                        </span>
-                                    </div>
-                                </div>
+                        <!-- Genre Name -->
+                        <div class="field column is-8 is-offset-2">
+                            <label for="genre_name" class="label">Genre Name</label>
+                            <div class="control has-icons-left">
+                                <input id="genre_name" name="genre_name" class="input validate sign-bord" type="text"
+                                    minlength="3" maxlength="25" placeholder="Genre Name" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-globe"></i>
+                                </span>
+                            </div>
+                        </div>
 
-                                <!-- Add New Genre Button -->
-                                <div class="field column is-4 is-offset-4">
-                                    <div class="control">
-                                        <button type="submit" class="button my-blue text-my-white is-medium is-fullwidth but-font is-rounded">
-                                            Add Genre
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Add New Genre Button -->
+                        <div class="field column is-4 is-offset-4">
+                            <div class="control">
+                                <button type="submit"
+                                    class="button my-blue text-my-white is-medium is-fullwidth but-font is-rounded">
+                                    Add Genre
+                                </button>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
-        
+        </form>
+    </div>
+</div>
+
 {% endblock %}

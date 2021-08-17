@@ -1,5 +1,4 @@
 // Declare Constants
-
 const coll = document.getElementsByClassName("collapsible");
 let i;
 

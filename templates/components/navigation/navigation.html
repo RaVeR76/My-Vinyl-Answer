@@ -13,18 +13,18 @@
 
                 {% if session.user and session.user|lower != "admin"|lower %}
 
-                    <a href="{{ url_for('profile') }}" class="navbar-item">Profile</a>
-                    <a href="{{ url_for('my_vinyls') }}" class="navbar-item">My Vinyl</a>
-                    <a href="{{ url_for('add_vinyl') }}" class="navbar-item">Add Vinyl</a>
-                    <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a> 
+                <a href="{{ url_for('profile') }}" class="navbar-item">Profile</a>
+                <a href="{{ url_for('my_vinyls') }}" class="navbar-item">My Vinyl</a>
+                <a href="{{ url_for('add_vinyl') }}" class="navbar-item">Add Vinyl</a>
+                <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a>
 
                 {% elif session.user|lower == "admin"|lower %}
 
-                    <a href="{{ url_for('manage_site') }}" class="navbar-item">Lobby</a>
-                    <a href="{{ url_for('genre_list') }}" class="navbar-item">Genre</a>
-                    <a href="{{ url_for('users_list') }}" class="navbar-item">Users</a>
-                    <a href="{{ url_for('vinyl_list') }}" class="navbar-item">Vinyl</a>
-                    <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a> 
+                <a href="{{ url_for('manage_site') }}" class="navbar-item">Lobby</a>
+                <a href="{{ url_for('genre_list') }}" class="navbar-item">Genre</a>
+                <a href="{{ url_for('users_list') }}" class="navbar-item">Users</a>
+                <a href="{{ url_for('vinyl_list') }}" class="navbar-item">Vinyl</a>
+                <a href="{{ url_for('logout') }}" class="navbar-item">Log Out</a>
 
                 {% else %}
 
@@ -40,7 +40,7 @@
                 </div>
 
                 {% endif %}
-                
+
             </div>
         </div>
     </nav>
