@@ -8,14 +8,24 @@
         <div class="container is-two-thirds">
             <div class="notification my-blue col-pad is-centered not-pos">
                 <p class="has-text-centered text-my-white">Manage Users</p>
-                <figure class="image is-24x24  back-pos">
-                    <a href="{{ url_for('manage_site') }}">
-                        <img src="{{ url_for('static', filename='images/back.png') }}" class="round-butt">
-                    </a>
-                </figure>
             </div>
+
+            <div class="row is-centered col-pad">
+                <div class="field column is-2 is-offset-5">
+                    <div class="control">
+                        <a href="{{ url_for('manage_site') }}"
+                            class="button my-blue-light text-my-white is-medium is-fullwidth but-font is-rounded">
+                            <span class="icon is-small">
+                                <i class="fas fa-backward"></i>
+                              </span>
+                            <span>Back</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <section class="section">
-                <div class="columns is-centered col-pad is-flex-wrap-wrap">
+                <div class="columns is-centered is-flex-wrap-wrap">
 
                     {% for user in users %}
 
@@ -29,8 +39,8 @@
                                 </header>
                                 <footer class="card-footer">
                                     <a href="{{ url_for('edit_user', user_id=user._id) }}" class="card-footer-item">Edit</a>
-                                    <a href="manage_site.htm" 
-                                        class="card-footer-item">Delete</a>   <!--{{ url_for('del_user_confirm', user_id=user._id) }}-->
+                                    <a href="{{ url_for('del_user_confirm', user_id=user._id) }}" 
+                                        class="card-footer-item">Delete</a>
                                 </footer>
                             </div>
                         </div>

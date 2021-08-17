@@ -6,13 +6,8 @@
     {% include 'components/flash_messages/flash_messages.html' %}
 
         <div class="container">
-            <div class="notification my-blue col-pad is-centered not-pos">
+            <div class="notification my-blue col-pad is-centered">
                 <p class="has-text-centered text-my-white">Manage Vinyl</p>
-                <figure class="image is-24x24 back-pos">
-                    <a href="{{ url_for('manage_site') }}">
-                        <img src="{{ url_for('static', filename='images/back.png') }}" class="round-butt">
-                    </a>
-                </figure>
             </div>
             <div class="columns">
                 <div class="column is-8 is-offset-2">
@@ -29,7 +24,7 @@
                                         <i class="fas fa-search" aria-hidden="true"></i>
                                     </span>
                                     <div class="control">
-                                        <button type="submit" class="button my-blue text-my-white">
+                                        <button type="submit" class="button my-blue text-my-white but-font">
                                             Search
                                         </button>
                                     </div>
@@ -66,6 +61,12 @@
                                 {% endif %}
                             </div>
                             <div class="panel-block">
+                                <a href="{{ url_for('manage_site') }}" class="button my-blue text-my-white but-font">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-backward"></i>
+                                    </span>
+                                    <span>Back</span>
+                                </a>
                                 <a href="{{ url_for('my_vinyls') }}" class="button sign-bord is-outlined is-fullwidth">
                                     Reset all filters
                                 </a>
